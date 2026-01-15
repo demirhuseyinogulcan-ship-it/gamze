@@ -47,5 +47,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    // Location Pages (High Priority for Local SEO)
+    {
+      url: `${baseUrl}/silivri-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/istanbul-tango-kursu`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
   ];
 }

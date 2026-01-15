@@ -7,6 +7,7 @@ import { useTranslation } from '@/lib/i18n';
 import { useScrollProgress } from '@/lib/hooks';
 import { cn } from '@/lib/utils';
 import { Container } from './Container';
+import { MilongaToggle } from '@/components/effects';
 
 const navItems = [
   { key: 'home', href: '#hero' },
@@ -100,6 +101,9 @@ export function Navbar() {
                 <Globe size={18} />
                 <span className="text-sm font-medium uppercase">{locale === 'tr' ? 'EN' : 'TR'}</span>
               </motion.button>
+
+              {/* Milonga Mode Toggle */}
+              <MilongaToggle />
             </div>
 
             {/* Mobile Menu Button */}

@@ -9,6 +9,9 @@ export interface Dictionary {
     schedule: string;
     faq: string;
     contact: string;
+    locations: string;
+    silivri: string;
+    istanbul: string;
   };
   hero: {
     subtitle: string;
@@ -133,6 +136,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       schedule: 'Takvim',
       faq: 'SSS',
       contact: 'İletişim',
+      locations: 'Lokasyonlar',
+      silivri: 'Silivri Tango Dersi',
+      istanbul: 'İstanbul Tango Kursu',
     },
     hero: {
       subtitle: 'Profesyonel Tango Eğitmeni',
@@ -381,6 +387,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       schedule: 'Schedule',
       faq: 'FAQ',
       contact: 'Contact',
+      locations: 'Locations',
+      silivri: 'Silivri Tango Lessons',
+      istanbul: 'Istanbul Tango Course',
     },
     hero: {
       subtitle: 'Professional Tango Instructor',

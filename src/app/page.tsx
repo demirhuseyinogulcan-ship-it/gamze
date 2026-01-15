@@ -1,12 +1,16 @@
 'use client';
 
-import { Navbar, Footer, ScrollProgress } from '@/components/ui';
+import { Navbar, Footer, ScrollProgress, AmbientSound } from '@/components/ui';
+import { CursorTrail } from '@/components/effects';
 import {
   Hero,
   About,
   Philosophy,
   Services,
   Gallery,
+  Testimonials,
+  FirstLessonJourney,
+  LeadMagnet,
   Schedule,
   FAQ,
   Contact,
@@ -15,6 +19,7 @@ import {
 export default function HomePage() {
   return (
     <>
+      <CursorTrail />
       <ScrollProgress />
       <Navbar />
       <main>
@@ -23,11 +28,15 @@ export default function HomePage() {
         <Philosophy />
         <Services />
         <Gallery />
+        <Testimonials />
+        <FirstLessonJourney />
+        <LeadMagnet />
         <Schedule />
         <FAQ />
         <Contact />
       </main>
       <Footer />
+      <AmbientSound />
     </>
   );
 }

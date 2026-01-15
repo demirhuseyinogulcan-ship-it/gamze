@@ -169,4 +169,74 @@
     mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
   }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Milonga Mode Styles
+   Special ambient mode for a tango dance hall atmosphere
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --milonga-glow: 0;
+}
+
+.milonga-mode {
+  /* Warm, intimate color palette */
+  --milonga-gold: 255, 180, 100;
+  --milonga-rose: 255, 100, 120;
+  --milonga-ambient: 40, 20, 25;
+}
+
+.milonga-mode .text-gold {
+  color: rgb(255, 180, 100);
+  text-shadow: 0 0 10px rgba(255, 180, 100, 0.5);
+}
+
+.milonga-mode .bg-gold {
+  background-color: rgb(255, 180, 100);
+  box-shadow: 0 0 20px rgba(255, 180, 100, 0.3);
+}
+
+.milonga-mode .border-gold {
+  border-color: rgb(255, 180, 100);
+  box-shadow: 0 0 10px rgba(255, 180, 100, 0.2);
+}
+
+.milonga-mode .bg-midnight {
+  background-color: rgb(20, 12, 15);
+}
+
+.milonga-mode .bg-charcoal {
+  background-color: rgb(35, 20, 25);
+}
+
+/* Subtle warm glow on images */
+.milonga-mode img {
+  filter: sepia(0.1) saturate(1.1);
+}
+
+/* Pulsing glow animation for interactive elements */
+.milonga-mode .btn-primary,
+.milonga-mode .btn-secondary {
+  animation: milonga-pulse 3s ease-in-out infinite;
+}
+
+@keyframes milonga-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 180, 100, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 180, 100, 0.5);
+  }
+}
+
