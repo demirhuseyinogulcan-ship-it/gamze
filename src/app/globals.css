@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-midnight text-white font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-white;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-midnight-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold/50 rounded-full hover:bg-gold/70 transition-colors;
+  }
+
+  /* Focus States */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-midnight;
+  }
+}
+
+@layer components {
+  /* Gold Text Gradient */
+  .text-gradient-gold {
+    @apply bg-gradient-gold bg-clip-text text-transparent;
+  }
+
+  /* Gold Underline Effect */
+  .gold-underline {
+    @apply relative;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-500;
+  }
+
+  .gold-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Section Styling */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-midnight-50/80 backdrop-blur-md border border-white/5;
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10;
+  }
+
+  /* Button Base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-body font-medium 
+           transition-all duration-300 ease-smooth 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-gold text-midnight px-8 py-4 
+           hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent border-2 border-gold text-gold px-8 py-4
+           hover:bg-gold hover:text-midnight
+           active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply btn text-gold hover:bg-gold/10 px-4 py-2;
+  }
+
+  /* Navigation Link */
+  .nav-link {
+    @apply relative text-white/80 hover:text-gold transition-colors duration-300
+           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-gold after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  /* Heading Styles */
+  .heading-xl {
+    @apply font-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight;
+  }
+
+  .heading-lg {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-tight;
+  }
+
+  .heading-md {
+    @apply font-heading text-3xl md:text-4xl lg:text-5xl font-light tracking-tight;
+  }
+
+  .heading-sm {
+    @apply font-heading text-2xl md:text-3xl font-light tracking-tight;
+  }
+
+  /* Body Text */
+  .body-lg {
+    @apply font-body text-lg md:text-xl leading-relaxed text-white/80;
+  }
+
+  .body-md {
+    @apply font-body text-base md:text-lg leading-relaxed text-white/70;
+  }
+
+  /* Decorative Elements */
+  .gold-line {
+    @apply w-16 h-0.5 bg-gold;
+  }
+
+  .gold-dot {
+    @apply w-2 h-2 rounded-full bg-gold;
+  }
+}
+
+@layer utilities {
+  /* Aspect Ratios */
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-cinema {
+    aspect-ratio: 21 / 9;
+  }
+
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth Transforms */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  /* Mask Gradient */
+  .mask-gradient {
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  }
+}

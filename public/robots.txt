@@ -1,0 +1,16 @@
+# Gamze Tango - Robots.txt
+# https://gamzetango.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gamzetango.com/sitemap.xml
+
+# Disallow admin/api routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
