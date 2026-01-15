@@ -1,6 +1,6 @@
 'use client';
 
-import { Navbar, Footer, ScrollProgress, AmbientSound } from '@/components/ui';
+import { Navbar, Footer, ScrollProgress, AmbientSound, PWAInstallPrompt } from '@/components/ui';
 import { CursorTrail } from '@/components/effects';
 import {
   Hero,
@@ -37,6 +37,7 @@ export default function HomePage() {
       </main>
       <Footer />
       <AmbientSound />
+      <PWAInstallPrompt />
     </>
   );
 }

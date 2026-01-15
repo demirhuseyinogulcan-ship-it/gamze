@@ -117,12 +117,9 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-white/5">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm">
-              © {currentYear} Gamze Yıldız Tango. {footer.rights}
-            </p>
+          <div className="flex justify-center items-center">
             <p className="flex items-center gap-2 text-white/40 text-sm">
-              {footer.madeWith} <Heart size={14} className="text-crimson animate-pulse" /> Can
+              © {currentYear} {footer.madeWith} <Heart size={14} className="text-crimson animate-pulse" /> Can
             </p>
           </div>
         </div>

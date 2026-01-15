@@ -247,7 +247,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: 'Tüm hakları saklıdır.',
-      madeWith: 'Tutkuyla yapıldı',
+      madeWith: 'Tüm hislerim saklıdır',
       quickLinks: 'Hızlı Bağlantılar',
       contact: 'İletişim',
       description: 'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi.',
@@ -342,7 +342,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             },
             {
               question: 'Ödeme seçenekleri nelerdir?',
-              answer: 'Esnek ödeme seçenekleri sunuyorum:\n\n• Tek ders: En esnek seçenek, denemek isteyenler için\n• 4 derslik paket: %10 indirimli\n• 8 derslik paket: %15 indirimli\n• 12 derslik paket: %20 indirimli\n\nÖdeme yöntemleri: Nakit, havale/EFT, kredi kartı\n\nİlk tanışma dersi için özel fiyat uygulanır. Fiyatlar hakkında detaylı bilgi almak için lütfen benimle iletişime geçin.'
+              answer: 'Esnek ödeme seçenekleri sunuyorum:\n\n• Tek ders: En esnek seçenek, denemek isteyenler için\n• 4 derslik paket: %10 indirimli\n• 8 derslik paket: %15 indirimli\n• 12 derslik paket: %20 indirimli\n\nÖdeme yöntemleri: Nakit, havale/EFT, kredi kartı\n\n🎁 İlk tanışma dersi tamamen ücretsiz! Hiçbir ödeme veya taahhüt yok. Fiyatlar hakkında detaylı bilgi almak için lütfen benimle iletişime geçin.'
             }
           ]
         },
@@ -498,7 +498,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: 'All rights reserved.',
-      madeWith: 'Made with passion',
+      madeWith: 'All hearts reserved',
       quickLinks: 'Quick Links',
       contact: 'Contact',
       description: 'Step into the enchanting world of tango. Professional tango training in Silivri and Istanbul.',
@@ -593,7 +593,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             },
             {
               question: 'What are the payment options?',
-              answer: 'I offer flexible payment options:\n\n• Single lesson: Most flexible option, for those who want to try\n• 4-lesson package: 10% discount\n• 8-lesson package: 15% discount\n• 12-lesson package: 20% discount\n\nPayment methods: Cash, bank transfer, credit card\n\nSpecial pricing applies for the first introductory lesson. Please contact me for detailed pricing information.'
+              answer: 'I offer flexible payment options:\n\n• Single lesson: Most flexible option, for those who want to try\n• 4-lesson package: 10% discount\n• 8-lesson package: 15% discount\n• 12-lesson package: 20% discount\n\nPayment methods: Cash, bank transfer, credit card\n\n🎁 Your first trial lesson is completely free! No payment or commitment required. Please contact me for detailed pricing information.'
             }
           ]
         },

@@ -3,13 +3,6 @@
 /**
  * Testimonials Section Component
  * Displays student stories with filtering and animations
- * 
- * POTENTIAL ISSUES ADDRESSED:
- * - Performance: Virtualized list not needed for < 20 items
- * - Animation: Reduced motion for accessibility
- * - Layout shift: Fixed card heights with truncation
- * - Mobile: Horizontal scroll for filters, stacked cards
- * - Accessibility: Proper ARIA labels, keyboard navigation
  */
 
 import { useState, useCallback, useMemo } from 'react';
@@ -23,36 +16,6 @@ import {
   CATEGORY_LABELS,
 } from '@/lib/constants/testimonials';
 import type { Testimonial, TestimonialCategory } from '@/types/testimonial';
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-} as const;
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.95,
-    transition: { duration: 0.3 },
-  },
-} as const;
 
 // Star Rating Component
 function StarRating({ rating }: { rating: number }) {
@@ -101,9 +64,7 @@ function TestimonialCard({
   const hasFullStory = !!testimonial.fullStory;
 
   return (
-    <motion.article
-      variants={cardVariants}
-      layout
+    <article
       className="group relative overflow-hidden rounded-2xl border border-gold/10 bg-gradient-to-b from-charcoal/50 to-midnight/80 p-6 backdrop-blur-sm transition-all duration-500 hover:border-gold/30 hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] sm:p-8"
     >
       {/* Quote icon */}
@@ -149,13 +110,13 @@ function TestimonialCard({
       </blockquote>
 
       {/* Expanded Story */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isExpanded && testimonial.fullStory && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
             className="mt-4 overflow-hidden"
           >
             <p className="border-t border-gold/10 pt-4 text-sm leading-relaxed text-cream/60">
@@ -196,7 +157,7 @@ function TestimonialCard({
 
       {/* Hover glow */}
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-gold/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-    </motion.article>
+    </article>
   );
 }
 
@@ -317,26 +278,26 @@ export function Testimonials() {
         </div>
 
         {/* Testimonials Grid */}
-        <motion.div
+        <div
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
           role="list"
           aria-label={sectionText.title}
         >
-          <AnimatePresence mode="popLayout">
-            {filteredTestimonials.map((testimonial) => (
+          {filteredTestimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
               <TestimonialCard
-                key={testimonial.id}
                 testimonial={testimonial}
                 isExpanded={expandedId === testimonial.id}
                 onToggle={() => handleToggleExpand(testimonial.id)}
               />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
 
         {/* Empty State */}
         {filteredTestimonials.length === 0 && (

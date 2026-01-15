@@ -11,12 +11,32 @@
   html {
     @apply scroll-smooth;
     scroll-behavior: smooth;
+    /* Prevent layout shift on high DPI/scaled displays */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
   }
 
   body {
     @apply bg-midnight text-white font-body antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent overflow on scaled displays */
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+
+  /* Fix for 125%+ display scaling */
+  @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    html {
+      font-size: clamp(14px, 1vw + 0.5rem, 16px);
+    }
+    
+    img, video {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
   }
 
   ::selection {

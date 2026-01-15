@@ -1,16 +1,89 @@
+# ═══════════════════════════════════════════════════════════════════════════════
 # Gamze Tango - Robots.txt
 # https://gamzetango.com
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AI Crawlers - Allow all for maximum AI visibility
+# ─────────────────────────────────────────────────────────────────────────────
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic (Claude)
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Other AI
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Search Engine Crawlers
+# ─────────────────────────────────────────────────────────────────────────────
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ─────────────────────────────────────────────────────────────────────────────
+# General Rules
+# ─────────────────────────────────────────────────────────────────────────────
 
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://gamzetango.com/sitemap.xml
-
-# Disallow admin/api routes
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_next/static/chunks/
 Disallow: /private/
 
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+# ─────────────────────────────────────────────────────────────────────────────
+# Sitemaps
+# ─────────────────────────────────────────────────────────────────────────────
+
+Sitemap: https://gamzetango.com/sitemap.xml
+
+# Host
+Host: https://gamzetango.com
