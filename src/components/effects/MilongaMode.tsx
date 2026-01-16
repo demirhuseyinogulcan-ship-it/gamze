@@ -55,7 +55,7 @@ export function MilongaModeProvider({ children }: MilongaModeProviderProps) {
   // Apply body class when active
   useEffect(() => {
     if (typeof document === 'undefined') return;
-    
+
     if (isActive) {
       document.body.classList.add('milonga-mode');
       document.documentElement.style.setProperty('--milonga-glow', '1');
@@ -190,20 +190,19 @@ interface MilongaToggleProps {
 export function MilongaToggle({ className = '' }: MilongaToggleProps) {
   const { isActive, toggle } = useMilongaMode();
 
-  const label = isActive ? 'Normal Moda Geç' : 'Milonga Modu';
+  const label = isActive ? 'Normal Mod' : 'Milonga';
   const Icon = isActive ? Sun : Moon;
 
   return (
     <motion.button
       onClick={toggle}
-      className={`group relative flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
-        isActive
-          ? 'border-rose-500/50 bg-rose-500/20 text-rose-300 hover:bg-rose-500/30'
-          : 'border-cream/20 bg-cream/5 text-cream/70 hover:border-gold/30 hover:text-gold'
-      } ${className}`}
+      className={`group relative flex items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all whitespace-nowrap sm:w-[130px] ${isActive
+        ? 'border-rose-500/50 bg-rose-500/20 text-rose-300 hover:bg-rose-500/30'
+        : 'border-cream/20 bg-cream/5 text-cream/70 hover:border-gold/30 hover:text-gold'
+        } ${className}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      aria-label={label}
+      aria-label={isActive ? 'Normal Moda Geç' : 'Milonga Modunu Aç'}
       aria-pressed={isActive}
     >
       <AnimatePresence mode="wait">
@@ -218,7 +217,7 @@ export function MilongaToggle({ className = '' }: MilongaToggleProps) {
         </motion.span>
       </AnimatePresence>
 
-      <span className="hidden sm:inline">{label}</span>
+      <span className="hidden sm:inline text-xs whitespace-nowrap">{label}</span>
 
       {/* Sparkle effect when active */}
       {isActive && (

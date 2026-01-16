@@ -206,7 +206,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     schedule: {
       subtitle: 'Takvim',
       title: 'Ders Programı',
-      description: 'Silivri ve Kadıköy lokasyonlarında düzenlenen haftalık ders programı',
+      description: 'Silivri, Beyoğlu ve Kadıköy lokasyonlarında düzenlenen haftalık ders programı',
       classes: [
         { day: 'Pazartesi', time: '19:00 - 20:30', level: 'Başlangıç', location: 'Silivri' },
         { day: 'Çarşamba', time: '19:00 - 20:30', level: 'Orta Seviye', location: 'Silivri' },
@@ -216,7 +216,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       locations: [
         { name: 'Silivri Dans Stüdyosu', address: 'Silivri, İstanbul' },
-        { name: 'Kadıköy Dans Okulu', address: 'Kadıköy, İstanbul' },
+        { name: 'Beyoğlu Dans Stüdyosu', address: 'Beyoğlu, İstanbul (Avrupa Yakası)' },
+        { name: 'Kadıköy Dans Okulu', address: 'Kadıköy, İstanbul (Anadolu Yakası)' },
       ],
     },
     contact: {
@@ -232,9 +233,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
         success: 'Mesajınız başarıyla gönderildi!',
       },
       info: {
-        phone: '+90 546 889 72 26',
+        phone: '+90 506 228 45 07',
         email: 'info@gamzetango.com',
-        location: 'Silivri & İstanbul',
+        location: 'Silivri, Beyoğlu & Kadıköy',
         phoneLabel: 'Telefon',
         emailLabel: 'E-posta',
         locationLabel: 'Lokasyon',
@@ -338,7 +339,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             },
             {
               question: 'Dersler nerede yapılıyor?',
-              answer: 'İki ana lokasyonda ders veriyorum:\n\n📍 Silivri: [Adres bilgisi eklenecek]\nSakin, ferah bir stüdyo ortamında, özellikle özel dersler için ideal.\n\n📍 İstanbul Avrupa Yakası: [Adres bilgisi eklenecek]\nMerkezi lokasyon, toplu taşımaya yakın.\n\nHer iki lokasyon da ahşap zemin, aynalı duvar ve kaliteli ses sistemine sahip. Park imkanı ve kafeterya bulunmaktadır. Özel durumlarda ev/ofis ziyaretleri de değerlendirilebilir.'
+              answer: 'Üç ana lokasyonda özel ders veriyorum:\n\n📍 Silivri\nSakin, ferah bir stüdyo ortamında, özellikle özel dersler için ideal.\n\n📍 Beyoğlu (Avrupa Yakası)\nMerkezi lokasyon, toplu taşımaya yakın.\n\n📍 Kadıköy (Anadolu Yakası)\nAnadolu yakasında kolay ulaşılabilir lokasyon.\n\nTüm lokasyonlarda ahşap zemin ve kaliteli ses sistemi mevcut. Özel durumlarda ev/ofis ziyaretleri de değerlendirilebilir.'
             },
             {
               question: 'Ödeme seçenekleri nelerdir?',
@@ -457,7 +458,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     schedule: {
       subtitle: 'Schedule',
       title: 'Class Schedule',
-      description: 'Weekly class schedule at Silivri and Kadıköy locations',
+      description: 'Weekly class schedule at Silivri, Beyoğlu and Kadıköy locations',
       classes: [
         { day: 'Monday', time: '19:00 - 20:30', level: 'Beginner', location: 'Silivri' },
         { day: 'Wednesday', time: '19:00 - 20:30', level: 'Intermediate', location: 'Silivri' },
@@ -467,7 +468,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       locations: [
         { name: 'Silivri Dance Studio', address: 'Silivri, Istanbul' },
-        { name: 'Kadıköy Dance School', address: 'Kadıköy, Istanbul' },
+        { name: 'Beyoğlu Dance Studio', address: 'Beyoğlu, Istanbul (European Side)' },
+        { name: 'Kadıköy Dance School', address: 'Kadıköy, Istanbul (Asian Side)' },
       ],
     },
     contact: {
@@ -483,9 +485,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
         success: 'Your message has been sent successfully!',
       },
       info: {
-        phone: '+90 546 889 72 26',
+        phone: '+90 506 228 45 07',
         email: 'info@gamzetango.com',
-        location: 'Silivri & Istanbul',
+        location: 'Silivri, Beyoğlu & Kadıköy',
         phoneLabel: 'Phone',
         emailLabel: 'Email',
         locationLabel: 'Location',
@@ -589,7 +591,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             },
             {
               question: 'Where are the lessons held?',
-              answer: 'I teach at two main locations:\n\n📍 Silivri: [Address to be added]\nA calm, spacious studio environment, ideal especially for private lessons.\n\n📍 Istanbul European Side: [Address to be added]\nCentral location, close to public transport.\n\nBoth locations have wooden floors, mirrored walls, and quality sound systems. Parking and a cafeteria are available. Home/office visits can be considered for special situations.'
+              answer: 'I offer private lessons at three main locations:\n\n📍 Silivri\nA calm, spacious studio environment, ideal especially for private lessons.\n\n📍 Beyoğlu (European Side)\nCentral location, close to public transport.\n\n📍 Kadıköy (Asian Side)\nEasily accessible location on the Asian side.\n\nAll locations have wooden floors and quality sound systems. Home/office visits can be considered for special situations.'
             },
             {
               question: 'What are the payment options?',

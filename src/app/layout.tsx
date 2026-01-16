@@ -119,11 +119,17 @@ const jsonLd = {
       description: 'Profesyonel tango eğitimi - Özel dersler, düğün dansı, lady styling ve kurumsal workshoplar.',
       url: 'https://gamzetango.com',
       image: 'https://gamzetango.com/images/0.jpg',
-      telephone: '+905468897226',
+      telephone: '+905062284507',
       address: [
         {
           '@type': 'PostalAddress',
           addressLocality: 'Silivri',
+          addressRegion: 'İstanbul',
+          addressCountry: 'TR',
+        },
+        {
+          '@type': 'PostalAddress',
+          addressLocality: 'Beyoğlu',
           addressRegion: 'İstanbul',
           addressCountry: 'TR',
         },

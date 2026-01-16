@@ -25,9 +25,9 @@ export const SILIVRI_LOCATION: Location = {
     fullAddress: 'Alibey Mahallesi, Silivri, İstanbul 34570',
   },
   contact: {
-    phone: '+90 542 539 02 47',
+    phone: '+90 506 228 45 07',
     email: 'info@gamzetango.com',
-    whatsapp: '905425390247',
+    whatsapp: '905062284507',
   },
   seo: {
     title: 'Silivri Tango Dersi | Gamze Yıldız ile Profesyonel Tango Eğitimi',
@@ -155,9 +155,9 @@ export const ISTANBUL_LOCATION: Location = {
     fullAddress: 'İstanbul (Avrupa & Anadolu Yakası)',
   },
   contact: {
-    phone: '+90 542 539 02 47',
+    phone: '+90 506 228 45 07',
     email: 'info@gamzetango.com',
-    whatsapp: '905425390247',
+    whatsapp: '905062284507',
   },
   seo: {
     title: 'İstanbul Tango Kursu | Profesyonel Arjantin Tango Dersleri',

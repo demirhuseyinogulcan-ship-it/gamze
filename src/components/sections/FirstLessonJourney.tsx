@@ -75,21 +75,19 @@ function ProgressIndicator({ steps, currentStep, onStepClick }: ProgressIndicato
             {/* Connector Line */}
             {index > 0 && (
               <div
-                className={`absolute right-full top-1/2 h-0.5 w-2 -translate-y-1/2 sm:w-4 ${
-                  isCompleted ? 'bg-gold' : 'bg-cream/20'
-                }`}
+                className={`absolute right-full top-1/2 h-0.5 w-2 -translate-y-1/2 sm:w-4 ${isCompleted ? 'bg-gold' : 'bg-cream/20'
+                  }`}
               />
             )}
 
             {/* Step Circle */}
             <motion.div
-              className={`relative flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 sm:h-12 sm:w-12 ${
-                isActive
+              className={`relative flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 sm:h-12 sm:w-12 ${isActive
                   ? 'border-gold bg-gold/20 text-gold'
                   : isCompleted
                     ? 'border-gold bg-gold text-midnight'
                     : 'border-cream/30 text-cream/50 hover:border-cream/50'
-              }`}
+                }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -108,9 +106,8 @@ function ProgressIndicator({ steps, currentStep, onStepClick }: ProgressIndicato
 
             {/* Step Number (Desktop) */}
             <span
-              className={`mt-2 hidden text-xs font-medium transition-colors sm:block ${
-                isActive ? 'text-gold' : 'text-cream/50'
-              }`}
+              className={`mt-2 hidden text-xs font-medium transition-colors sm:block ${isActive ? 'text-gold' : 'text-cream/50'
+                }`}
             >
               {index + 1}
             </span>
@@ -261,11 +258,10 @@ function Navigation({
       <motion.button
         onClick={onPrev}
         disabled={!canGoPrev}
-        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
-          canGoPrev
+        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${canGoPrev
             ? 'bg-cream/10 text-cream hover:bg-cream/20'
             : 'cursor-not-allowed text-cream/30'
-        }`}
+          }`}
         whileHover={canGoPrev ? { x: -4 } : undefined}
         whileTap={canGoPrev ? { scale: 0.95 } : undefined}
       >
@@ -283,11 +279,10 @@ function Navigation({
       <motion.button
         onClick={onNext}
         disabled={!canGoNext}
-        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${
-          canGoNext
+        className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all ${canGoNext
             ? 'bg-gold text-midnight hover:bg-gold/90'
             : 'cursor-not-allowed bg-cream/10 text-cream/30'
-        }`}
+          }`}
         whileHover={canGoNext ? { x: 4 } : undefined}
         whileTap={canGoNext ? { scale: 0.95 } : undefined}
       >
@@ -323,7 +318,7 @@ function JourneyCTA({ ctaText, ctaSecondary }: JourneyCTAProps) {
 
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <motion.a
-          href="tel:+905321234567"
+          href="tel:+905062284507"
           className="group inline-flex items-center gap-3 rounded-full bg-gold px-8 py-4 font-medium text-midnight transition-all hover:bg-gold/90"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
