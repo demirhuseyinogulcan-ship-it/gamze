@@ -14,7 +14,7 @@ import { hasAcceptedCookies } from '@/components/ui/CookieConsent';
 // Replace with your actual GA4 Measurement ID
 // ─────────────────────────────────────────────────────────────────────────────
 
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with actual ID
+const GA_MEASUREMENT_ID = 'G-XQM6FD9HCV';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Main Component
@@ -42,8 +42,8 @@ export function GoogleAnalytics() {
         };
     }, []);
 
-    // Don't render if GA ID is not configured or consent not given
-    if (!shouldLoad || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+    // Don't render if consent not given
+    if (!shouldLoad) {
         return null;
     }
 
