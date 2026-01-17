@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, MapPin, Clock, CheckCircle, MessageCircle, Star, ChevronRight, Users, Award, Heart } from 'lucide-react';
+import { Navbar, Footer, AmbientSound } from '@/components/ui';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SEO Metadata - MEGA OPTIMIZED FOR "ÖZEL TANGO DERSİ İSTANBUL"
@@ -155,7 +156,9 @@ export default function IstanbulTangoDersiPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-            <main className="min-h-screen bg-midnight">
+            <Navbar />
+
+            <main className="min-h-screen bg-midnight pt-20">
                 {/* Hero Section */}
                 <section className="relative py-24 px-4 bg-gradient-to-b from-charcoal to-midnight">
                     <div className="max-w-4xl mx-auto text-center">
@@ -338,6 +341,9 @@ export default function IstanbulTangoDersiPage() {
                     </div>
                 </section>
             </main>
+
+            <Footer />
+            <AmbientSound />
         </>
     );
 }

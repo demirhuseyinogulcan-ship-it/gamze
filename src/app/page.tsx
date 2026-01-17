@@ -23,7 +23,7 @@ export default function HomePage() {
       <CursorTrail />
       <ScrollProgress />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Philosophy />
