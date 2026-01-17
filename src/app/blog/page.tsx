@@ -4,7 +4,7 @@
  */
 
 import type { Metadata } from 'next';
-import { Navbar, Footer } from '@/components/ui';
+import { Navbar, Footer, AmbientSound } from '@/components/ui';
 import { 
   BlogHero, 
   BlogGrid, 
@@ -139,6 +139,7 @@ export default async function BlogPage() {
       </main>
       
       <Footer />
+      <AmbientSound />
     </>
   );
 }

@@ -5,7 +5,7 @@
 
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Navbar, Footer } from '@/components/ui';
+import { Navbar, Footer, AmbientSound } from '@/components/ui';
 import { Container } from '@/components/ui';
 import { 
   BlogArticleHeader, 
@@ -229,6 +229,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </main>
       
       <Footer />
+      <AmbientSound />
     </>
   );
 }

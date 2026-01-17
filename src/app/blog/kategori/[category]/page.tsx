@@ -5,7 +5,7 @@
 
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Navbar, Footer, Container } from '@/components/ui';
+import { Navbar, Footer, Container, AmbientSound } from '@/components/ui';
 import { BlogHero, BlogGrid, BlogSidebar, BlogPagination } from '@/components/blog';
 import { getPostsByCategory, getAllCategories, getAllTags, paginate } from '@/lib/blog';
 import { BLOG_CATEGORIES, getCategoryInfo, BLOG_CONFIG } from '@/lib/constants/blog';
@@ -105,6 +105,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </main>
       
       <Footer />
+      <AmbientSound />
     </>
   );
 }
