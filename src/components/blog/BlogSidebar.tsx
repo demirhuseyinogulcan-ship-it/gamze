@@ -73,7 +73,7 @@ export function BlogSidebar({
             return (
               <li key={category}>
                 <Link
-                  href={`${basePath}/kategori/${category}`}
+                  href={`${basePath}/${locale === 'tr' ? 'kategori' : 'category'}/${category}`}
                   className={`flex items-center justify-between py-2 px-3 rounded-sm transition-all duration-300 ${
                     isActive
                       ? 'bg-gold/10 text-gold'
@@ -118,7 +118,7 @@ export function BlogSidebar({
             return (
               <Link
                 key={tagSlug}
-                href={`${basePath}/etiket/${tagSlug}`}
+                href={`${basePath}/${locale === 'tr' ? 'etiket' : 'tag'}/${tagSlug}`}
                 className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-sm text-sm transition-all duration-300 ${
                   isActive
                     ? 'bg-gold text-midnight'

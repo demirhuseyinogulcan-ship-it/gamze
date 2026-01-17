@@ -63,16 +63,24 @@ export function Footer() {
             >
               <h4 className="font-heading text-xl text-white mb-6">{footer.quickLinks}</h4>
               <ul className="space-y-3">
-                {Object.entries(footer.links).map(([key, label]) => (
-                  <li key={key}>
-                    <a
-                      href={`#${key}`}
-                      className="text-white/60 hover:text-gold transition-colors duration-300"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
+                {Object.entries(footer.links).map(([key, label]) => {
+                  // Blog has its own page, not a section anchor
+                  const isTurkish = t('nav').home === 'Ana Sayfa';
+                  const href = key === 'blog' 
+                    ? (isTurkish ? '/blog' : '/en/blog')
+                    : `#${key}`;
+                  
+                  return (
+                    <li key={key}>
+                      <a
+                        href={href}
+                        className="text-white/60 hover:text-gold transition-colors duration-300"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </motion.div>
 

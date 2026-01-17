@@ -107,6 +107,7 @@ export interface Dictionary {
       schedule: string;
       faq: string;
       contact: string;
+      blog: string;
     };
   };
   faq: {
@@ -262,6 +263,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         schedule: 'Takvim',
         faq: 'SSS',
         contact: 'İletişim',
+        blog: 'Blog',
       },
     },
     faq: {
@@ -516,6 +518,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         schedule: 'Schedule',
         faq: 'FAQ',
         contact: 'Contact',
+        blog: 'Blog',
       },
     },
     faq: {
