@@ -43,6 +43,17 @@ export function Navbar() {
       setIsOpen(false);
       return;
     }
+    
+    // Check if we're on a different page (not homepage)
+    const isOnHomepage = window.location.pathname === '/' || window.location.pathname === '';
+    
+    if (!isOnHomepage) {
+      // Navigate to homepage with the anchor
+      setIsOpen(false);
+      window.location.href = '/' + href;
+      return;
+    }
+    
     e.preventDefault();
     setIsOpen(false);
     const target = document.querySelector(href);
