@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return [
+    // Main Pages
     {
       url: baseUrl,
       lastModified,
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+
+    // Section Anchors
     {
       url: `${baseUrl}/#about`,
       lastModified,
@@ -47,20 +50,47 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    // Location Pages (High Priority for Local SEO)
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Location Pages - HIGH PRIORITY FOR LOCAL SEO
+    // These are the main landing pages for "özel tango dersi" searches
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Main İstanbul Page (Highest Priority)
     {
-      url: `${baseUrl}/silivri-tango-dersi`,
+      url: `${baseUrl}/istanbul-ozel-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+
+    // Silivri Page
+    {
+      url: `${baseUrl}/silivri-ozel-tango-dersi`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+
+    // Kadıköy Page (Anadolu Yakası)
     {
-      url: `${baseUrl}/istanbul-tango-kursu`,
+      url: `${baseUrl}/kadikoy-ozel-tango-dersi`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+
+    // Beyoğlu Page (Avrupa Yakası)
+    {
+      url: `${baseUrl}/beyoglu-ozel-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
     // Legal Pages (Turkish)
+    // ─────────────────────────────────────────────────────────────────────────
     {
       url: `${baseUrl}/gizlilik-politikasi`,
       lastModified,
@@ -73,7 +103,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
     // Legal Pages (English)
+    // ─────────────────────────────────────────────────────────────────────────
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified,
