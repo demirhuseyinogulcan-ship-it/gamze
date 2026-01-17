@@ -108,7 +108,10 @@ export function BlogSidebar({
         </h3>
         <div className="flex flex-wrap gap-2">
           {(popularTags.length > 0 ? popularTags.slice(0, 15) : BLOG_TAGS.slice(0, 15)).map(item => {
-            const tagSlug = typeof item === 'object' && 'tag' in item ? item.tag : (item as any).slug;
+            // Handle both PopularTag format and BlogTag format
+            const tagSlug = typeof item === 'object' && 'tag' in item 
+              ? item.tag 
+              : (item as { slug: string }).slug;
             const tagInfo = getTagInfo(tagSlug);
             const isActive = currentTag === tagSlug;
             

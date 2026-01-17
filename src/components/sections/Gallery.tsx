@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -15,10 +15,78 @@ const galleryImages = [
   { src: '/images/4.jpg', alt: 'Dans çalışması', span: 'col-span-1 row-span-1' },
 ];
 
+// Focus trap hook for accessibility
+function useFocusTrap(isActive: boolean) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const previousActiveElement = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!isActive) return;
+
+    // Store the previously focused element
+    previousActiveElement.current = document.activeElement as HTMLElement;
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Get all focusable elements
+    const getFocusableElements = () => {
+      return container.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+    };
+
+    // Focus the first focusable element
+    const focusableElements = getFocusableElements();
+    if (focusableElements.length > 0) {
+      focusableElements[0].focus();
+    }
+
+    // Handle Tab key to trap focus
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+
+      const focusable = getFocusableElements();
+      if (focusable.length === 0) return;
+
+      const firstElement = focusable[0];
+      const lastElement = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        // Shift + Tab: go to last element if on first
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        // Tab: go to first element if on last
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup: restore focus to previous element
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      if (previousActiveElement.current) {
+        previousActiveElement.current.focus();
+      }
+    };
+  }, [isActive]);
+
+  return containerRef;
+}
+
 export function Gallery() {
   const { t } = useTranslation();
   const gallery = t('gallery');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const isLightboxOpen = selectedIndex !== null;
+  const focusTrapRef = useFocusTrap(isLightboxOpen);
 
   const openLightbox = useCallback((index: number) => {
     setSelectedIndex(index);
@@ -104,6 +172,7 @@ export function Gallery() {
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
+            ref={focusTrapRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -111,19 +180,24 @@ export function Gallery() {
             className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
             onClick={closeLightbox}
             onKeyDown={handleKeyDown}
-            tabIndex={0}
             role="dialog"
             aria-modal="true"
             aria-label="Galeri görüntüleyici"
+            aria-describedby="lightbox-description"
           >
+            {/* Screen reader description */}
+            <span id="lightbox-description" className="sr-only">
+              Galeri görüntüleyici. Sol ve sağ ok tuşlarıyla gezinebilir, Escape tuşuyla kapatabilirsiniz.
+            </span>
+
             {/* Close Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               onClick={closeLightbox}
-              className="absolute top-6 right-6 p-3 text-white/70 hover:text-gold transition-colors duration-300 z-10"
-              aria-label="Kapat"
+              className="absolute top-6 right-6 p-3 text-white/70 hover:text-gold transition-colors duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-black rounded-lg"
+              aria-label="Galeriyi kapat"
             >
               <X size={32} />
             </motion.button>
@@ -136,8 +210,8 @@ export function Gallery() {
                 e.stopPropagation();
                 navigateLightbox('prev');
               }}
-              className="absolute left-4 md:left-8 p-3 text-white/70 hover:text-gold transition-colors duration-300 z-10"
-              aria-label="Önceki"
+              className="absolute left-4 md:left-8 p-3 text-white/70 hover:text-gold transition-colors duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-black rounded-lg"
+              aria-label={`Önceki görsel (${selectedIndex === 0 ? galleryImages.length : selectedIndex} / ${galleryImages.length})`}
             >
               <ChevronLeft size={40} />
             </motion.button>
@@ -149,8 +223,8 @@ export function Gallery() {
                 e.stopPropagation();
                 navigateLightbox('next');
               }}
-              className="absolute right-4 md:right-8 p-3 text-white/70 hover:text-gold transition-colors duration-300 z-10"
-              aria-label="Sonraki"
+              className="absolute right-4 md:right-8 p-3 text-white/70 hover:text-gold transition-colors duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-black rounded-lg"
+              aria-label={`Sonraki görsel (${selectedIndex === galleryImages.length - 1 ? 1 : selectedIndex + 2} / ${galleryImages.length})`}
             >
               <ChevronRight size={40} />
             </motion.button>

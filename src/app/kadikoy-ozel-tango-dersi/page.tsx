@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, MapPin, Clock, CheckCircle, MessageCircle, Star, ChevronRight } from 'lucide-react';
 import { Navbar, Footer, AmbientSound } from '@/components/ui';
+import { CONTACT, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SEO Metadata
@@ -102,10 +103,7 @@ const faqJsonLd = {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function KadikoyTangoDersiPage() {
-    const whatsappMessage = encodeURIComponent(
-        'Merhaba, Kadıköy\'de özel tango dersi hakkında bilgi almak istiyorum.'
-    );
-    const whatsappUrl = `https://wa.me/905062284507?text=${whatsappMessage}`;
+    const whatsappUrl = getWhatsAppUrl(WHATSAPP_MESSAGES.KADIKOY);
 
     return (
         <>
@@ -138,7 +136,7 @@ export default function KadikoyTangoDersiPage() {
                                 <MessageCircle className="w-5 h-5" />
                                 WhatsApp ile Bilgi Al
                             </a>
-                            <a href="tel:+905062284507"
+                            <a href={CONTACT.PHONE_TEL}
                                 className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold/90 text-midnight px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105">
                                 <Phone className="w-5 h-5" />
                                 Hemen Ara
@@ -223,9 +221,9 @@ export default function KadikoyTangoDersiPage() {
                                 className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-medium transition-all">
                                 <MessageCircle className="w-5 h-5" />WhatsApp ile Yazın
                             </a>
-                            <a href="tel:+905062284507"
+                            <a href={CONTACT.PHONE_TEL}
                                 className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-midnight px-8 py-4 rounded-full font-medium transition-all">
-                                <Phone className="w-5 h-5" />+90 506 228 45 07
+                                <Phone className="w-5 h-5" />{CONTACT.PHONE_DISPLAY}
                             </a>
                         </div>
                         <div className="flex flex-wrap justify-center gap-8 text-cream/70">

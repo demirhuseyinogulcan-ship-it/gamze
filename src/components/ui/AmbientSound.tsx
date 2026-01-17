@@ -243,8 +243,7 @@ export function AmbientSound() {
     } else {
       // Browsers require user interaction for audio playback
       audioRef.current.play().catch(() => {
-        // Autoplay blocked - user needs to interact first
-        console.log('Audio playback requires user interaction');
+        // Autoplay blocked - silently handle, user needs to interact first
       });
       setIsPlaying(true);
       setHasInteracted(true);

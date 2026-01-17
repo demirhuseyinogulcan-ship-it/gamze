@@ -98,7 +98,7 @@ export const metadata: Metadata = {
       'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi.',
     images: [
       {
-        url: '/images/0.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Gamze Yıldız - Tango Eğitmeni',
@@ -110,7 +110,7 @@ export const metadata: Metadata = {
     title: 'Gamze Yıldız | Profesyonel Tango Eğitmeni',
     description:
       'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi.',
-    images: ['/images/0.jpg'],
+    images: ['/images/og-image.jpg'],
   },
   robots: {
     index: true,

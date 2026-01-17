@@ -12,10 +12,12 @@
 
 export const CONTACT = {
   PHONE: '+905062284507',
-  PHONE_DISPLAY: '0506 228 45 07',
+  PHONE_DISPLAY: '+90 506 228 45 07',
+  PHONE_SHORT: '0506 228 45 07',
   PHONE_TEL: 'tel:+905062284507',
   EMAIL: 'info@gamzetango.com',
   WHATSAPP_BASE: 'https://wa.me/905062284507',
+  WHATSAPP_NUMBER: '905062284507',
 } as const;
 
 /**
@@ -163,7 +165,8 @@ export const SEO = {
   TITLE_TEMPLATE: '%s | Gamze Tango',
   OG_IMAGE: '/images/og-image.jpg',
   TWITTER_HANDLE: '@gamzetango',
-  GOOGLE_VERIFICATION: 'your-google-verification-code', // TODO: Add real verification code
+  // Google Search Console verification code - set via environment variable
+  GOOGLE_VERIFICATION: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || '',
 } as const;
 
 // ============================================

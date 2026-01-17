@@ -3,10 +3,12 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Cursor Trail Effect
 // Elegant particle trail following the cursor
+// Respects prefers-reduced-motion for accessibility
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useReducedMotion } from '@/lib/hooks';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -95,21 +97,23 @@ export function CursorTrail({
   const particleIdRef = useRef(0);
   const lastPositionRef = useRef({ x: 0, y: 0 });
   const lastTimeRef = useRef(0);
+  const prefersReducedMotion = useReducedMotion();
 
-  // Check if device supports hover (not touch-only)
+  // Check if device supports hover (not touch-only) and respects reduced motion
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const mediaQuery = window.matchMedia('(hover: hover)');
-    setIsVisible(mediaQuery.matches && enabled);
+    // Disable cursor trail if user prefers reduced motion
+    setIsVisible(mediaQuery.matches && enabled && !prefersReducedMotion);
 
     const handleChange = (e: MediaQueryListEvent) => {
-      setIsVisible(e.matches && enabled);
+      setIsVisible(e.matches && enabled && !prefersReducedMotion);
     };
 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [enabled]);
+  }, [enabled, prefersReducedMotion]);
 
   // Mouse move handler
   const handleMouseMove = useCallback(

@@ -3,6 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Milonga Mode
 // Special mode that transforms the site into a milonga atmosphere
+// Respects prefers-reduced-motion for accessibility
 // ─────────────────────────────────────────────────────────────────────────────
 
 import {
@@ -16,6 +17,7 @@ import {
 } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun, Sparkles } from 'lucide-react';
+import { useReducedMotion } from '@/lib/hooks';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types & Context
@@ -135,6 +137,8 @@ function MilongaOverlay() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 function FloatingLights() {
+  const prefersReducedMotion = useReducedMotion();
+  
   const lights = useMemo(() => {
     return Array.from({ length: 20 }, (_, i) => ({
       id: i,
@@ -146,6 +150,11 @@ function FloatingLights() {
       color: Math.random() > 0.5 ? 'rgba(212, 175, 55, 0.4)' : 'rgba(255, 200, 100, 0.3)',
     }));
   }, []);
+
+  // Don't render floating lights for users who prefer reduced motion
+  if (prefersReducedMotion) {
+    return null;
+  }
 
   return (
     <div className="absolute inset-0">

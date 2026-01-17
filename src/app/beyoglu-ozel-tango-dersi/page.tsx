@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, MapPin, Clock, CheckCircle, MessageCircle, Star, ChevronRight } from 'lucide-react';
 import { Navbar, Footer, AmbientSound } from '@/components/ui';
+import { CONTACT, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SEO Metadata
@@ -42,7 +43,7 @@ const jsonLd = {
     name: 'Gamze Tango - Beyoğlu Özel Ders',
     description: 'Beyoğlu, Taksim, Galata ve Cihangir\'de profesyonel özel tango dersleri.',
     url: 'https://gamzetango.com/beyoglu-ozel-tango-dersi',
-    telephone: '+905062284507',
+    telephone: CONTACT.PHONE,
     priceRange: '₺₺',
     address: {
         '@type': 'PostalAddress',
@@ -101,10 +102,7 @@ const faqJsonLd = {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function BeyogluTangoDersiPage() {
-    const whatsappMessage = encodeURIComponent(
-        'Merhaba, Beyoğlu\'nda özel tango dersi hakkında bilgi almak istiyorum.'
-    );
-    const whatsappUrl = `https://wa.me/905062284507?text=${whatsappMessage}`;
+    const whatsappUrl = getWhatsAppUrl(WHATSAPP_MESSAGES.BEYOGLU);
 
     return (
         <>
@@ -137,7 +135,7 @@ export default function BeyogluTangoDersiPage() {
                                 <MessageCircle className="w-5 h-5" />
                                 WhatsApp ile Bilgi Al
                             </a>
-                            <a href="tel:+905062284507"
+                            <a href={CONTACT.PHONE_TEL}
                                 className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold/90 text-midnight px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105">
                                 <Phone className="w-5 h-5" />
                                 Hemen Ara
@@ -222,9 +220,9 @@ export default function BeyogluTangoDersiPage() {
                                 className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-medium transition-all">
                                 <MessageCircle className="w-5 h-5" />WhatsApp ile Yazın
                             </a>
-                            <a href="tel:+905062284507"
+                            <a href={CONTACT.PHONE_TEL}
                                 className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-midnight px-8 py-4 rounded-full font-medium transition-all">
-                                <Phone className="w-5 h-5" />+90 506 228 45 07
+                                <Phone className="w-5 h-5" />{CONTACT.PHONE_DISPLAY}
                             </a>
                         </div>
                         <div className="flex flex-wrap justify-center gap-8 text-cream/70">

@@ -4,6 +4,7 @@
  */
 
 import type { Location, LocalBusinessSchema } from '@/types/location';
+import { CONTACT } from './site';
 
 // Silivri Location Data
 export const SILIVRI_LOCATION: Location = {
@@ -25,9 +26,9 @@ export const SILIVRI_LOCATION: Location = {
     fullAddress: 'Alibey Mahallesi, Silivri, İstanbul 34570',
   },
   contact: {
-    phone: '+90 506 228 45 07',
-    email: 'info@gamzetango.com',
-    whatsapp: '905062284507',
+    phone: CONTACT.PHONE_DISPLAY,
+    email: CONTACT.EMAIL,
+    whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
     title: 'Silivri Tango Dersi | Gamze Yıldız ile Profesyonel Tango Eğitimi',
@@ -155,9 +156,9 @@ export const ISTANBUL_LOCATION: Location = {
     fullAddress: 'İstanbul (Avrupa & Anadolu Yakası)',
   },
   contact: {
-    phone: '+90 506 228 45 07',
-    email: 'info@gamzetango.com',
-    whatsapp: '905062284507',
+    phone: CONTACT.PHONE_DISPLAY,
+    email: CONTACT.EMAIL,
+    whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
     title: 'İstanbul Tango Kursu | Profesyonel Arjantin Tango Dersleri',

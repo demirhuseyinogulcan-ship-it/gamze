@@ -13,7 +13,8 @@ import { hasAcceptedCookies } from '@/components/ui/CookieConsent';
 // Configuration
 // ─────────────────────────────────────────────────────────────────────────────
 
-const GA_MEASUREMENT_ID = 'G-XQM6FD9HCV';
+// GA ID from environment variable with fallback
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XQM6FD9HCV';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Main Component

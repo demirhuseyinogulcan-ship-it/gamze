@@ -30,10 +30,12 @@ function WhatsAppIcon({ className }: { className?: string }) {
 // Constants
 // ─────────────────────────────────────────────────────────────────────────────
 
-const INSTAGRAM_URL = 'https://www.instagram.com/gamze.tango/';
-const INSTAGRAM_HANDLE = '@gamze.tango';
+import { CONTACT, SOCIAL } from '@/lib/constants/site';
 
-const WHATSAPP_PHONE = '905062284507';
+const INSTAGRAM_URL = SOCIAL.INSTAGRAM;
+const INSTAGRAM_HANDLE = SOCIAL.INSTAGRAM_HANDLE;
+
+const WHATSAPP_PHONE = CONTACT.PHONE.replace('+', '');
 const WHATSAPP_MESSAGE = 'Merhaba, ben www.gamzetango.com web sitenizden ulaşıyorum. Dersler hakkında bilgi almak istiyorum.';
 
 const CONTENT = {

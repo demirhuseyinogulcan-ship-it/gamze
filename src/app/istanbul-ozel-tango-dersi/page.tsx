@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, MapPin, Clock, CheckCircle, MessageCircle, Star, ChevronRight, Users, Award, Heart } from 'lucide-react';
 import { Navbar, Footer, AmbientSound } from '@/components/ui';
+import { CONTACT, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SEO Metadata - MEGA OPTIMIZED FOR "ÖZEL TANGO DERSİ İSTANBUL"
@@ -146,10 +147,7 @@ const faqJsonLd = {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function IstanbulTangoDersiPage() {
-    const whatsappMessage = encodeURIComponent(
-        'Merhaba, İstanbul\'da özel tango dersi hakkında bilgi almak istiyorum.'
-    );
-    const whatsappUrl = `https://wa.me/905062284507?text=${whatsappMessage}`;
+    const whatsappUrl = getWhatsAppUrl(WHATSAPP_MESSAGES.ISTANBUL);
 
     return (
         <>
@@ -182,7 +180,7 @@ export default function IstanbulTangoDersiPage() {
                                 <MessageCircle className="w-6 h-6" />
                                 WhatsApp ile Hemen Bilgi Al
                             </a>
-                            <a href="tel:+905062284507"
+                            <a href={CONTACT.PHONE_TEL}
                                 className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold/90 text-midnight px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 text-lg">
                                 <Phone className="w-6 h-6" />
                                 Hemen Ara
@@ -326,10 +324,10 @@ export default function IstanbulTangoDersiPage() {
                                 <MessageCircle className="w-6 h-6" />
                                 WhatsApp ile Hemen Yazın
                             </a>
-                            <a href="tel:+905062284507"
+                            <a href={CONTACT.PHONE_TEL}
                                 className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-midnight px-10 py-5 rounded-full font-medium transition-all text-lg">
                                 <Phone className="w-6 h-6" />
-                                +90 506 228 45 07
+                                {CONTACT.PHONE_DISPLAY}
                             </a>
                         </div>
 

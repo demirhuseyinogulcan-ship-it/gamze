@@ -7,6 +7,7 @@
 
 import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CONTACT } from '@/lib/constants/site';
 import {
   MessageCircle,
   User,
@@ -318,7 +319,7 @@ function JourneyCTA({ ctaText, ctaSecondary }: JourneyCTAProps) {
 
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <motion.a
-          href="tel:+905062284507"
+          href={CONTACT.PHONE_TEL}
           className="group inline-flex items-center gap-3 rounded-full bg-gold px-8 py-4 font-medium text-midnight transition-all hover:bg-gold/90"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

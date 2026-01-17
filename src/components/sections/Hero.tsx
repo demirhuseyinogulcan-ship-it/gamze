@@ -5,25 +5,34 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Play } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 import { Container, Button } from '@/components/ui';
+import { useReducedMotion } from '@/lib/hooks';
 
 export function Hero() {
   const { t } = useTranslation();
   const hero = t('hero');
   const containerRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  // Disable parallax effects for users who prefer reduced motion
+  const y = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ['0%', '0%'] : ['0%', '30%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], prefersReducedMotion ? [1, 1] : [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [1, 1] : [1, 1.1]);
+
+  // Animation helper - returns instant animation for reduced motion preference
+  const getTransition = (duration: number, delay: number = 0) => ({
+    duration: prefersReducedMotion ? 0 : duration,
+    delay: prefersReducedMotion ? 0 : delay,
+  });
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     }
   };
 
@@ -67,9 +76,9 @@ export function Hero() {
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
             {/* Subtitle */}
             <motion.span
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={getTransition(0.8, 0.2)}
               className="text-gold font-body text-sm md:text-base uppercase tracking-[0.4em] mb-6"
             >
               {hero.subtitle}
@@ -77,9 +86,9 @@ export function Hero() {
 
             {/* Main Title */}
             <motion.h1
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
+              transition={getTransition(1, 0.4)}
               className="heading-xl mb-4"
             >
               <span className="text-white">{hero.title}</span>
@@ -87,9 +96,9 @@ export function Hero() {
 
             {/* Tango Highlight */}
             <motion.span
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={getTransition(0.8, 0.7)}
               className="font-heading text-6xl md:text-7xl lg:text-8xl italic text-gold mb-8"
             >
               {hero.titleHighlight}
@@ -97,9 +106,9 @@ export function Hero() {
 
             {/* Description */}
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={getTransition(0.8, 0.9)}
               className="body-lg max-w-2xl mb-10 text-white/80"
             >
               {hero.description}
@@ -107,9 +116,9 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
+              transition={getTransition(0.8, 1.1)}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button
@@ -136,13 +145,13 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
+        transition={getTransition(1, 1.5)}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.button
           onClick={() => scrollToSection('#about')}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+          animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}
+          transition={prefersReducedMotion ? {} : { repeat: Infinity, duration: 2, ease: 'easeInOut' }}
           className="flex flex-col items-center gap-2 text-white/60 hover:text-gold transition-colors duration-300"
           aria-label="Aşağı kaydır"
         >
@@ -155,13 +164,13 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
-        transition={{ duration: 2, delay: 1 }}
+        transition={getTransition(2, 1)}
         className="absolute top-20 left-10 w-32 h-32 border border-gold/20 rounded-full blur-sm"
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.2 }}
-        transition={{ duration: 2, delay: 1.2 }}
+        transition={getTransition(2, 1.2)}
         className="absolute bottom-40 right-20 w-48 h-48 border border-gold/10 rounded-full blur-sm"
       />
     </section>
