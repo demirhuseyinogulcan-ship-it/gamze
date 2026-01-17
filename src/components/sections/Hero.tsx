@@ -10,7 +10,7 @@ export function Hero() {
   const { t } = useTranslation();
   const hero = t('hero');
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
@@ -34,16 +34,23 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Ana bölüm"
     >
-      {/* Video Background */}
-      <motion.div 
+      {/* Video Background - Optimized for Performance */}
+      <motion.div
         style={{ scale }}
         className="absolute inset-0 z-0"
       >
+        {/* Poster image loads first for fast LCP */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/0.jpg')" }}
+        />
+        {/* Video loads lazily with low priority */}
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
           poster="/images/0.jpg"
         >
