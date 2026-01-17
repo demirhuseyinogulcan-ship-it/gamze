@@ -30,18 +30,60 @@ export const metadata: Metadata = {
   description:
     'Gamze Yıldız ile profesyonel tango eğitimi. Silivri ve İstanbul\'da özel dersler, düğün dansı, lady styling ve kurumsal workshop. İstanbul\'un deneyimli tango eğitmeni.',
   keywords: [
+    // Ana Anahtar Kelimeler
     'tango',
     'tango dersi',
+    'tango kursu',
+    'tango eğitimi',
     'tango eğitmeni',
+    'tango öğretmeni',
+    'tango hocası',
+
+    // Özel Ders Odaklı
+    'özel tango dersi',
+    'birebir tango dersi',
+    'özel tango eğitimi',
+    'kişiye özel tango',
+    'private tango lesson',
+
+    // Lokasyon Bazlı
     'İstanbul tango',
+    'istanbul tango dersi',
+    'istanbul tango kursu',
     'Silivri tango',
     'Kadıköy tango',
+    'Beyoğlu tango',
+    'Taksim tango',
+    'Anadolu yakası tango',
+    'Avrupa yakası tango',
+
+    // Düğün Dansı
     'düğün dansı',
+    'düğün dansı kursu',
+    'düğün dansı eğitimi',
+    'düğün dansı tango',
+    'ilk dans',
     'wedding dance',
-    'lady styling',
-    'tango kursu',
-    'Gamze Yıldız',
+    'wedding dance istanbul',
+
+    // Dans Türleri
     'arjantin tangosu',
+    'argentine tango',
+    'tango argentino',
+    'lady styling',
+    'tango tekniği',
+
+    // Fiyat ve Bilgi Aramaları
+    'tango dersi fiyatları',
+    'tango kursu fiyatı',
+    'tango öğrenmek',
+    'tango nasıl öğrenilir',
+    'tango başlangıç',
+
+    // Marka
+    'Gamze Yıldız',
+    'Gamze Tango',
+    'gamzetango',
   ],
   authors: [{ name: 'Gamze Yıldız' }],
   creator: 'Gamze Yıldız',
