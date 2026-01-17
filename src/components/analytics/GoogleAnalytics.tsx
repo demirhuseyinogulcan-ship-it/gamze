@@ -2,7 +2,7 @@
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Google Analytics Component
-// Loads GA4 only when user has accepted cookies
+// Script always loads, but tracking only happens after cookie consent
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { useEffect, useState } from 'react';
@@ -11,7 +11,6 @@ import { hasAcceptedCookies } from '@/components/ui/CookieConsent';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Configuration
-// Replace with your actual GA4 Measurement ID
 // ─────────────────────────────────────────────────────────────────────────────
 
 const GA_MEASUREMENT_ID = 'G-XQM6FD9HCV';
@@ -21,18 +20,24 @@ const GA_MEASUREMENT_ID = 'G-XQM6FD9HCV';
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function GoogleAnalytics() {
-    const [shouldLoad, setShouldLoad] = useState(false);
+    const [hasConsent, setHasConsent] = useState(false);
 
     useEffect(() => {
         // Check initial consent status
         if (hasAcceptedCookies()) {
-            setShouldLoad(true);
+            setHasConsent(true);
         }
 
         // Listen for consent changes
         const handleConsentChange = (event: CustomEvent<string>) => {
             if (event.detail === 'accepted') {
-                setShouldLoad(true);
+                setHasConsent(true);
+                // Initialize tracking after consent
+                if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('consent', 'update', {
+                        analytics_storage: 'granted',
+                    });
+                }
             }
         };
 
@@ -42,13 +47,9 @@ export function GoogleAnalytics() {
         };
     }, []);
 
-    // Don't render if consent not given
-    if (!shouldLoad) {
-        return null;
-    }
-
     return (
         <>
+            {/* Always load GA script for verification */}
             <Script
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
                 strategy="afterInteractive"
@@ -58,6 +59,12 @@ export function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+          
+          // Default to denied for KVKK compliance
+          gtag('consent', 'default', {
+            analytics_storage: '${hasConsent ? 'granted' : 'denied'}',
+          });
+          
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
           });
@@ -65,4 +72,11 @@ export function GoogleAnalytics() {
             </Script>
         </>
     );
+}
+
+// Add gtag to window type
+declare global {
+    interface Window {
+        gtag?: (...args: unknown[]) => void;
+    }
 }
