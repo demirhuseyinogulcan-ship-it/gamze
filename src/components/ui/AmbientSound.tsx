@@ -38,18 +38,18 @@ function VisualizerBars({ isPlaying }: VisualizerBarsProps) {
           animate={
             isPlaying
               ? {
-                  height: [4, 16, 8, 12, 4],
-                }
+                height: [4, 16, 8, 12, 4],
+              }
               : { height: 4 }
           }
           transition={
             isPlaying
               ? {
-                  duration: 0.8,
-                  repeat: Infinity,
-                  delay: i * 0.1,
-                  ease: 'easeInOut',
-                }
+                duration: 0.8,
+                repeat: Infinity,
+                delay: i * 0.1,
+                ease: 'easeInOut',
+              }
               : { duration: 0.3 }
           }
           style={{ height: 4 }}
@@ -177,9 +177,8 @@ function ControlsPanel({
         {/* Mute Button */}
         <button
           onClick={onMuteToggle}
-          className={`rounded-full p-2 transition-colors ${
-            isMuted ? 'text-red-400' : 'text-cream/70 hover:text-cream'
-          }`}
+          className={`rounded-full p-2 transition-colors ${isMuted ? 'text-red-400' : 'text-cream/70 hover:text-cream'
+            }`}
           aria-label={isMuted ? content.unmuteLabel : content.muteLabel}
         >
           {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
@@ -208,7 +207,7 @@ export function AmbientSound() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [volume, setVolume] = useState(0.3);
+  const [volume, setVolume] = useState(0.15);
   const [showControls, setShowControls] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
 
@@ -300,11 +299,10 @@ export function AmbientSound() {
       {/* Main Toggle Button */}
       <motion.button
         onClick={handleToggleControls}
-        className={`group relative flex h-14 w-14 items-center justify-center rounded-full border shadow-lg transition-all ${
-          isPlaying
-            ? 'border-gold/50 bg-gold/20 text-gold'
-            : 'border-cream/20 bg-charcoal/90 text-cream/70 hover:border-gold/30 hover:text-gold'
-        }`}
+        className={`group relative flex h-14 w-14 items-center justify-center rounded-full border shadow-lg transition-all ${isPlaying
+          ? 'border-gold/50 bg-gold/20 text-gold'
+          : 'border-cream/20 bg-charcoal/90 text-cream/70 hover:border-gold/30 hover:text-gold'
+          }`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label={content.toggleLabel}
@@ -321,11 +319,6 @@ export function AmbientSound() {
         )}
 
         <Music className="h-6 w-6" />
-
-        {/* Label tooltip */}
-        <span className="absolute bottom-full mb-2 hidden whitespace-nowrap rounded-lg bg-charcoal/90 px-3 py-1.5 text-xs text-cream shadow-lg group-hover:block">
-          {content.toggleLabel}
-        </span>
       </motion.button>
     </div>
   );

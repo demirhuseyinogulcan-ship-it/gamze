@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Urbanist } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
+import { CookieConsent } from '@/components/ui/CookieConsent';
+import { FloatingSocialButtons } from '@/components/ui/InstagramBanner';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin', 'latin-ext'],
@@ -103,8 +106,7 @@ const jsonLd = {
       url: 'https://gamzetango.com',
       image: 'https://gamzetango.com/images/hakkimda.jpg',
       sameAs: [
-        'https://instagram.com/gamzetango',
-        'https://youtube.com/@gamzetango',
+        'https://www.instagram.com/gamze.tango/',
       ],
       knowsAbout: ['Arjantin Tangosu', 'Dans Eğitimi', 'Düğün Dansı', 'Lady Styling'],
       worksFor: {
@@ -223,7 +225,12 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-midnight text-white antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <FloatingSocialButtons />
+          <CookieConsent />
+          <GoogleAnalytics />
+        </Providers>
       </body>
     </html>
   );

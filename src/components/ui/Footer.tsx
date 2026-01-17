@@ -1,14 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Instagram, Youtube, Phone, Mail, MapPin, Heart } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin, Heart } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 import { Container } from './Container';
 import { getWhatsAppLink } from '@/lib/utils';
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://instagram.com/gamzeyildiztango', label: 'Instagram' },
-  { icon: Youtube, href: 'https://youtube.com/@gamzeyildiztango', label: 'YouTube' },
+  { icon: Instagram, href: 'https://www.instagram.com/gamze.tango/', label: 'Instagram' },
 ];
 
 export function Footer() {
@@ -117,7 +116,23 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-white/5">
-          <div className="flex justify-center items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Legal Links */}
+            <div className="flex gap-6 text-sm">
+              <a
+                href={t('nav').home === 'Ana Sayfa' ? '/gizlilik-politikasi' : '/privacy-policy'}
+                className="text-white/40 hover:text-gold transition-colors duration-300"
+              >
+                {t('nav').home === 'Ana Sayfa' ? 'Gizlilik Politikası' : 'Privacy Policy'}
+              </a>
+              <a
+                href={t('nav').home === 'Ana Sayfa' ? '/kullanim-sartlari' : '/terms-of-use'}
+                className="text-white/40 hover:text-gold transition-colors duration-300"
+              >
+                {t('nav').home === 'Ana Sayfa' ? 'Kullanım Şartları' : 'Terms of Use'}
+              </a>
+            </div>
+            {/* Copyright */}
             <p className="flex items-center gap-2 text-white/40 text-sm">
               © {currentYear} {footer.madeWith} <Heart size={14} className="text-crimson animate-pulse" /> Can
             </p>

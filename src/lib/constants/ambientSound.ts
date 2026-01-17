@@ -15,9 +15,8 @@ export const AMBIENT_TRACKS: AudioTrack[] = [
   {
     id: 'tango-1',
     title: 'La Cumparsita',
-    artist: 'Traditional',
-    // Using a placeholder URL - replace with actual audio file path
-    src: '/audio/ambient-tango.mp3',
+    artist: 'Bandonegro, Gianpiero Galdi & Lorena Tarantino',
+    src: '/audio/la-cumparsita.mp3',
     duration: 180,
   },
 ];

@@ -104,6 +104,7 @@ export interface Dictionary {
       classes: string;
       gallery: string;
       schedule: string;
+      faq: string;
       contact: string;
     };
   };
@@ -257,6 +258,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         classes: 'Dersler',
         gallery: 'Galeri',
         schedule: 'Takvim',
+        faq: 'SSS',
         contact: 'İletişim',
       },
     },
@@ -509,6 +511,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         classes: 'Classes',
         gallery: 'Gallery',
         schedule: 'Schedule',
+        faq: 'FAQ',
         contact: 'Contact',
       },
     },

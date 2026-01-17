@@ -60,5 +60,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+    // Legal Pages (Turkish)
+    {
+      url: `${baseUrl}/gizlilik-politikasi`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/kullanim-sartlari`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    // Legal Pages (English)
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms-of-use`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 }
