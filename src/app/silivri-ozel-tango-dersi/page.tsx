@@ -126,6 +126,26 @@ const faqJsonLd = {
     })),
 };
 
+// Breadcrumb Schema for SEO
+const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Ana Sayfa',
+            item: 'https://gamzetango.com',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Silivri Özel Tango Dersi',
+            item: 'https://gamzetango.com/silivri-ozel-tango-dersi',
+        },
+    ],
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Page Component
 // ─────────────────────────────────────────────────────────────────────────────
@@ -146,6 +166,10 @@ export default function SilivriTangoDersiPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
 
             <main className="min-h-screen bg-midnight">
@@ -427,6 +451,35 @@ export default function SilivriTangoDersiPage() {
                                 className="px-6 py-3 bg-charcoal/50 border border-gold/20 rounded-full text-cream/80 hover:border-gold/50 hover:text-gold transition-all"
                             >
                                 İstanbul Tango Dersleri
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Main Site CTA - Strong Internal Link to Homepage */}
+                <section className="py-16 px-4 bg-gradient-to-b from-midnight to-charcoal">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h3 className="font-heading text-2xl md:text-3xl text-cream mb-4">
+                            <span className="text-gold">Gamze Tango</span> ile Tanışın
+                        </h3>
+                        <p className="text-cream/70 mb-8 max-w-2xl mx-auto">
+                            10 yılı aşkın deneyimiyle İstanbul&apos;un önde gelen tango eğitmeni Gamze Yıldız hakkında 
+                            daha fazla bilgi edinin. Tüm hizmetlerimizi, galeriyi, öğrenci yorumlarını ve 
+                            blog yazılarımızı keşfedin.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                href="/"
+                                className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold/90 text-midnight px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105"
+                            >
+                                Ana Sayfayı Ziyaret Et
+                                <ChevronRight className="w-5 h-5" />
+                            </Link>
+                            <Link
+                                href="/blog"
+                                className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold hover:bg-gold/10 px-8 py-4 rounded-full font-medium transition-all"
+                            >
+                                Tango Blog Yazıları
                             </Link>
                         </div>
                     </div>
