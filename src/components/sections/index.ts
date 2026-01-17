@@ -9,3 +9,4 @@ export { LeadMagnet } from './LeadMagnet';
 export { Schedule } from './Schedule';
 export { FAQ } from './FAQ';
 export { Contact } from './Contact';
+export { BlogPreview } from './BlogPreview';

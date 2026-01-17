@@ -119,5 +119,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Blog Pages - HIGH PRIORITY FOR CONTENT SEO
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      url: `${baseUrl}/blog`,
+      lastModified,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    // Pillar Content (Highest Priority)
+    {
+      url: `${baseUrl}/blog/tango-rehberi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/dugun-dansi-tango`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/lady-styling-rehberi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    // Cluster Content
+    {
+      url: `${baseUrl}/blog/tango-nedir`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/ilk-tango-dersi`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/tango-terimleri`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ];
 }

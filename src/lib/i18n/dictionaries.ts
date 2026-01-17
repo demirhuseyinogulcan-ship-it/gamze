@@ -12,6 +12,7 @@ export interface Dictionary {
     locations: string;
     silivri: string;
     istanbul: string;
+    blog: string;
   };
   hero: {
     subtitle: string;
@@ -140,6 +141,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       locations: 'Lokasyonlar',
       silivri: 'Silivri Tango Dersi',
       istanbul: 'İstanbul Tango Kursu',
+      blog: 'Blog',
     },
     hero: {
       subtitle: 'Profesyonel Tango Eğitmeni',
@@ -393,6 +395,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       locations: 'Locations',
       silivri: 'Silivri Tango Lessons',
       istanbul: 'Istanbul Tango Course',
+      blog: 'Blog',
     },
     hero: {
       subtitle: 'Professional Tango Instructor',

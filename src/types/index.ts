@@ -28,3 +28,6 @@ export interface ServiceItem {
   description: string;
   features: string[];
 }
+
+// Blog types
+export * from './blog';

@@ -14,6 +14,7 @@ import {
   Schedule,
   FAQ,
   Contact,
+  BlogPreview,
 } from '@/components/sections';
 
 export default function HomePage() {
@@ -30,6 +31,7 @@ export default function HomePage() {
         <Gallery />
         <Testimonials />
         <FirstLessonJourney />
+        <BlogPreview />
         <LeadMagnet />
         <Schedule />
         <FAQ />

@@ -17,6 +17,7 @@ const navItems = [
   { key: 'schedule', href: '#schedule' },
   { key: 'faq', href: '#faq' },
   { key: 'contact', href: '#contact' },
+  { key: 'blog', href: '/blog', isExternal: true },
 ] as const;
 
 export function Navbar() {
@@ -36,7 +37,12 @@ export function Navbar() {
     };
   }, [isOpen]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean) => {
+    if (isExternal) {
+      // External link - let it navigate normally
+      setIsOpen(false);
+      return;
+    }
     e.preventDefault();
     setIsOpen(false);
     const target = document.querySelector(href);
@@ -82,7 +88,7 @@ export function Navbar() {
                 <motion.a
                   key={item.key}
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  onClick={(e) => handleNavClick(e, item.href, 'isExternal' in item ? item.isExternal : false)}
                   className="nav-link text-sm uppercase tracking-wider"
                   whileHover={{ y: -2 }}
                 >
@@ -159,7 +165,7 @@ export function Navbar() {
                   <motion.a
                     key={item.key}
                     href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
+                    onClick={(e) => handleNavClick(e, item.href, 'isExternal' in item ? item.isExternal : false)}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 + 0.2 }}
