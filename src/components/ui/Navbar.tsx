@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
@@ -20,10 +21,57 @@ const navItems = [
   { key: 'blog', href: '/blog', isExternal: true },
 ] as const;
 
+// URL patterns for language switching
+const getLocalizedUrl = (pathname: string, targetLocale: 'tr' | 'en'): string => {
+  // Check if we're on a specific blog post (not category/tag pages)
+  const isBlogPost = (pathname.startsWith('/blog/') || pathname.startsWith('/en/blog/')) && 
+    !pathname.includes('/kategori/') && 
+    !pathname.includes('/category/') &&
+    !pathname.includes('/etiket/') && 
+    !pathname.includes('/tag/');
+  
+  // For specific blog posts, redirect to main blog page (slugs are different per language)
+  if (isBlogPost) {
+    return targetLocale === 'tr' ? '/blog' : '/en/blog';
+  }
+  
+  // Blog category pages
+  if (pathname.includes('/kategori/') || pathname.includes('/category/')) {
+    const categorySlug = pathname.split('/').pop();
+    if (targetLocale === 'tr') {
+      return `/blog/kategori/${categorySlug}`;
+    }
+    return `/en/blog/category/${categorySlug}`;
+  }
+  
+  // Blog tag pages
+  if (pathname.includes('/etiket/') || pathname.includes('/tag/')) {
+    const tagSlug = pathname.split('/').pop();
+    if (targetLocale === 'tr') {
+      return `/blog/etiket/${tagSlug}`;
+    }
+    return `/en/blog/tag/${tagSlug}`;
+  }
+  
+  // Main blog page
+  if (pathname === '/blog' || pathname === '/en/blog') {
+    return targetLocale === 'tr' ? '/blog' : '/en/blog';
+  }
+  
+  // For homepage and other pages, just return root
+  return '/';
+};
+
+// Get blog href based on locale
+const getBlogHref = (locale: 'tr' | 'en'): string => {
+  return locale === 'tr' ? '/blog' : '/en/blog';
+};
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { isScrolled } = useScrollProgress();
   const { locale, setLocale, t } = useTranslation();
+  const pathname = usePathname();
   const nav = t('nav');
 
   useEffect(() => {
@@ -63,7 +111,22 @@ export function Navbar() {
   };
 
   const toggleLocale = () => {
-    setLocale(locale === 'tr' ? 'en' : 'tr');
+    const newLocale = locale === 'tr' ? 'en' : 'tr';
+    setLocale(newLocale);
+    
+    // If on blog pages, navigate to the localized version
+    if (pathname.startsWith('/blog') || pathname.startsWith('/en/blog')) {
+      const newUrl = getLocalizedUrl(pathname, newLocale);
+      window.location.href = newUrl;
+    }
+  };
+
+  // Get the correct blog href based on current locale
+  const getNavHref = (item: typeof navItems[number]): string => {
+    if (item.key === 'blog') {
+      return getBlogHref(locale);
+    }
+    return item.href;
   };
 
   return (
@@ -95,17 +158,20 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {navItems.map((item) => (
-                <motion.a
-                  key={item.key}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href, 'isExternal' in item ? item.isExternal : false)}
-                  className="nav-link text-sm uppercase tracking-wider"
-                  whileHover={{ y: -2 }}
-                >
-                  {nav[item.key as keyof typeof nav]}
-                </motion.a>
-              ))}
+              {navItems.map((item) => {
+                const href = getNavHref(item);
+                return (
+                  <motion.a
+                    key={item.key}
+                    href={href}
+                    onClick={(e) => handleNavClick(e, href, 'isExternal' in item ? item.isExternal : false)}
+                    className="nav-link text-sm uppercase tracking-wider"
+                    whileHover={{ y: -2 }}
+                  >
+                    {nav[item.key as keyof typeof nav]}
+                  </motion.a>
+                );
+              })}
               
               {/* Language Toggle */}
               <motion.button
@@ -172,19 +238,22 @@ export function Navbar() {
               className="absolute right-0 top-0 h-full w-full max-w-sm bg-midnight-50 shadow-2xl"
             >
               <div className="flex flex-col justify-center h-full px-8 py-20">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.key}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href, 'isExternal' in item ? item.isExternal : false)}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 + 0.2 }}
-                    className="py-4 text-2xl font-heading text-white hover:text-gold transition-colors duration-300 border-b border-white/5"
-                  >
-                    {nav[item.key as keyof typeof nav]}
-                  </motion.a>
-                ))}
+                {navItems.map((item, index) => {
+                  const href = getNavHref(item);
+                  return (
+                    <motion.a
+                      key={item.key}
+                      href={href}
+                      onClick={(e) => handleNavClick(e, href, 'isExternal' in item ? item.isExternal : false)}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 + 0.2 }}
+                      className="py-4 text-2xl font-heading text-white hover:text-gold transition-colors duration-300 border-b border-white/5"
+                    >
+                      {nav[item.key as keyof typeof nav]}
+                    </motion.a>
+                  );
+                })}
               </div>
             </motion.nav>
           </motion.div>
