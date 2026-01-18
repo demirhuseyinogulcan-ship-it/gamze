@@ -177,34 +177,34 @@ export const ISTANBUL_LOCATION: Location = {
   },
   features: [
     {
-      id: 'location-flexible',
-      icon: 'MapPin',
-      title: 'Esnek Lokasyon',
-      description: 'Size en yakın lokasyonda ders imkanı. Avrupa veya Anadolu yakası.',
+      id: 'studio',
+      icon: 'Building',
+      title: 'Profesyonel Stüdyo',
+      description: 'Konforlu ve modern dans stüdyosunda eğitim.',
     },
     {
-      id: 'home-lesson',
-      icon: 'Home',
-      title: 'Evde Özel Ders',
-      description: 'Evinizde veya ofisinizde özel ders seçeneği.',
+      id: 'private',
+      icon: 'User',
+      title: 'Özel Ders',
+      description: 'Birebir kişiselleştirilmiş tango eğitimi.',
+    },
+    {
+      id: 'group',
+      icon: 'Users',
+      title: 'Grup Dersleri',
+      description: 'Sosyal ortamda öğrenin, yeni insanlarla tanışın.',
     },
     {
       id: 'couple',
-      icon: 'Users',
+      icon: 'Heart',
       title: 'Çift Dersleri',
       description: 'Partnerinizle birlikte öğrenin. Çiftlere özel indirimler.',
     },
     {
-      id: 'milonga',
+      id: 'wedding',
       icon: 'Music',
-      title: 'Milonga Hazırlık',
-      description: 'İstanbul\'un en iyi milongalarına hazırlanın.',
-    },
-    {
-      id: 'performance',
-      icon: 'Star',
-      title: 'Performans Eğitimi',
-      description: 'Sahne ve gösteri tango teknikleri.',
+      title: 'Düğün Dansı',
+      description: 'Özel gününüz için unutulmaz bir tango performansı.',
     },
     {
       id: 'all-levels',
@@ -266,10 +266,472 @@ export const ISTANBUL_LOCATION: Location = {
   isActive: true,
 };
 
+// Kadıköy Location Data
+export const KADIKOY_LOCATION: Location = {
+  id: 'kadikoy',
+  slug: 'kadikoy-ozel-tango-dersi',
+  name: 'Kadıköy Özel Tango Dersi',
+  tagline: 'Anadolu Yakası\'nın Tango Merkezi',
+  description: 'Kadıköy\'de profesyonel tango eğitimi. Moda, Bağdat Caddesi ve çevresinde stüdyo dersleri.',
+  heroImage: '/images/2.jpg',
+  coordinates: {
+    lat: 40.9927,
+    lng: 29.0277,
+  },
+  address: {
+    street: 'Caferağa Mahallesi',
+    district: 'Kadıköy',
+    city: 'İstanbul',
+    fullAddress: 'Kadıköy, İstanbul (Anadolu Yakası)',
+  },
+  contact: {
+    phone: CONTACT.PHONE_DISPLAY,
+    email: CONTACT.EMAIL,
+    whatsapp: CONTACT.PHONE.replace('+', ''),
+  },
+  seo: {
+    title: 'Kadıköy Özel Tango Dersi | Anadolu Yakası Tango Eğitimi',
+    description: 'Kadıköy\'de profesyonel özel tango dersleri. Moda, Bağdat Caddesi çevresinde stüdyo eğitimi. Gamze Yıldız ile birebir ve grup dersleri.',
+    keywords: [
+      'kadıköy tango dersi',
+      'kadıköy özel tango dersi',
+      'anadolu yakası tango',
+      'kadıköy tango eğitmeni',
+      'moda tango dersi',
+      'bağdat caddesi tango',
+    ],
+    canonicalUrl: 'https://gamzetango.com/kadikoy-ozel-tango-dersi',
+  },
+  features: [
+    {
+      id: 'studio',
+      icon: 'Building',
+      title: 'Profesyonel Stüdyo',
+      description: 'Kadıköy\'de modern ve konforlu dans stüdyosunda eğitim.',
+    },
+    {
+      id: 'private',
+      icon: 'User',
+      title: 'Özel Ders',
+      description: 'Birebir kişiselleştirilmiş tango eğitimi.',
+    },
+    {
+      id: 'group',
+      icon: 'Users',
+      title: 'Grup Dersleri',
+      description: 'Sosyal ortamda öğrenin, yeni insanlarla tanışın.',
+    },
+    {
+      id: 'couple',
+      icon: 'Heart',
+      title: 'Çift Dersleri',
+      description: 'Partnerinizle birlikte öğrenin.',
+    },
+    {
+      id: 'wedding',
+      icon: 'Music',
+      title: 'Düğün Dansı',
+      description: 'Özel gününüz için unutulmaz tango performansı.',
+    },
+    {
+      id: 'all-levels',
+      icon: 'TrendingUp',
+      title: 'Her Seviye',
+      description: 'Başlangıçtan ileri seviyeye program.',
+    },
+  ],
+  testimonials: [
+    {
+      id: 'kadikoy-1',
+      name: 'Ayşe K.',
+      location: 'Moda',
+      quote: 'Kadıköy\'de profesyonel bir tango eğitimi bulmak harikaydı!',
+      rating: 5,
+    },
+    {
+      id: 'kadikoy-2',
+      name: 'Mehmet D.',
+      location: 'Bağdat Caddesi',
+      quote: 'Gamze Hoca\'nın sabrı ve enerjisi muhteşem.',
+      rating: 5,
+    },
+  ],
+  accessInfo: [
+    {
+      type: 'metro',
+      name: 'Kadıköy Metro',
+      distance: '10 dk',
+    },
+    {
+      type: 'ferry',
+      name: 'Kadıköy İskelesi',
+      distance: '15 dk',
+    },
+  ],
+  workingHours: [
+    { day: 'Pazartesi', hours: '10:00 - 21:00' },
+    { day: 'Salı', hours: '10:00 - 21:00' },
+    { day: 'Çarşamba', hours: '10:00 - 21:00' },
+    { day: 'Perşembe', hours: '10:00 - 21:00' },
+    { day: 'Cuma', hours: '10:00 - 21:00' },
+    { day: 'Cumartesi', hours: '10:00 - 18:00' },
+    { day: 'Pazar', hours: 'Randevu ile' },
+  ],
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48192.30000!2d29.02!3d40.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab86e1200a921%3A0x1b0abb4a8c0b4f59!2zS2FkxLFrw7Z5LCDEsHN0YW5idWw!5e0!3m2!1sen!2str',
+  isActive: true,
+};
+
+// Beyoğlu Location Data
+export const BEYOGLU_LOCATION: Location = {
+  id: 'beyoglu',
+  slug: 'beyoglu-ozel-tango-dersi',
+  name: 'Beyoğlu Özel Tango Dersi',
+  tagline: 'Avrupa Yakası\'nın Tango Kalbi',
+  description: 'Beyoğlu\'nda profesyonel tango eğitimi. Taksim, Galata, Cihangir bölgelerinde stüdyo dersleri.',
+  heroImage: '/images/3.jpg',
+  coordinates: {
+    lat: 41.0336,
+    lng: 28.9769,
+  },
+  address: {
+    street: 'Beyoğlu Merkez',
+    district: 'Beyoğlu',
+    city: 'İstanbul',
+    fullAddress: 'Beyoğlu, İstanbul (Avrupa Yakası)',
+  },
+  contact: {
+    phone: CONTACT.PHONE_DISPLAY,
+    email: CONTACT.EMAIL,
+    whatsapp: CONTACT.PHONE.replace('+', ''),
+  },
+  seo: {
+    title: 'Beyoğlu Özel Tango Dersi | Avrupa Yakası Tango Eğitimi',
+    description: 'Beyoğlu\'nda profesyonel özel tango dersleri. Taksim, Galata, Cihangir çevresinde stüdyo eğitimi. Gamze Yıldız ile birebir ve grup dersleri.',
+    keywords: [
+      'beyoğlu tango dersi',
+      'beyoğlu özel tango dersi',
+      'taksim tango',
+      'galata tango dersi',
+      'avrupa yakası tango',
+    ],
+    canonicalUrl: 'https://gamzetango.com/beyoglu-ozel-tango-dersi',
+  },
+  features: [
+    {
+      id: 'studio',
+      icon: 'Building',
+      title: 'Merkezi Stüdyo',
+      description: 'Beyoğlu\'nun kalbinde profesyonel dans stüdyosu.',
+    },
+    {
+      id: 'private',
+      icon: 'User',
+      title: 'Özel Ders',
+      description: 'Birebir kişiselleştirilmiş tango eğitimi.',
+    },
+    {
+      id: 'group',
+      icon: 'Users',
+      title: 'Grup Dersleri',
+      description: 'Sosyal ortamda öğrenin, yeni insanlarla tanışın.',
+    },
+    {
+      id: 'couple',
+      icon: 'Heart',
+      title: 'Çift Dersleri',
+      description: 'Partnerinizle birlikte öğrenin.',
+    },
+    {
+      id: 'wedding',
+      icon: 'Music',
+      title: 'Düğün Dansı',
+      description: 'Özel gününüz için unutulmaz tango performansı.',
+    },
+    {
+      id: 'lady-styling',
+      icon: 'Sparkles',
+      title: 'Lady Styling',
+      description: 'Kadın dansçılara özel teknik ve stil çalışmaları.',
+    },
+  ],
+  testimonials: [
+    {
+      id: 'beyoglu-1',
+      name: 'Zeynep A.',
+      location: 'Taksim',
+      quote: 'Taksim\'de böyle kaliteli bir eğitim bulmak şanstı!',
+      rating: 5,
+    },
+    {
+      id: 'beyoglu-2',
+      name: 'Emre B.',
+      location: 'Galata',
+      quote: 'Harika bir atmosferde harika dersler.',
+      rating: 5,
+    },
+  ],
+  accessInfo: [
+    {
+      type: 'metro',
+      name: 'Taksim Metro',
+      distance: '5 dk',
+    },
+    {
+      type: 'metro',
+      name: 'İstiklal Tramvay',
+      distance: '3 dk',
+    },
+  ],
+  workingHours: [
+    { day: 'Pazartesi', hours: '10:00 - 21:00' },
+    { day: 'Salı', hours: '10:00 - 21:00' },
+    { day: 'Çarşamba', hours: '10:00 - 21:00' },
+    { day: 'Perşembe', hours: '10:00 - 21:00' },
+    { day: 'Cuma', hours: '10:00 - 21:00' },
+    { day: 'Cumartesi', hours: '10:00 - 18:00' },
+    { day: 'Pazar', hours: 'Randevu ile' },
+  ],
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48156.30000!2d28.97!3d41.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8c3a6f4553a1c4a8!2zQmV5b8SfbHUsIMSwc3RhbmJ1bA!5e0!3m2!1sen!2str',
+  isActive: true,
+};
+
+// İstanbul Özel Tango Dersi Location Data
+export const ISTANBUL_OZEL_LOCATION: Location = {
+  id: 'istanbul-ozel',
+  slug: 'istanbul-ozel-tango-dersi',
+  name: 'İstanbul Özel Tango Dersi',
+  tagline: 'İstanbul\'un Her Yerinde Profesyonel Tango Eğitimi',
+  description: 'İstanbul genelinde profesyonel özel tango dersleri. Avrupa ve Anadolu yakasında stüdyo eğitimi.',
+  heroImage: '/images/1.jpg',
+  coordinates: {
+    lat: 41.0082,
+    lng: 28.9784,
+  },
+  address: {
+    street: 'Çeşitli Stüdyolar',
+    district: 'İstanbul Geneli',
+    city: 'İstanbul',
+    fullAddress: 'İstanbul (Avrupa & Anadolu Yakası)',
+  },
+  contact: {
+    phone: CONTACT.PHONE_DISPLAY,
+    email: CONTACT.EMAIL,
+    whatsapp: CONTACT.PHONE.replace('+', ''),
+  },
+  seo: {
+    title: 'İstanbul Özel Tango Dersi | Profesyonel Tango Eğitimi',
+    description: 'İstanbul\'da profesyonel özel tango dersleri. Avrupa ve Anadolu yakasında stüdyo eğitimi. Gamze Yıldız ile birebir, çift ve grup dersleri.',
+    keywords: [
+      'istanbul özel tango dersi',
+      'özel tango dersi istanbul',
+      'istanbul tango eğitimi',
+      'profesyonel tango dersi',
+      'birebir tango dersi',
+    ],
+    canonicalUrl: 'https://gamzetango.com/istanbul-ozel-tango-dersi',
+  },
+  features: [
+    {
+      id: 'studio',
+      icon: 'Building',
+      title: 'Profesyonel Stüdyo',
+      description: 'Modern ve konforlu dans stüdyolarında eğitim.',
+    },
+    {
+      id: 'private',
+      icon: 'User',
+      title: 'Özel Ders',
+      description: 'Birebir kişiselleştirilmiş tango eğitimi.',
+    },
+    {
+      id: 'group',
+      icon: 'Users',
+      title: 'Grup Dersleri',
+      description: 'Sosyal ortamda öğrenin, yeni insanlarla tanışın.',
+    },
+    {
+      id: 'couple',
+      icon: 'Heart',
+      title: 'Çift Dersleri',
+      description: 'Partnerinizle birlikte öğrenin. Çiftlere özel indirimler.',
+    },
+    {
+      id: 'wedding',
+      icon: 'Music',
+      title: 'Düğün Dansı',
+      description: 'Özel gününüz için unutulmaz bir tango performansı.',
+    },
+    {
+      id: 'lady-styling',
+      icon: 'Sparkles',
+      title: 'Lady Styling',
+      description: 'Kadın dansçılara özel teknik ve stil çalışmaları.',
+    },
+  ],
+  testimonials: [
+    {
+      id: 'istanbul-ozel-1',
+      name: 'Selin T.',
+      location: 'Kadıköy',
+      quote: 'İstanbul\'un en iyi tango eğitmeni!',
+      rating: 5,
+    },
+    {
+      id: 'istanbul-ozel-2',
+      name: 'Can & Elif',
+      location: 'Beşiktaş',
+      quote: 'Düğün dansımız için harika bir hazırlık yaptık.',
+      rating: 5,
+    },
+  ],
+  accessInfo: [
+    {
+      type: 'metro',
+      name: 'Metro Hatları',
+      distance: 'Lokasyona göre değişir',
+    },
+    {
+      type: 'ferry',
+      name: 'Vapur Seferleri',
+      distance: 'Anadolu-Avrupa geçişi',
+    },
+  ],
+  workingHours: [
+    { day: 'Pazartesi', hours: '09:00 - 22:00' },
+    { day: 'Salı', hours: '09:00 - 22:00' },
+    { day: 'Çarşamba', hours: '09:00 - 22:00' },
+    { day: 'Perşembe', hours: '09:00 - 22:00' },
+    { day: 'Cuma', hours: '09:00 - 22:00' },
+    { day: 'Cumartesi', hours: '10:00 - 20:00' },
+    { day: 'Pazar', hours: '10:00 - 18:00' },
+  ],
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.79327595874!2d28.871754!3d41.005495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVs!5e0!3m2!1sen!2str',
+  isActive: true,
+};
+
+// Silivri Özel Tango Dersi Location Data
+export const SILIVRI_OZEL_LOCATION: Location = {
+  id: 'silivri-ozel',
+  slug: 'silivri-ozel-tango-dersi',
+  name: 'Silivri Özel Tango Dersi',
+  tagline: 'Silivri\'nin İlk ve Tek Profesyonel Tango Okulu',
+  description: 'Silivri\'de profesyonel özel tango eğitimi. Modern stüdyoda birebir, çift ve grup dersleri.',
+  heroImage: '/images/0.jpg',
+  coordinates: {
+    lat: 41.0731,
+    lng: 28.2466,
+  },
+  address: {
+    street: 'Alibey Mahallesi',
+    district: 'Silivri',
+    city: 'İstanbul',
+    postalCode: '34570',
+    fullAddress: 'Alibey Mahallesi, Silivri, İstanbul 34570',
+  },
+  contact: {
+    phone: CONTACT.PHONE_DISPLAY,
+    email: CONTACT.EMAIL,
+    whatsapp: CONTACT.PHONE.replace('+', ''),
+  },
+  seo: {
+    title: 'Silivri Özel Tango Dersi | Profesyonel Tango Eğitimi',
+    description: 'Silivri\'de profesyonel özel tango dersleri. Modern stüdyoda birebir, çift ve grup eğitimleri. Gamze Yıldız ile tangonun büyüsünü keşfedin.',
+    keywords: [
+      'silivri tango dersi',
+      'silivri özel tango dersi',
+      'silivri tango kursu',
+      'silivri düğün dansı',
+      'silivri dans eğitimi',
+    ],
+    canonicalUrl: 'https://gamzetango.com/silivri-ozel-tango-dersi',
+  },
+  features: [
+    {
+      id: 'studio',
+      icon: 'Building',
+      title: 'Modern Stüdyo',
+      description: 'Silivri\'nin tek profesyonel dans stüdyosunda eğitim.',
+    },
+    {
+      id: 'private',
+      icon: 'User',
+      title: 'Özel Ders',
+      description: 'Birebir kişiselleştirilmiş tango eğitimi.',
+    },
+    {
+      id: 'group',
+      icon: 'Users',
+      title: 'Grup Dersleri',
+      description: 'Sosyal ortamda öğrenin, yeni insanlarla tanışın.',
+    },
+    {
+      id: 'couple',
+      icon: 'Heart',
+      title: 'Çift Dersleri',
+      description: 'Partnerinizle birlikte öğrenin.',
+    },
+    {
+      id: 'wedding',
+      icon: 'Music',
+      title: 'Düğün Dansı',
+      description: 'Özel gününüz için unutulmaz tango performansı.',
+    },
+    {
+      id: 'beginner',
+      icon: 'Sparkles',
+      title: 'Başlangıç Dostu',
+      description: 'Hiç dans etmemiş olsanız bile başlayabilirsiniz.',
+    },
+  ],
+  testimonials: [
+    {
+      id: 'silivri-ozel-1',
+      name: 'Ayşe K.',
+      location: 'Silivri',
+      quote: 'Düğünümüz için 3 ay Gamze Hoca ile çalıştık. Herkes dansımıza hayran kaldı!',
+      rating: 5,
+    },
+    {
+      id: 'silivri-ozel-2',
+      name: 'Mehmet D.',
+      location: 'Silivri Merkez',
+      quote: '50 yaşında tango öğrenmeye başladım. Gamze Hoca\'nın sabrı inanılmaz.',
+      rating: 5,
+    },
+  ],
+  accessInfo: [
+    {
+      type: 'bus',
+      name: 'Silivri Merkez Durağı',
+      distance: '500m',
+    },
+    {
+      type: 'car',
+      name: 'TEM Otoyolu Silivri Çıkışı',
+      distance: '5 km',
+    },
+  ],
+  workingHours: [
+    { day: 'Pazartesi', hours: '10:00 - 21:00' },
+    { day: 'Salı', hours: '10:00 - 21:00' },
+    { day: 'Çarşamba', hours: '10:00 - 21:00' },
+    { day: 'Perşembe', hours: '10:00 - 21:00' },
+    { day: 'Cuma', hours: '10:00 - 21:00' },
+    { day: 'Cumartesi', hours: '10:00 - 18:00' },
+    { day: 'Pazar', hours: 'Randevu ile' },
+  ],
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48256.65095696569!2d28.20!3d41.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b51cb21e9f7f2d%3A0x9d2d7d09c0e7fb8d!2sSilivri%2C%20Istanbul!5e0!3m2!1sen!2str',
+  isActive: true,
+};
+
 // All locations array for iteration
 export const ALL_LOCATIONS: readonly Location[] = [
   SILIVRI_LOCATION,
   ISTANBUL_LOCATION,
+  KADIKOY_LOCATION,
+  BEYOGLU_LOCATION,
+  ISTANBUL_OZEL_LOCATION,
+  SILIVRI_OZEL_LOCATION,
 ] as const;
 
 // Helper to get location by slug
