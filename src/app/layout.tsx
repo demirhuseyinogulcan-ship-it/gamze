@@ -38,47 +38,97 @@ export const metadata: Metadata = {
     'tango eğitmeni',
     'tango öğretmeni',
     'tango hocası',
+    'tango okulu',
 
-    // Özel Ders Odaklı
+    // Özel Ders Odaklı - TÜM VARYASYONLAR
     'özel tango dersi',
+    'tango özel ders',
     'birebir tango dersi',
     'özel tango eğitimi',
     'kişiye özel tango',
     'private tango lesson',
+    'özel ders tango',
 
-    // Lokasyon Bazlı
+    // İstanbul Varyasyonları - TÜM SIRALAMAR
     'İstanbul tango',
+    'tango istanbul',
     'istanbul tango dersi',
+    'tango dersi istanbul',
     'istanbul tango kursu',
-    'Silivri tango',
-    'Kadıköy tango',
-    'Beyoğlu tango',
-    'Taksim tango',
-    'Anadolu yakası tango',
-    'Avrupa yakası tango',
+    'tango kursu istanbul',
+    'istanbul özel tango dersi',
+    'özel tango dersi istanbul',
+    'istanbul tango eğitimi',
+    'tango eğitimi istanbul',
+    'istanbul tango hocası',
+    'tango hocası istanbul',
+    'istanbul tango okulu',
 
-    // Düğün Dansı
+    // Kadıköy Varyasyonları - TÜM SIRALAMAR
+    'kadıköy tango',
+    'tango kadıköy',
+    'kadıköy tango dersi',
+    'tango dersi kadıköy',
+    'kadıköy özel tango dersi',
+    'özel tango dersi kadıköy',
+    'kadıköy tango kursu',
+    'tango kursu kadıköy',
+    'kadıköy özel ders tango',
+    'tango özel ders kadıköy',
+    'anadolu yakası tango',
+    'tango anadolu yakası',
+    'anadolu yakası tango dersi',
+
+    // Beyoğlu / Taksim Varyasyonları
+    'beyoğlu tango',
+    'tango beyoğlu',
+    'beyoğlu tango dersi',
+    'tango dersi beyoğlu',
+    'beyoğlu özel tango dersi',
+    'taksim tango',
+    'tango taksim',
+    'taksim tango dersi',
+    'avrupa yakası tango',
+    'tango avrupa yakası',
+
+    // Silivri Varyasyonları
+    'silivri tango',
+    'tango silivri',
+    'silivri tango dersi',
+    'tango dersi silivri',
+    'silivri özel tango dersi',
+    'silivri tango kursu',
+
+    // Düğün Dansı - TÜM VARYASYONLAR
     'düğün dansı',
     'düğün dansı kursu',
     'düğün dansı eğitimi',
     'düğün dansı tango',
+    'tango düğün dansı',
     'ilk dans',
+    'ilk dans eğitimi',
     'wedding dance',
     'wedding dance istanbul',
+    'düğün dansı istanbul',
+    'istanbul düğün dansı',
+    'düğün için tango',
 
     // Dans Türleri
     'arjantin tangosu',
     'argentine tango',
     'tango argentino',
     'lady styling',
+    'lady styling dersi',
     'tango tekniği',
 
     // Fiyat ve Bilgi Aramaları
     'tango dersi fiyatları',
     'tango kursu fiyatı',
+    'özel tango dersi fiyat',
     'tango öğrenmek',
     'tango nasıl öğrenilir',
     'tango başlangıç',
+    'tango kursu kayıt',
 
     // Marka
     'Gamze Yıldız',

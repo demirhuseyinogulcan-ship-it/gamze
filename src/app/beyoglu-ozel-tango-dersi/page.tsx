@@ -12,14 +12,41 @@ export const metadata: Metadata = {
     title: 'Beyoğlu Özel Tango Dersi | Avrupa Yakası Tango Eğitimi - Gamze Yıldız',
     description: 'Beyoğlu\'nda özel tango dersi. Taksim, Galata, Cihangir ve İstiklal çevresinde profesyonel tango eğitimi. Gamze Yıldız ile birebir dersler, düğün dansı ve lady styling.',
     keywords: [
+        // Beyoğlu - Tüm Varyasyonlar
         'beyoğlu tango dersi',
+        'tango dersi beyoğlu',
         'beyoğlu özel tango dersi',
+        'özel tango dersi beyoğlu',
+        'beyoğlu tango kursu',
+        'tango kursu beyoğlu',
+        'beyoğlu tango eğitimi',
+        'beyoğlu tango hocası',
+        'beyoğlu özel ders tango',
+        
+        // Taksim Varyasyonları
         'taksim tango',
+        'tango taksim',
+        'taksim tango dersi',
+        'tango dersi taksim',
+        'taksim özel tango dersi',
+        
+        // Diğer Semtler
         'galata tango dersi',
         'cihangir tango',
+        'karaköy tango dersi',
+        'şişli tango dersi',
+        'nişantaşı tango dersi',
+        
+        // Avrupa Yakası
         'avrupa yakası tango',
+        'tango avrupa yakası',
+        'avrupa yakası tango dersi',
+        'avrupa yakası özel tango dersi',
+        
+        // Düğün Dansı
+        'beyoğlu düğün dansı',
+        'taksim düğün dansı',
         'istanbul tango eğitmeni',
-        'özel tango dersi beyoğlu',
     ],
     alternates: {
         canonical: 'https://gamzetango.com/beyoglu-ozel-tango-dersi',

@@ -12,19 +12,49 @@ export const metadata: Metadata = {
     title: 'İstanbul Özel Tango Dersi | Profesyonel Tango Eğitimi - Gamze Yıldız',
     description: 'İstanbul\'da özel tango dersi arıyorsanız doğru yerdesiniz! Gamze Yıldız ile Avrupa ve Anadolu Yakası\'nda birebir tango eğitimi, düğün dansı hazırlığı, lady styling. İlk ders için hemen arayın!',
     keywords: [
+        // Ana Keywords - Tüm Varyasyonlar
         'özel tango dersi',
+        'tango özel ders',
         'istanbul özel tango dersi',
         'özel tango dersi istanbul',
-        'tango dersi',
-        'tango eğitmeni',
+        'tango dersi istanbul',
+        'istanbul tango dersi',
+        'tango istanbul',
         'istanbul tango',
+        
+        // Kurs Varyasyonları
+        'istanbul tango kursu',
         'tango kursu istanbul',
-        'birebir tango dersi',
+        'istanbul tango okulu',
+        'tango okulu istanbul',
+        
+        // Eğitmen/Hoca Varyasyonları
+        'istanbul tango eğitmeni',
+        'tango eğitmeni istanbul',
+        'istanbul tango hocası',
+        'tango hocası istanbul',
         'profesyonel tango eğitimi',
+        'birebir tango dersi',
+        
+        // Bölge Bazlı
+        'avrupa yakası tango dersi',
+        'anadolu yakası tango dersi',
+        'kadıköy tango',
+        'beyoğlu tango',
+        'taksim tango',
+        
+        // Düğün Dansı
         'düğün dansı istanbul',
-        'tango öğrenmek',
+        'istanbul düğün dansı',
+        'düğün dansı tango',
+        'tango düğün dansı',
+        'düğün ilk dansı istanbul',
+        
+        // Diğer
+        'tango öğrenmek istanbul',
         'arjantin tangosu dersi',
         'tango dersi fiyatları',
+        'lady styling istanbul',
     ],
     alternates: {
         canonical: 'https://gamzetango.com/istanbul-ozel-tango-dersi',

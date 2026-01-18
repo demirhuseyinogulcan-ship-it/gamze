@@ -12,14 +12,39 @@ export const metadata: Metadata = {
     title: 'Kadıköy Özel Tango Dersi | Anadolu Yakası Tango Eğitimi - Gamze Yıldız',
     description: 'Kadıköy\'de özel tango dersi arıyorsanız doğru yerdesiniz. Anadolu Yakası\'nda profesyonel tango eğitmeni Gamze Yıldız ile birebir dersler. Moda, Bağdat Caddesi ve çevresinde hizmet.',
     keywords: [
+        // Kadıköy - Tüm Varyasyonlar
         'kadıköy tango dersi',
+        'tango dersi kadıköy',
         'kadıköy özel tango dersi',
-        'anadolu yakası tango',
-        'kadıköy tango eğitmeni',
+        'özel tango dersi kadıköy',
         'kadıköy tango kursu',
+        'tango kursu kadıköy',
+        'kadıköy tango eğitimi',
+        'tango eğitimi kadıköy',
+        'kadıköy tango hocası',
+        'tango hocası kadıköy',
+        'kadıköy tango eğitmeni',
+        'kadıköy özel ders tango',
+        'tango özel ders kadıköy',
+        
+        // Anadolu Yakası
+        'anadolu yakası tango',
+        'tango anadolu yakası',
+        'anadolu yakası tango dersi',
+        'anadolu yakası özel tango dersi',
+        
+        // Semt Bazlı
         'moda tango dersi',
         'bağdat caddesi tango',
-        'özel tango dersi kadıköy',
+        'fenerbahçe tango dersi',
+        'üsküdar tango dersi',
+        'ataşehir tango dersi',
+        'maltepe tango dersi',
+        
+        // Düğün Dansı
+        'kadıköy düğün dansı',
+        'düğün dansı kadıköy',
+        'anadolu yakası düğün dansı',
     ],
     alternates: {
         canonical: 'https://gamzetango.com/kadikoy-ozel-tango-dersi',
