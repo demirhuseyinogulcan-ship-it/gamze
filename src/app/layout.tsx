@@ -5,6 +5,7 @@ import { Providers } from './providers';
 import { CookieConsent } from '@/components/ui/CookieConsent';
 import { FloatingSocialButtons } from '@/components/ui/InstagramBanner';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { Analytics } from '@vercel/analytics/react';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin', 'latin-ext'],
@@ -329,6 +330,7 @@ export default function RootLayout({
           <FloatingSocialButtons />
           <CookieConsent />
           <GoogleAnalytics />
+          <Analytics />
         </Providers>
       </body>
     </html>
