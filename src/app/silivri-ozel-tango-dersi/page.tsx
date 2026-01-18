@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   title: SILIVRI_OZEL_LOCATION.seo.title,
   description: SILIVRI_OZEL_LOCATION.seo.description,
   keywords: [
-    // Silivri - Tüm Varyasyonlar
+    // ═══════════════════════════════════════════════════════════════════════
+    // SİLİVRİ - TÜM VARYASYONLAR (Ana Hedef Kelimeler)
+    // ═══════════════════════════════════════════════════════════════════════
     'silivri tango dersi',
     'tango dersi silivri',
     'silivri özel tango dersi',
@@ -26,21 +28,84 @@ export const metadata: Metadata = {
     'silivri tango kursu',
     'tango kursu silivri',
     'silivri tango eğitimi',
+    'tango eğitimi silivri',
     'silivri tango hocası',
-    'silivri dans kursu',
+    'tango hocası silivri',
+    'silivri tango eğitmeni',
+    'tango eğitmeni silivri',
+    'silivri özel ders tango',
+    'tango özel ders silivri',
+    'silivri tango okulu',
+    'silivri birebir tango',
+    'silivri private tango',
     
-    // Düğün Dansı
+    // ═══════════════════════════════════════════════════════════════════════
+    // SİLİVRİ ÇEVRESİ & BATI İSTANBUL
+    // ═══════════════════════════════════════════════════════════════════════
+    'silivri dans kursu',
+    'silivri dans okulu',
+    'silivri dans eğitimi',
+    'büyükçekmece tango dersi',
+    'büyükçekmece tango kursu',
+    'çatalca tango dersi',
+    'kumburgaz tango dersi',
+    'selimpaşa tango dersi',
+    'batı istanbul tango',
+    'istanbul batı tango dersi',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // DÜĞÜN DANSI - SİLİVRİ
+    // ═══════════════════════════════════════════════════════════════════════
     'silivri düğün dansı',
     'düğün dansı silivri',
     'silivri düğün dansı kursu',
+    'silivri düğün dansı eğitimi',
+    'silivri ilk dans',
+    'silivri nikah dansı',
+    'silivri evlilik dansı',
+    'silivri düğün hazırlığı',
     
-    // Arjantin Tango
+    // ═══════════════════════════════════════════════════════════════════════
+    // LADY STYLING - SİLİVRİ
+    // ═══════════════════════════════════════════════════════════════════════
+    'silivri lady styling',
+    'lady styling silivri',
+    'silivri kadın tango dersi',
+    'silivri kadınlar için tango',
+    'silivri solo tango',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ARJANTİN TANGO & DANS TÜRLERİ
+    // ═══════════════════════════════════════════════════════════════════════
     'silivri arjantin tango',
     'arjantin tango silivri',
+    'silivri arjantin tangosu',
+    'silivri milonga',
+    'silivri tango vals',
     
-    // Genel
-    'silivri dans eğitimi',
-    'silivri dans okulu',
+    // ═══════════════════════════════════════════════════════════════════════
+    // FİYAT VE BİLGİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'silivri tango dersi fiyat',
+    'silivri tango fiyatları',
+    'silivri özel tango dersi ücreti',
+    'silivri dans kursu fiyat',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // BAŞLANGIÇ SEVİYESİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'silivri tango başlangıç',
+    'silivri sıfırdan tango',
+    'silivri yeni başlayanlar tango',
+    'silivri tango öğrenmek',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ENGLISH KEYWORDS (Turistler için)
+    // ═══════════════════════════════════════════════════════════════════════
+    'silivri tango lessons',
+    'tango lessons silivri',
+    'private tango silivri',
+    'tango classes silivri istanbul',
   ],
   alternates: {
     canonical: SILIVRI_OZEL_LOCATION.seo.canonicalUrl,

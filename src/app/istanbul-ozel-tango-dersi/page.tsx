@@ -18,49 +18,130 @@ export const metadata: Metadata = {
   title: ISTANBUL_OZEL_LOCATION.seo.title,
   description: ISTANBUL_OZEL_LOCATION.seo.description,
   keywords: [
-    // Ana Keywords - Tüm Varyasyonlar
+    // ═══════════════════════════════════════════════════════════════════════
+    // ANA KEYWORDS - İSTANBUL ÖZEL TANGO DERSİ
+    // ═══════════════════════════════════════════════════════════════════════
     'özel tango dersi',
     'tango özel ders',
+    'birebir tango dersi',
+    'private tango lesson',
+    'kişiye özel tango',
+    'özel tango eğitimi',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // İSTANBUL - TÜM VARYASYONLAR
+    // ═══════════════════════════════════════════════════════════════════════
     'istanbul özel tango dersi',
     'özel tango dersi istanbul',
     'tango dersi istanbul',
     'istanbul tango dersi',
     'tango istanbul',
     'istanbul tango',
+    'istanbul da tango',
+    'istanbulda tango dersi',
+    'istanbul birebir tango',
+    'istanbul private tango',
     
-    // Kurs Varyasyonları
+    // ═══════════════════════════════════════════════════════════════════════
+    // KURS VE OKUL VARYASYONLARI
+    // ═══════════════════════════════════════════════════════════════════════
     'istanbul tango kursu',
     'tango kursu istanbul',
     'istanbul tango okulu',
     'tango okulu istanbul',
+    'istanbul tango akademi',
+    'istanbul dans okulu tango',
     
-    // Eğitmen/Hoca Varyasyonları
+    // ═══════════════════════════════════════════════════════════════════════
+    // EĞİTMEN/HOCA VARYASYONLARI
+    // ═══════════════════════════════════════════════════════════════════════
     'istanbul tango eğitmeni',
     'tango eğitmeni istanbul',
     'istanbul tango hocası',
     'tango hocası istanbul',
+    'istanbul tango öğretmeni',
     'profesyonel tango eğitimi',
-    'birebir tango dersi',
+    'profesyonel tango eğitmeni istanbul',
+    'kadın tango eğitmeni istanbul',
     
-    // Bölge Bazlı
+    // ═══════════════════════════════════════════════════════════════════════
+    // YAKA VE BÖLGE BAZLI
+    // ═══════════════════════════════════════════════════════════════════════
     'avrupa yakası tango dersi',
+    'tango dersi avrupa yakası',
     'anadolu yakası tango dersi',
+    'tango dersi anadolu yakası',
     'kadıköy tango',
     'beyoğlu tango',
     'taksim tango',
+    'silivri tango',
     
-    // Düğün Dansı
+    // ═══════════════════════════════════════════════════════════════════════
+    // DÜĞÜN DANSI - TÜM VARYASYONLAR
+    // ═══════════════════════════════════════════════════════════════════════
     'düğün dansı istanbul',
     'istanbul düğün dansı',
     'düğün dansı tango',
     'tango düğün dansı',
+    'düğün dansı kursu istanbul',
+    'istanbul düğün dansı kursu',
     'düğün ilk dansı istanbul',
+    'ilk dans istanbul',
+    'nikah dansı istanbul',
+    'evlilik dansı istanbul',
+    'wedding dance istanbul',
     
-    // Diğer
-    'tango öğrenmek istanbul',
-    'arjantin tangosu dersi',
-    'tango dersi fiyatları',
+    // ═══════════════════════════════════════════════════════════════════════
+    // LADY STYLING - İSTANBUL
+    // ═══════════════════════════════════════════════════════════════════════
     'lady styling istanbul',
+    'istanbul lady styling',
+    'lady styling dersi istanbul',
+    'kadın tango dersi istanbul',
+    'solo tango istanbul',
+    'kadınlar için tango istanbul',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ARJANTİN TANGO & DANS TÜRLERİ
+    // ═══════════════════════════════════════════════════════════════════════
+    'arjantin tangosu dersi',
+    'istanbul arjantin tango',
+    'arjantin tango istanbul',
+    'argentine tango istanbul',
+    'tango argentino istanbul',
+    'milonga istanbul',
+    'istanbul milonga',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // FİYAT VE BİLGİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'tango dersi fiyatları',
+    'tango dersi fiyatları istanbul',
+    'istanbul tango fiyat',
+    'özel tango dersi ücreti',
+    'tango ne kadar',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // BAŞLANGIÇ SEVİYESİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'tango öğrenmek istanbul',
+    'istanbul da tango öğrenmek',
+    'tango başlangıç istanbul',
+    'sıfırdan tango istanbul',
+    'yeni başlayanlar için tango istanbul',
+    'istanbul tango deneme dersi',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ENGLISH KEYWORDS (Turistler için)
+    // ═══════════════════════════════════════════════════════════════════════
+    'private tango lessons istanbul',
+    'tango lessons istanbul',
+    'tango classes istanbul',
+    'learn tango istanbul',
+    'tango instructor istanbul',
+    'tango teacher istanbul',
+    'argentine tango lessons istanbul',
+    'wedding dance lessons istanbul',
   ],
   alternates: {
     canonical: ISTANBUL_OZEL_LOCATION.seo.canonicalUrl,

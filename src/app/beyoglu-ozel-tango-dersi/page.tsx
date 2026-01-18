@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   title: BEYOGLU_LOCATION.seo.title,
   description: BEYOGLU_LOCATION.seo.description,
   keywords: [
-    // Beyoğlu - Tüm Varyasyonlar
+    // ═══════════════════════════════════════════════════════════════════════
+    // BEYOĞLU - TÜM VARYASYONLAR (Ana Hedef Kelimeler)
+    // ═══════════════════════════════════════════════════════════════════════
     'beyoğlu tango dersi',
     'tango dersi beyoğlu',
     'beyoğlu özel tango dersi',
@@ -26,33 +28,125 @@ export const metadata: Metadata = {
     'beyoğlu tango kursu',
     'tango kursu beyoğlu',
     'beyoğlu tango eğitimi',
+    'tango eğitimi beyoğlu',
     'beyoğlu tango hocası',
+    'tango hocası beyoğlu',
+    'beyoğlu tango eğitmeni',
+    'tango eğitmeni beyoğlu',
     'beyoğlu özel ders tango',
+    'tango özel ders beyoğlu',
+    'beyoğlu tango okulu',
+    'beyoğlu birebir tango',
+    'beyoğlu private tango',
     
-    // Taksim Varyasyonları
+    // ═══════════════════════════════════════════════════════════════════════
+    // TAKSİM - TÜM VARYASYONLAR
+    // ═══════════════════════════════════════════════════════════════════════
     'taksim tango',
     'tango taksim',
     'taksim tango dersi',
     'tango dersi taksim',
     'taksim özel tango dersi',
+    'özel tango dersi taksim',
+    'taksim tango kursu',
+    'tango kursu taksim',
+    'taksim tango hocası',
+    'taksim tango eğitmeni',
+    'taksim birebir tango',
     
-    // Diğer Semtler
-    'galata tango dersi',
-    'cihangir tango',
-    'karaköy tango dersi',
-    'şişli tango dersi',
-    'nişantaşı tango dersi',
-    
-    // Avrupa Yakası
+    // ═══════════════════════════════════════════════════════════════════════
+    // AVRUPA YAKASI - TÜM VARYASYONLAR
+    // ═══════════════════════════════════════════════════════════════════════
     'avrupa yakası tango',
     'tango avrupa yakası',
     'avrupa yakası tango dersi',
+    'tango dersi avrupa yakası',
     'avrupa yakası özel tango dersi',
+    'özel tango dersi avrupa yakası',
+    'avrupa yakası tango kursu',
+    'avrupa yakası tango hocası',
+    'avrupa yakası tango eğitmeni',
+    'avrupa yakası birebir tango',
     
-    // Düğün Dansı
+    // ═══════════════════════════════════════════════════════════════════════
+    // SEMT BAZLI ARAMALAR (Beyoğlu Çevresi)
+    // ═══════════════════════════════════════════════════════════════════════
+    'galata tango dersi',
+    'galata tango kursu',
+    'cihangir tango',
+    'cihangir tango dersi',
+    'karaköy tango dersi',
+    'karaköy tango kursu',
+    'şişli tango dersi',
+    'şişli tango kursu',
+    'nişantaşı tango dersi',
+    'nişantaşı tango kursu',
+    'mecidiyeköy tango dersi',
+    'levent tango dersi',
+    'beşiktaş tango dersi',
+    'beşiktaş tango kursu',
+    'etiler tango dersi',
+    'bebek tango dersi',
+    'ortaköy tango dersi',
+    'harbiye tango dersi',
+    'osmanbey tango dersi',
+    'fulya tango dersi',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // DÜĞÜN DANSI - BEYOĞLU & AVRUPA YAKASI
+    // ═══════════════════════════════════════════════════════════════════════
     'beyoğlu düğün dansı',
+    'düğün dansı beyoğlu',
+    'beyoğlu düğün dansı kursu',
     'taksim düğün dansı',
-    'istanbul tango eğitmeni',
+    'düğün dansı taksim',
+    'avrupa yakası düğün dansı',
+    'düğün dansı avrupa yakası',
+    'beyoğlu ilk dans',
+    'taksim nikah dansı',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // LADY STYLING - BEYOĞLU
+    // ═══════════════════════════════════════════════════════════════════════
+    'beyoğlu lady styling',
+    'lady styling beyoğlu',
+    'taksim lady styling',
+    'avrupa yakası lady styling',
+    'beyoğlu kadın tango dersi',
+    'beyoğlu solo tango',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // FİYAT VE BİLGİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'beyoğlu tango dersi fiyat',
+    'beyoğlu tango fiyatları',
+    'taksim tango dersi ücreti',
+    'avrupa yakası tango fiyat',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // BAŞLANGIÇ SEVİYESİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'beyoğlu tango başlangıç',
+    'beyoğlu sıfırdan tango',
+    'taksim yeni başlayanlar tango',
+    'avrupa yakası tango başlangıç',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ARJANTİN TANGO & DANS TÜRLERİ
+    // ═══════════════════════════════════════════════════════════════════════
+    'beyoğlu arjantin tango',
+    'taksim arjantin tangosu',
+    'beyoğlu milonga',
+    'taksim milonga',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ENGLISH KEYWORDS (Turistler için)
+    // ═══════════════════════════════════════════════════════════════════════
+    'beyoglu tango lessons',
+    'taksim tango lessons',
+    'tango lessons taksim',
+    'private tango beyoglu',
+    'tango classes european side istanbul',
   ],
   alternates: {
     canonical: BEYOGLU_LOCATION.seo.canonicalUrl,

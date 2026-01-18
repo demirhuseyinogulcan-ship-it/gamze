@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   title: KADIKOY_LOCATION.seo.title,
   description: KADIKOY_LOCATION.seo.description,
   keywords: [
-    // Kadıköy - Tüm Varyasyonlar
+    // ═══════════════════════════════════════════════════════════════════════
+    // KADIKÖY - TÜM VARYASYONLAR (Ana Hedef Kelimeler)
+    // ═══════════════════════════════════════════════════════════════════════
     'kadıköy tango dersi',
     'tango dersi kadıköy',
     'kadıköy özel tango dersi',
@@ -30,27 +32,103 @@ export const metadata: Metadata = {
     'kadıköy tango hocası',
     'tango hocası kadıköy',
     'kadıköy tango eğitmeni',
+    'tango eğitmeni kadıköy',
     'kadıköy özel ders tango',
     'tango özel ders kadıköy',
+    'kadıköy tango okulu',
+    'kadıköy birebir tango',
+    'kadıköy private tango',
     
-    // Anadolu Yakası
+    // ═══════════════════════════════════════════════════════════════════════
+    // ANADOLU YAKASI - TÜM VARYASYONLAR
+    // ═══════════════════════════════════════════════════════════════════════
     'anadolu yakası tango',
     'tango anadolu yakası',
     'anadolu yakası tango dersi',
+    'tango dersi anadolu yakası',
     'anadolu yakası özel tango dersi',
+    'özel tango dersi anadolu yakası',
+    'anadolu yakası tango kursu',
+    'anadolu yakası tango hocası',
+    'anadolu yakası tango eğitmeni',
+    'anadolu yakası birebir tango',
     
-    // Semt Bazlı
+    // ═══════════════════════════════════════════════════════════════════════
+    // SEMT BAZLI ARAMALAR (Kadıköy Çevresi)
+    // ═══════════════════════════════════════════════════════════════════════
     'moda tango dersi',
+    'moda tango kursu',
     'bağdat caddesi tango',
+    'bağdat caddesi tango dersi',
     'fenerbahçe tango dersi',
+    'fenerbahçe tango kursu',
     'üsküdar tango dersi',
+    'üsküdar tango kursu',
     'ataşehir tango dersi',
+    'ataşehir tango kursu',
     'maltepe tango dersi',
+    'maltepe tango kursu',
+    'kartal tango dersi',
+    'pendik tango dersi',
+    'göztepe tango dersi',
+    'suadiye tango dersi',
+    'erenköy tango dersi',
+    'kozyatağı tango dersi',
+    'acıbadem tango dersi',
+    'altunizade tango dersi',
     
-    // Düğün Dansı
+    // ═══════════════════════════════════════════════════════════════════════
+    // DÜĞÜN DANSI - KADIKÖY & ANADOLU YAKASI
+    // ═══════════════════════════════════════════════════════════════════════
     'kadıköy düğün dansı',
     'düğün dansı kadıköy',
+    'kadıköy düğün dansı kursu',
     'anadolu yakası düğün dansı',
+    'düğün dansı anadolu yakası',
+    'kadıköy ilk dans',
+    'kadıköy nikah dansı',
+    'kadıköy evlilik dansı',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // LADY STYLING - KADIKÖY
+    // ═══════════════════════════════════════════════════════════════════════
+    'kadıköy lady styling',
+    'lady styling kadıköy',
+    'anadolu yakası lady styling',
+    'kadıköy kadın tango dersi',
+    'kadıköy solo tango',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // FİYAT VE BİLGİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'kadıköy tango dersi fiyat',
+    'kadıköy tango fiyatları',
+    'kadıköy özel tango dersi ücreti',
+    'anadolu yakası tango fiyat',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // BAŞLANGIÇ SEVİYESİ ARAMALARI
+    // ═══════════════════════════════════════════════════════════════════════
+    'kadıköy tango başlangıç',
+    'kadıköy sıfırdan tango',
+    'kadıköy yeni başlayanlar tango',
+    'anadolu yakası tango başlangıç',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ARJANTİN TANGO & DANS TÜRLERİ
+    // ═══════════════════════════════════════════════════════════════════════
+    'kadıköy arjantin tango',
+    'kadıköy arjantin tangosu',
+    'kadıköy milonga',
+    'kadıköy tango vals',
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // ENGLISH KEYWORDS (Turistler için)
+    // ═══════════════════════════════════════════════════════════════════════
+    'kadikoy tango lessons',
+    'tango lessons kadikoy',
+    'private tango kadikoy',
+    'tango classes asian side istanbul',
   ],
   alternates: {
     canonical: KADIKOY_LOCATION.seo.canonicalUrl,
