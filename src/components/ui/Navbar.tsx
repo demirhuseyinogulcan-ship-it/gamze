@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
@@ -72,6 +72,7 @@ export function Navbar() {
   const { isScrolled } = useScrollProgress();
   const { locale, setLocale, t } = useTranslation();
   const pathname = usePathname();
+  const router = useRouter();
   const nav = t('nav');
 
   useEffect(() => {
@@ -109,32 +110,32 @@ export function Navbar() {
       return;
     }
     
-    // Home link - always go to clean URL "/"
+    // Home link - always go to clean URL based on locale
     if (isHome) {
       setIsOpen(false);
-      // If already on homepage, scroll to top without changing URL
-      if (pathname === '/') {
+      const homeUrl = locale === 'tr' ? '/' : '/en';
+      const currentIsHome = pathname === '/' || pathname === '/en';
+      
+      // If already on homepage, scroll to top
+      if (currentIsHome) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Clean up URL if it has hash
         if (window.location.hash) {
-          window.history.replaceState(null, '', '/');
+          window.history.replaceState(null, '', homeUrl);
         }
       }
-      // Otherwise let it navigate to "/"
       return;
     }
     
-    // Check if we're on homepage
-    const isOnHomepage = pathname === '/';
+    // Check if we're on homepage (either Turkish or English)
+    const isOnHomepage = pathname === '/' || pathname === '/en';
     
     if (!isOnHomepage) {
-      // Navigate to homepage, then scroll to section
-      // Use replaceState to avoid /#section in URL
+      // Navigate to correct homepage based on locale, then scroll to section
       setIsOpen(false);
-      // Store target section in sessionStorage for after navigation
+      const homeUrl = locale === 'tr' ? '/' : '/en';
       sessionStorage.setItem('scrollTarget', href);
-      window.location.href = '/';
+      router.push(homeUrl);
       return;
     }
     
@@ -144,7 +145,6 @@ export function Navbar() {
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
-      // Don't add hash to URL - keeps URL clean for SEO
     }
   };
 
@@ -152,28 +152,26 @@ export function Navbar() {
     const newLocale = locale === 'tr' ? 'en' : 'tr';
     setLocale(newLocale);
     
-    // Always navigate to the correct URL for SEO
-    // This ensures Google sees proper language-specific URLs
+    // Use Next.js router for smooth transitions (no page reload)
     if (pathname === '/' || pathname === '/en') {
       // Homepage - navigate to language-specific homepage
       const newUrl = newLocale === 'tr' ? '/' : '/en';
-      window.location.href = newUrl;
+      router.push(newUrl);
     } else if (pathname.startsWith('/blog') || pathname.startsWith('/en/blog')) {
       // Blog pages - navigate to localized version
       const newUrl = getLocalizedUrl(pathname, newLocale);
-      window.location.href = newUrl;
+      router.push(newUrl);
     } else if (pathname.startsWith('/en/')) {
-      // English location pages - navigate to Turkish equivalent
+      // English pages - navigate to Turkish equivalent or homepage
       const turkishPath = pathname.replace('/en/', '/').replace(/^\/en$/, '/');
-      window.location.href = newLocale === 'tr' ? turkishPath : pathname;
+      router.push(newLocale === 'tr' ? turkishPath : pathname);
     } else if (!pathname.startsWith('/en/') && newLocale === 'en') {
-      // Turkish pages - navigate to English equivalent if exists
-      // For now, redirect to English homepage if no direct translation
-      window.location.href = '/en';
+      // Turkish pages - navigate to English homepage
+      router.push('/en');
     } else {
       // Fallback: navigate to language-specific homepage
       const newUrl = newLocale === 'tr' ? '/' : '/en';
-      window.location.href = newUrl;
+      router.push(newUrl);
     }
   };
 
