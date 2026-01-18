@@ -110,6 +110,7 @@ export default function IstanbulTangoKursuPage() {
           contact={ISTANBUL_LOCATION.contact}
           locationName={ISTANBUL_LOCATION.name}
           locale="tr"
+          locationSlug="istanbul-tango-kursu"
         />
       </main>
 

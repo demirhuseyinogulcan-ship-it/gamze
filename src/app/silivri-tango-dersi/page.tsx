@@ -110,6 +110,7 @@ export default function SilivriTangoDersiPage() {
           contact={SILIVRI_LOCATION.contact}
           locationName={SILIVRI_LOCATION.name}
           locale="tr"
+          locationSlug="silivri-tango-dersi"
         />
       </main>
 

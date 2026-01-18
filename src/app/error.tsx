@@ -6,6 +6,7 @@
  */
 
 import { useEffect } from 'react';
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 export default function Error({
   error,
@@ -81,7 +82,7 @@ export default function Error({
         <p className="mt-8 text-white/40 text-sm">
           Sorun devam ederse{' '}
           <a 
-            href="https://wa.me/905062284507" 
+            href={getWhatsAppUrl(WHATSAPP_MESSAGES.CONTACT)} 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gold hover:underline"

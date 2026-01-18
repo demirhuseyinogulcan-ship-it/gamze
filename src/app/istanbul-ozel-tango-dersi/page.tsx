@@ -144,6 +144,7 @@ export default function IstanbulOzelTangoDersiPage() {
           contact={ISTANBUL_OZEL_LOCATION.contact}
           locationName={ISTANBUL_OZEL_LOCATION.name}
           locale="tr"
+          locationSlug="istanbul-ozel-tango-dersi"
         />
       </main>
 

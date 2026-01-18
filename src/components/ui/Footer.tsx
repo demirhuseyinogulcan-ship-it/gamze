@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Instagram, Phone, Mail, MapPin, Heart, ChevronRight } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 import { Container } from './Container';
-import { getWhatsAppLink } from '@/lib/utils';
+import { getWhatsAppUrl, WHATSAPP_MESSAGES, CONTACT } from '@/lib/constants/site';
 
 const socialLinks = [
   { icon: Instagram, href: 'https://www.instagram.com/gamze.tango/', label: 'Instagram' },
@@ -167,7 +167,7 @@ export function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href={getWhatsAppLink(contact.info.phone)}
+                    href={getWhatsAppUrl(WHATSAPP_MESSAGES.CONTACT)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-white/60 hover:text-gold transition-colors duration-300 text-sm"
@@ -193,7 +193,7 @@ export function Footer() {
               
               {/* CTA Button */}
               <a
-                href={getWhatsAppLink(contact.info.phone)}
+                href={getWhatsAppUrl(WHATSAPP_MESSAGES.FOOTER)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium hover:bg-gold hover:text-midnight transition-all duration-300"

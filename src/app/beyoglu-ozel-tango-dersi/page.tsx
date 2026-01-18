@@ -136,6 +136,7 @@ export default function BeyogluOzelTangoDersiPage() {
           contact={BEYOGLU_LOCATION.contact}
           locationName={BEYOGLU_LOCATION.name}
           locale="tr"
+          locationSlug="beyoglu-ozel-tango-dersi"
         />
       </main>
 

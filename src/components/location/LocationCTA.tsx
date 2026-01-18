@@ -14,6 +14,7 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, ArrowRight } from 'lucide-react';
 import type { LocationCTAProps } from '@/types/location';
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 // Animation variants
 const containerVariants = {
@@ -111,16 +112,25 @@ function ContactButton({
   );
 }
 
-export function LocationCTA({ contact, locationName, locale }: LocationCTAProps) {
+export function LocationCTA({ contact, locationName, locale, locationSlug }: LocationCTAProps) {
   const t = translations[locale];
+
+  // Get location-specific WhatsApp message
+  const getLocationMessage = () => {
+    if (locationSlug === 'silivri-ozel-tango-dersi') return WHATSAPP_MESSAGES.SILIVRI;
+    if (locationSlug === 'silivri-tango-dersi') return WHATSAPP_MESSAGES.SILIVRI_KURS;
+    if (locationSlug?.includes('kadikoy')) return WHATSAPP_MESSAGES.KADIKOY;
+    if (locationSlug?.includes('beyoglu')) return WHATSAPP_MESSAGES.BEYOGLU;
+    if (locationSlug === 'istanbul-tango-kursu') return WHATSAPP_MESSAGES.ISTANBUL_KURS;
+    if (locationSlug?.includes('istanbul')) return WHATSAPP_MESSAGES.ISTANBUL;
+    return locale === 'tr'
+      ? `Merhaba, ${locationName} için tango dersleri hakkında bilgi almak istiyorum.`
+      : `Hello, I would like information about tango lessons at ${locationName}.`;
+  };
 
   // Generate contact URLs
   const phoneUrl = `tel:${contact.phone.replace(/\s/g, '')}`;
-  const whatsappUrl = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    locale === 'tr'
-      ? `Merhaba, ${locationName} için tango dersleri hakkında bilgi almak istiyorum.`
-      : `Hello, I would like information about tango lessons at ${locationName}.`
-  )}`;
+  const whatsappUrl = getWhatsAppUrl(getLocationMessage());
   const emailUrl = `mailto:${contact.email}?subject=${encodeURIComponent(
     locale === 'tr' ? 'Tango Dersi Bilgi Talebi' : 'Tango Lesson Inquiry'
   )}`;

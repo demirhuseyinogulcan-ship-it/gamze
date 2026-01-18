@@ -134,6 +134,7 @@ export default function KadikoyOzelTangoDersiPage() {
           contact={KADIKOY_LOCATION.contact}
           locationName={KADIKOY_LOCATION.name}
           locale="tr"
+          locationSlug="kadikoy-ozel-tango-dersi"
         />
       </main>
 

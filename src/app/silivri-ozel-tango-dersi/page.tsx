@@ -124,6 +124,7 @@ export default function SilivriOzelTangoDersiPage() {
           contact={SILIVRI_OZEL_LOCATION.contact}
           locationName={SILIVRI_OZEL_LOCATION.name}
           locale="tr"
+          locationSlug="silivri-ozel-tango-dersi"
         />
       </main>
 

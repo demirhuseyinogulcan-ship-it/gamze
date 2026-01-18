@@ -111,6 +111,7 @@ export interface LocationCTAProps {
   readonly contact: LocationContact;
   readonly locationName: string;
   readonly locale: 'tr' | 'en';
+  readonly locationSlug?: string;
 }
 
 // Schema.org LocalBusiness type for SEO

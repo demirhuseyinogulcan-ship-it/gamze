@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 import { Container, SectionTitle, Button } from '@/components/ui';
-import { getWhatsAppLink } from '@/lib/utils';
+import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 interface FormData {
   name: string;
@@ -69,7 +69,7 @@ Bu mesaj gamzeyildiztango.com iletişim formundan gönderilmiştir.`;
       icon: Phone,
       label: contact.info.phoneLabel,
       value: contact.info.phone,
-      href: getWhatsAppLink(contact.info.phone),
+      href: getWhatsAppUrl(WHATSAPP_MESSAGES.CONTACT),
     },
     {
       icon: Mail,
@@ -255,7 +255,7 @@ Bu mesaj gamzeyildiztango.com iletişim formundan gönderilmiştir.`;
               </p>
               
               <motion.a
-                href={getWhatsAppLink(contact.info.phone, 'Merhaba, tango dersleri hakkında bilgi almak istiyorum.')}
+                href={getWhatsAppUrl(WHATSAPP_MESSAGES.CONTACT)}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}

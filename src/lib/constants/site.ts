@@ -146,16 +146,38 @@ export type LevelKey = keyof typeof LEVELS;
 // ============================================
 
 export const WHATSAPP_MESSAGES = {
-  GENERAL: 'Merhaba, tango dersleri hakkında bilgi almak istiyorum.',
-  WEDDING: 'Merhaba, düğün dansı dersleri hakkında bilgi almak istiyorum.',
-  PRIVATE: 'Merhaba, özel ders hakkında bilgi almak istiyorum.',
-  GROUP: 'Merhaba, grup dersleri hakkında bilgi almak istiyorum.',
-  // Location specific
-  SILIVRI: 'Merhaba, Silivri\'de tango dersleri hakkında bilgi almak istiyorum.',
-  KADIKOY: 'Merhaba, Kadıköy\'de tango dersleri hakkında bilgi almak istiyorum.',
-  BEYOGLU: 'Merhaba, Beyoğlu\'nda tango dersleri hakkında bilgi almak istiyorum.',
-  ISTANBUL: 'Merhaba, İstanbul\'da tango dersleri hakkında bilgi almak istiyorum.',
+  // Genel Mesajlar
+  GENERAL: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Tango dersleri hakkında bilgi almak istiyorum.',
+  
+  // Hizmet Bazlı Mesajlar
+  TRIAL_LESSON: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Ücretsiz deneme dersi almak istiyorum.',
+  WEDDING: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Düğün dansı eğitimi hakkında bilgi almak istiyorum.',
+  PRIVATE: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Özel tango dersi almak istiyorum.',
+  GROUP: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Grup dersleri hakkında bilgi almak istiyorum.',
+  LADY_STYLING: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Lady styling dersleri hakkında bilgi almak istiyorum.',
+  COUPLE: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Çift olarak tango dersi almak istiyorum.',
+  
+  // Lokasyon Bazlı Mesajlar
+  SILIVRI: 'Merhaba, gamzetango.com/silivri-ozel-tango-dersi sayfasından ulaşıyorum. Silivri\'de tango dersi almak istiyorum.',
+  SILIVRI_KURS: 'Merhaba, gamzetango.com/silivri-tango-dersi sayfasından ulaşıyorum. Silivri\'de tango kursu hakkında bilgi almak istiyorum.',
+  KADIKOY: 'Merhaba, gamzetango.com/kadikoy-ozel-tango-dersi sayfasından ulaşıyorum. Kadıköy\'de tango dersi almak istiyorum.',
+  BEYOGLU: 'Merhaba, gamzetango.com/beyoglu-ozel-tango-dersi sayfasından ulaşıyorum. Beyoğlu\'nda tango dersi almak istiyorum.',
+  ISTANBUL: 'Merhaba, gamzetango.com/istanbul-ozel-tango-dersi sayfasından ulaşıyorum. İstanbul\'da tango dersi almak istiyorum.',
+  ISTANBUL_KURS: 'Merhaba, gamzetango.com/istanbul-tango-kursu sayfasından ulaşıyorum. İstanbul\'da tango kursu hakkında bilgi almak istiyorum.',
+  
+  // Sayfa Bazlı Mesajlar
+  FOOTER: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Ücretsiz deneme dersi almak istiyorum.',
+  HERO: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Tango öğrenmek istiyorum, nasıl başlayabilirim?',
+  CONTACT: 'Merhaba, gamzetango.com iletişim bölümünden ulaşıyorum. Sizinle görüşmek istiyorum.',
+  SERVICES: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Hizmetleriniz hakkında detaylı bilgi almak istiyorum.',
+  FAQ: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. Bir sorum var.',
+  BLOG: 'Merhaba, gamzetango.com blog sayfasından ulaşıyorum. Tango dersleri hakkında bilgi almak istiyorum.',
+  
+  // Lead Magnet
+  LEAD_MAGNET: 'Merhaba, gamzetango.com sitesinden ulaşıyorum. "İlk 3 Derste Ne Öğreneceksiniz?" içeriğinizi gördüm ve deneme dersi almak istiyorum.',
 } as const;
+
+export type WhatsAppMessageKey = keyof typeof WHATSAPP_MESSAGES;
 
 // ============================================
 // SEO DEFAULTS

@@ -30,13 +30,12 @@ function WhatsAppIcon({ className }: { className?: string }) {
 // Constants
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { CONTACT, SOCIAL } from '@/lib/constants/site';
+import { CONTACT, SOCIAL, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants/site';
 
 const INSTAGRAM_URL = SOCIAL.INSTAGRAM;
 const INSTAGRAM_HANDLE = SOCIAL.INSTAGRAM_HANDLE;
 
 const WHATSAPP_PHONE = CONTACT.PHONE.replace('+', '');
-const WHATSAPP_MESSAGE = 'Merhaba, ben www.gamzetango.com web sitenizden ulaşıyorum. Dersler hakkında bilgi almak istiyorum.';
 
 const CONTENT = {
     tr: {
@@ -203,8 +202,7 @@ export function FloatingSocialButtons() {
     };
 
     const handleWhatsApp = () => {
-        const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-        const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
+        const whatsappUrl = getWhatsAppUrl(WHATSAPP_MESSAGES.GENERAL);
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
