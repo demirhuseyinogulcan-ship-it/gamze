@@ -184,7 +184,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'dGOPMBEO__B7xMdy-FMxLzA7vQgRsceRLsYP28CqkdU',
   },
 };
 
