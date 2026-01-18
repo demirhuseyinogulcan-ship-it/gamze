@@ -25,11 +25,11 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL('https://gamzetango.com'),
   title: {
-    default: 'Gamze Tango | Profesyonel Tango Eğitmeni - İstanbul',
-    template: '%s | Gamze Tango',
+    default: 'Gamze Yıldız Tango | İstanbul Tango Dersi & Eğitimi',
+    template: '%s | Gamze Yıldız Tango',
   },
   description:
-    'Gamze Yıldız ile profesyonel tango eğitimi. Silivri ve İstanbul\'da özel dersler, düğün dansı, lady styling ve kurumsal workshop. İstanbul\'un deneyimli tango eğitmeni.',
+    'Gamze Yıldız ile profesyonel tango dersleri. İstanbul\'da özel tango eğitimi, düğün dansı, lady styling. İlk tanışma dersi ücretsiz! ☎ 0506 228 45 07',
   keywords: [
     // Ana Anahtar Kelimeler
     'tango',
@@ -143,10 +143,10 @@ export const metadata: Metadata = {
     locale: 'tr_TR',
     alternateLocale: 'en_US',
     url: 'https://gamzetango.com',
-    siteName: 'Gamze Tango',
-    title: 'Gamze Yıldız | Profesyonel Tango Eğitmeni',
+    siteName: 'Gamze Yıldız Tango',
+    title: 'Gamze Yıldız Tango | İstanbul Tango Dersi & Eğitimi',
     description:
-      'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi.',
+      'Gamze Yıldız ile profesyonel tango dersleri. İstanbul\'da özel tango eğitimi, düğün dansı. İlk ders ücretsiz!',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -158,9 +158,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gamze Yıldız | Profesyonel Tango Eğitmeni',
+    title: 'Gamze Yıldız Tango | İstanbul Tango Dersi & Eğitimi',
     description:
-      'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi.',
+      'Gamze Yıldız ile profesyonel tango dersleri. İstanbul\'da özel tango eğitimi, düğün dansı. İlk ders ücretsiz!',
     images: ['/images/og-image.jpg'],
   },
   robots: {

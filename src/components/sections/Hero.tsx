@@ -84,25 +84,23 @@ export function Hero() {
               {hero.subtitle}
             </motion.span>
 
-            {/* Main Title */}
+            {/* Main Title - H1 includes "Tango" for SEO */}
             <motion.h1
               initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={getTransition(1, 0.4)}
-              className="heading-xl mb-4"
+              className="heading-xl mb-8"
             >
-              <span className="text-white">{hero.title}</span>
+              <span className="text-white block mb-2">{hero.title}</span>
+              <motion.span
+                initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={getTransition(0.8, 0.7)}
+                className="font-heading text-6xl md:text-7xl lg:text-8xl italic text-gold block"
+              >
+                {hero.titleHighlight}
+              </motion.span>
             </motion.h1>
-
-            {/* Tango Highlight */}
-            <motion.span
-              initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={getTransition(0.8, 0.7)}
-              className="font-heading text-6xl md:text-7xl lg:text-8xl italic text-gold mb-8"
-            >
-              {hero.titleHighlight}
-            </motion.span>
 
             {/* Description */}
             <motion.p
