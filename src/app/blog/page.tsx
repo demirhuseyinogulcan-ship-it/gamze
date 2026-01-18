@@ -1,16 +1,20 @@
 /**
- * Blog Main Page
- * Tüm blog yazılarını listeler
+ * Blog Main Page (Turkish)
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Tüm Türkçe blog yazılarını Infinite Scroll ile listeler
+ * 
+ * SEO: İlk 6 yazı SSR ile render edilir
+ * Performance: Sonraki yazılar lazy load edilir
+ * ─────────────────────────────────────────────────────────────────────────────
  */
 
 import type { Metadata } from 'next';
 import { Navbar, Footer, AmbientSound } from '@/components/ui';
 import { 
   BlogHero, 
-  BlogGrid, 
   BlogSidebar, 
-  BlogPagination,
-  PillarClustersList 
+  PillarClustersList,
+  InfiniteScrollBlog,
 } from '@/components/blog';
 import { Container } from '@/components/ui';
 import { 
@@ -18,9 +22,11 @@ import {
   getAllCategories, 
   getAllTags,
   getPillarClusters,
-  paginate 
 } from '@/lib/blog';
-import { BLOG_CONFIG } from '@/lib/constants/blog';
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Metadata
+// ─────────────────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
   title: 'Blog | Tango Dünyası',
@@ -51,13 +57,17 @@ export const metadata: Metadata = {
   },
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
 // JSON-LD Schema
+// ─────────────────────────────────────────────────────────────────────────────
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   name: 'Gamze Tango Blog',
   description: 'Arjantin tangosu hakkında yazılar, ipuçları ve deneyimler',
   url: 'https://gamzetango.com/blog',
+  inLanguage: 'tr-TR',
   author: {
     '@type': 'Person',
     name: 'Gamze Yıldız',
@@ -73,6 +83,16 @@ const jsonLd = {
   },
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Constants
+// ─────────────────────────────────────────────────────────────────────────────
+
+const INITIAL_POSTS_COUNT = 6; // İlk yüklemede gösterilecek yazı sayısı (SEO için)
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Page Component
+// ─────────────────────────────────────────────────────────────────────────────
+
 export default async function BlogPage() {
   // Blog verilerini getir
   const allPosts = await getAllPosts('tr');
@@ -80,12 +100,8 @@ export default async function BlogPage() {
   const tags = await getAllTags('tr');
   const pillarClusters = await getPillarClusters('tr');
   
-  // Sayfalama
-  const { items: posts, currentPage, totalPages } = paginate(
-    allPosts, 
-    1, 
-    BLOG_CONFIG.postsPerPage
-  );
+  // İlk yükleme için ilk N yazı (SSR - SEO friendly)
+  const initialPosts = allPosts.slice(0, INITIAL_POSTS_COUNT);
   
   return (
     <>
@@ -113,15 +129,15 @@ export default async function BlogPage() {
             
             {/* Blog Grid with Sidebar */}
             <div className="grid lg:grid-cols-[1fr_320px] gap-8 lg:gap-12">
-              {/* Main Content */}
+              {/* Main Content - Infinite Scroll */}
               <div>
-                <BlogGrid posts={posts} columns={2} showFeatured={pillarClusters.length === 0} />
-                
-                {/* Pagination */}
-                <BlogPagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  basePath="/blog"
+                <InfiniteScrollBlog
+                  initialPosts={initialPosts}
+                  allPosts={allPosts}
+                  batchSize={6}
+                  columns={2}
+                  showFeatured={pillarClusters.length === 0}
+                  locale="tr"
                 />
               </div>
               

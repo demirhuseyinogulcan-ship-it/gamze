@@ -10,6 +10,7 @@ export { BlogHero } from './BlogHero';
 export { BlogArticleHeader } from './BlogArticleHeader';
 export { TableOfContents } from './TableOfContents';
 export { PillarClusterView, PillarClustersList } from './PillarCluster';
+export { InfiniteScrollBlog } from './InfiniteScrollBlog';
 export { 
   MDXComponents, 
   CustomComponents,
