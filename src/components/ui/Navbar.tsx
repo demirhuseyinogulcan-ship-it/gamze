@@ -152,9 +152,27 @@ export function Navbar() {
     const newLocale = locale === 'tr' ? 'en' : 'tr';
     setLocale(newLocale);
     
-    // If on blog pages, navigate to the localized version
-    if (pathname.startsWith('/blog') || pathname.startsWith('/en/blog')) {
+    // Always navigate to the correct URL for SEO
+    // This ensures Google sees proper language-specific URLs
+    if (pathname === '/' || pathname === '/en') {
+      // Homepage - navigate to language-specific homepage
+      const newUrl = newLocale === 'tr' ? '/' : '/en';
+      window.location.href = newUrl;
+    } else if (pathname.startsWith('/blog') || pathname.startsWith('/en/blog')) {
+      // Blog pages - navigate to localized version
       const newUrl = getLocalizedUrl(pathname, newLocale);
+      window.location.href = newUrl;
+    } else if (pathname.startsWith('/en/')) {
+      // English location pages - navigate to Turkish equivalent
+      const turkishPath = pathname.replace('/en/', '/').replace(/^\/en$/, '/');
+      window.location.href = newLocale === 'tr' ? turkishPath : pathname;
+    } else if (!pathname.startsWith('/en/') && newLocale === 'en') {
+      // Turkish pages - navigate to English equivalent if exists
+      // For now, redirect to English homepage if no direct translation
+      window.location.href = '/en';
+    } else {
+      // Fallback: navigate to language-specific homepage
+      const newUrl = newLocale === 'tr' ? '/' : '/en';
       window.location.href = newUrl;
     }
   };

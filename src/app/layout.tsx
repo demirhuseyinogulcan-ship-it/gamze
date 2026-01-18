@@ -199,6 +199,46 @@ export const viewport: Viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    // Organization Schema - CRITICAL for Google logo display in search results
+    {
+      '@type': 'Organization',
+      '@id': 'https://gamzetango.com/#organization',
+      name: 'Gamze Tango',
+      alternateName: 'Gamze Yıldız Tango',
+      url: 'https://gamzetango.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://gamzetango.com/icons/icon-512.png',
+        width: 512,
+        height: 512,
+        caption: 'Gamze Tango Logo',
+      },
+      image: 'https://gamzetango.com/images/og-image.jpg',
+      description: 'İstanbul\'da profesyonel tango eğitimi. Özel dersler, düğün dansı, lady styling.',
+      foundingDate: '2015',
+      founder: {
+        '@type': 'Person',
+        '@id': 'https://gamzetango.com/#person',
+        name: 'Gamze Yıldız',
+        jobTitle: 'Profesyonel Tango Eğitmeni',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+905062284507',
+        contactType: 'customer service',
+        availableLanguage: ['Turkish', 'English'],
+        areaServed: 'TR',
+      },
+      sameAs: [
+        'https://www.instagram.com/gamze.tango/',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'İstanbul',
+        addressRegion: 'İstanbul',
+        addressCountry: 'TR',
+      },
+    },
     // WebSite Schema - for sitelinks
     {
       '@type': 'WebSite',
@@ -227,12 +267,7 @@ const jsonLd = {
       embedUrl: 'https://gamzetango.com/images/5.mp4',
       duration: 'PT30S',
       publisher: {
-        '@type': 'Organization',
-        name: 'Gamze Tango',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://gamzetango.com/icons/icon-512.png',
-        },
+        '@id': 'https://gamzetango.com/#organization',
       },
     },
     // Person Schema

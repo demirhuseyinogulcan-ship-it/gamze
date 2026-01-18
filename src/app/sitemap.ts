@@ -1,8 +1,12 @@
 import { MetadataRoute } from 'next';
+import { getAllPostSlugs } from '@/lib/blog';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://gamzetango.com';
   const lastModified = new Date();
+  
+  // Get all blog posts dynamically
+  const allPostSlugs = await getAllPostSlugs();
 
   return [
     // ═══════════════════════════════════════════════════════════════════════════
@@ -228,5 +232,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG POSTS - Dynamically generated from content directory
+    // ═══════════════════════════════════════════════════════════════════════════
+    ...allPostSlugs.map(({ slug, locale }) => {
+      const url = locale === 'tr' 
+        ? `${baseUrl}/blog/${slug}`
+        : `${baseUrl}/en/blog/${slug}`;
+      
+      // Determine priority based on pillar content
+      const isPillar = ['tango-rehberi', 'dugun-dansi-tango', 'lady-styling-rehberi', 
+                        'tango-guide', 'wedding-dance-tango', 'lady-styling-guide'].includes(slug);
+      
+      return {
+        url,
+        lastModified,
+        changeFrequency: 'monthly' as const,
+        priority: isPillar ? 0.9 : 0.7,
+        alternates: {
+          languages: {
+            tr: locale === 'tr' ? url : `${baseUrl}/blog/${slug}`,
+            en: locale === 'en' ? url : `${baseUrl}/en/blog/${slug}`,
+          },
+        },
+      };
+    }),
   ];
 }

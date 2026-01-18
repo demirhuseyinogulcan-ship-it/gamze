@@ -115,6 +115,46 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    // Organization Schema - CRITICAL for Google logo display
+    {
+      '@type': 'Organization',
+      '@id': 'https://gamzetango.com/#organization',
+      name: 'Gamze Tango',
+      alternateName: 'Gamze Yıldız Tango',
+      url: 'https://gamzetango.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://gamzetango.com/icons/icon-512.png',
+        width: 512,
+        height: 512,
+        caption: 'Gamze Tango Logo',
+      },
+      image: 'https://gamzetango.com/images/og-image.jpg',
+      description: 'Professional tango education in Istanbul. Private lessons, wedding dance, lady styling.',
+      foundingDate: '2015',
+      founder: {
+        '@type': 'Person',
+        '@id': 'https://gamzetango.com/en#person',
+        name: 'Gamze Yıldız',
+        jobTitle: 'Professional Tango Instructor',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+905062284507',
+        contactType: 'customer service',
+        availableLanguage: ['Turkish', 'English'],
+        areaServed: 'TR',
+      },
+      sameAs: [
+        'https://www.instagram.com/gamze.tango/',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Istanbul',
+        addressRegion: 'Istanbul',
+        addressCountry: 'TR',
+      },
+    },
     {
       '@type': 'Person',
       '@id': 'https://gamzetango.com/en#person',
@@ -129,8 +169,7 @@ const jsonLd = {
       knowsAbout: ['Argentine Tango', 'Dance Education', 'Wedding Dance', 'Lady Styling'],
       knowsLanguage: ['Turkish', 'English'],
       worksFor: {
-        '@type': 'DanceSchool',
-        name: 'Gamze Tango',
+        '@id': 'https://gamzetango.com/en#school',
       },
     },
     {
