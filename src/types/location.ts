@@ -147,6 +147,8 @@ export interface LocalBusinessSchema {
   readonly aggregateRating?: {
     readonly '@type': 'AggregateRating';
     readonly ratingValue: number;
+    readonly bestRating: number;
+    readonly worstRating: number;
     readonly reviewCount: number;
   };
 }

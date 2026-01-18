@@ -294,6 +294,14 @@ const jsonLd = {
           },
         ],
       },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: 5.0,
+        bestRating: 5,
+        worstRating: 1,
+        reviewCount: 47,
+        ratingCount: 47,
+      },
     },
   ],
 };

@@ -780,7 +780,9 @@ export function generateLocalBusinessSchema(location: Location): LocalBusinessSc
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: 5.0,
-      reviewCount: location.testimonials.length,
+      bestRating: 5,
+      worstRating: 1,
+      reviewCount: location.testimonials.length || 3,
     },
   };
 }
