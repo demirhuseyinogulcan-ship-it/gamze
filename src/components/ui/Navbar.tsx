@@ -11,7 +11,7 @@ import { Container } from './Container';
 import { MilongaToggle } from '@/components/effects';
 
 const navItems = [
-  { key: 'home', href: '#hero' },
+  { key: 'home', href: '/', isHome: true },
   { key: 'about', href: '#about' },
   { key: 'services', href: '#services' },
   { key: 'gallery', href: '#gallery' },
@@ -85,28 +85,66 @@ export function Navbar() {
     };
   }, [isOpen]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean) => {
+  // Handle scroll target from other pages (SEO-friendly navigation)
+  useEffect(() => {
+    if (pathname === '/') {
+      const scrollTarget = sessionStorage.getItem('scrollTarget');
+      if (scrollTarget) {
+        sessionStorage.removeItem('scrollTarget');
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const target = document.querySelector(scrollTarget);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, [pathname]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean, isHome?: boolean) => {
+    // External links (blog) - navigate normally
     if (isExternal) {
-      // External link - let it navigate normally
       setIsOpen(false);
       return;
     }
     
-    // Check if we're on a different page (not homepage)
-    const isOnHomepage = window.location.pathname === '/' || window.location.pathname === '';
+    // Home link - always go to clean URL "/"
+    if (isHome) {
+      setIsOpen(false);
+      // If already on homepage, scroll to top without changing URL
+      if (pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Clean up URL if it has hash
+        if (window.location.hash) {
+          window.history.replaceState(null, '', '/');
+        }
+      }
+      // Otherwise let it navigate to "/"
+      return;
+    }
+    
+    // Check if we're on homepage
+    const isOnHomepage = pathname === '/';
     
     if (!isOnHomepage) {
-      // Navigate to homepage with the anchor
+      // Navigate to homepage, then scroll to section
+      // Use replaceState to avoid /#section in URL
       setIsOpen(false);
-      window.location.href = '/' + href;
+      // Store target section in sessionStorage for after navigation
+      sessionStorage.setItem('scrollTarget', href);
+      window.location.href = '/';
       return;
     }
     
+    // On homepage - smooth scroll without changing URL
     e.preventDefault();
     setIsOpen(false);
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+      // Don't add hash to URL - keeps URL clean for SEO
     }
   };
 
@@ -144,10 +182,10 @@ export function Navbar() {
       >
         <Container>
           <nav className="flex items-center justify-between" role="navigation" aria-label="Ana navigasyon">
-            {/* Logo */}
+            {/* Logo - Always links to clean homepage URL */}
             <motion.a
-              href="#hero"
-              onClick={(e) => handleNavClick(e, '#hero')}
+              href="/"
+              onClick={(e) => handleNavClick(e, '/', false, true)}
               className="relative z-10 group"
               whileHover={{ scale: 1.02 }}
             >
@@ -160,11 +198,13 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => {
                 const href = getNavHref(item);
+                const isHome = 'isHome' in item ? item.isHome : false;
+                const isExternal = 'isExternal' in item ? item.isExternal : false;
                 return (
                   <motion.a
                     key={item.key}
                     href={href}
-                    onClick={(e) => handleNavClick(e, href, 'isExternal' in item ? item.isExternal : false)}
+                    onClick={(e) => handleNavClick(e, href, isExternal, isHome)}
                     className="nav-link text-sm uppercase tracking-wider"
                     whileHover={{ y: -2 }}
                   >
@@ -240,11 +280,13 @@ export function Navbar() {
               <div className="flex flex-col justify-center h-full px-8 py-20">
                 {navItems.map((item, index) => {
                   const href = getNavHref(item);
+                  const isExternal = 'isExternal' in item ? item.isExternal : false;
+                  const isHome = 'isHome' in item ? item.isHome : false;
                   return (
                     <motion.a
                       key={item.key}
                       href={href}
-                      onClick={(e) => handleNavClick(e, href, 'isExternal' in item ? item.isExternal : false)}
+                      onClick={(e) => handleNavClick(e, href, isExternal, isHome)}
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.2 }}
