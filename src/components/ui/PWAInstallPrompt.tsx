@@ -32,9 +32,12 @@ const CONTENT = {
     installButton: 'Yükle',
     dismissButton: 'Daha sonra',
     iosTitle: 'Ana Ekrana Ekle',
-    iosStep1: 'Alt menüden',
-    iosStep2: 'simgesine tıklayın',
-    iosStep3: '"Ana Ekrana Ekle" seçin',
+    iosDescription: 'Gamze Tango\'yu uygulama gibi kullanın!',
+    iosStep1: 'Alttaki',
+    iosStep1b: '(Paylaş) simgesine dokunun',
+    iosStep2: 'Aşağı kaydırın ve',
+    iosStep2b: '"Ana Ekrana Ekle" seçin',
+    iosStep3: 'Sağ üstten "Ekle" butonuna dokunun',
     iosClose: 'Anladım',
     installed: 'Uygulama yüklendi!',
   },
@@ -44,9 +47,12 @@ const CONTENT = {
     installButton: 'Install',
     dismissButton: 'Later',
     iosTitle: 'Add to Home Screen',
+    iosDescription: 'Use Gamze Tango like an app!',
     iosStep1: 'Tap the',
-    iosStep2: 'icon below',
-    iosStep3: 'Select "Add to Home Screen"',
+    iosStep1b: '(Share) icon below',
+    iosStep2: 'Scroll down and tap',
+    iosStep2b: '"Add to Home Screen"',
+    iosStep3: 'Tap "Add" in the top right',
     iosClose: 'Got it',
     installed: 'App installed!',
   },
@@ -75,12 +81,12 @@ function shouldShowPrompt(): boolean {
   // Don't show if already installed
   if (isStandalone()) return false;
   
-  // Check if user dismissed recently (24 hours)
+  // Check if user dismissed recently (1 hour for testing, can increase later)
   const dismissed = localStorage.getItem('pwa-dismissed');
   if (dismissed) {
     const dismissedTime = parseInt(dismissed, 10);
     const hoursSinceDismissed = (Date.now() - dismissedTime) / (1000 * 60 * 60);
-    if (hoursSinceDismissed < 24) return false;
+    if (hoursSinceDismissed < 1) return false;
   }
   
   return true;
@@ -116,30 +122,44 @@ function IOSInstructions({
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/20">
           <Smartphone className="h-6 w-6 text-gold" />
         </div>
-        <h3 className="font-display text-lg font-medium text-cream">
-          {content.iosTitle}
-        </h3>
+        <div>
+          <h3 className="font-display text-lg font-medium text-cream">
+            {content.iosTitle}
+          </h3>
+          <p className="text-sm text-cream/60">{content.iosDescription}</p>
+        </div>
       </div>
 
-      <ol className="mb-4 space-y-3 text-sm text-cream/70">
-        <li className="flex items-center gap-2">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
+      <ol className="mb-5 space-y-4 text-sm text-cream/80">
+        <li className="flex items-start gap-3">
+          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
             1
           </span>
           <span>
             {content.iosStep1}{' '}
-            <Share className="inline h-4 w-4 text-gold" />{' '}
-            {content.iosStep2}
+            <span className="inline-flex items-center gap-1 rounded bg-blue-500/20 px-2 py-0.5">
+              <Share className="h-4 w-4 text-blue-400" />
+            </span>{' '}
+            {content.iosStep1b}
           </span>
         </li>
-        <li className="flex items-center gap-2">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
+        <li className="flex items-start gap-3">
+          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
             2
           </span>
-          <span className="flex items-center gap-1">
-            <Plus className="inline h-4 w-4 text-gold" />
-            {content.iosStep3}
+          <span>
+            {content.iosStep2}{' '}
+            <span className="inline-flex items-center gap-1 rounded bg-gold/20 px-2 py-0.5 text-gold">
+              <Plus className="h-4 w-4" />
+              {content.iosStep2b}
+            </span>
           </span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
+            3
+          </span>
+          <span>{content.iosStep3}</span>
         </li>
       </ol>
 
@@ -173,20 +193,20 @@ export function PWAInstallPrompt() {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
       
-      // Show prompt after 30 seconds on page
+      // Show prompt after 10 seconds on page (Android/Chrome)
       setTimeout(() => {
         setInstallState('prompt');
-      }, 30000);
+      }, 10000);
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstall);
 
-    // Check if iOS after a delay
+    // Check if iOS - show after 5 seconds for better UX
     setTimeout(() => {
-      if (isIOS() && shouldShowPrompt()) {
+      if (isIOS() && shouldShowPrompt() && !isStandalone()) {
         setInstallState('ios-instructions');
       }
-    }, 45000);
+    }, 5000);
 
     // Listen for successful install
     window.addEventListener('appinstalled', () => {
