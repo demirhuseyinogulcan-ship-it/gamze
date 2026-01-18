@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Heart, Sparkles, Building2, ArrowRight } from 'lucide-react';
+import { Users, Heart, Sparkles, Building2, ArrowRight, MapPin } from 'lucide-react';
+import Link from 'next/link';
 import { useTranslation } from '@/lib/i18n';
 import { Container, SectionTitle, Button } from '@/components/ui';
 
@@ -12,9 +13,26 @@ const serviceIcons = {
   corporate: Building2,
 };
 
+// Location links for internal linking - boosts SEO
+const locationLinks = {
+  tr: [
+    { name: 'Kadıköy', href: '/kadikoy-ozel-tango-dersi' },
+    { name: 'Beyoğlu', href: '/beyoglu-ozel-tango-dersi' },
+    { name: 'Silivri', href: '/silivri-ozel-tango-dersi' },
+    { name: 'İstanbul', href: '/istanbul-ozel-tango-dersi' },
+  ],
+  en: [
+    { name: 'Kadıköy', href: '/en/tango-lessons-kadikoy' },
+    { name: 'Beyoğlu', href: '/en/tango-lessons-beyoglu' },
+    { name: 'Silivri', href: '/en/tango-lessons-silivri' },
+    { name: 'Istanbul', href: '/en/private-tango-lessons-istanbul' },
+  ],
+};
+
 export function Services() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const services = t('services');
+  const locations = locationLinks[locale] || locationLinks.tr;
 
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
@@ -100,6 +118,33 @@ export function Services() {
             );
           })}
         </div>
+
+        {/* Location Links Section - Internal Linking for SEO */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 pt-12 border-t border-white/10"
+        >
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <MapPin className="w-5 h-5 text-gold" />
+            <h3 className="font-heading text-xl text-white">
+              {locale === 'en' ? 'Our Locations' : 'Lokasyonlarımız'}
+            </h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {locations.map((location) => (
+              <Link
+                key={location.href}
+                href={location.href}
+                className="px-6 py-3 bg-midnight border border-white/10 rounded-sm text-white/80 hover:text-gold hover:border-gold/30 transition-all duration-300"
+              >
+                {location.name}
+              </Link>
+            ))}
+          </div>
+        </motion.div>
       </Container>
     </section>
   );

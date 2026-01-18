@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
@@ -76,8 +76,31 @@ export function FAQ() {
     return idx + itemIndex;
   };
 
+  // Generate FAQPage Schema for SEO - rich snippets in Google
+  const faqSchema = useMemo(() => {
+    const allFaqs = categories.flatMap(cat => cat.items);
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: allFaqs.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer.replace(/\n/g, ' ').replace(/•/g, '-'),
+        },
+      })),
+    };
+  }, [categories]);
+
   return (
     <section id="faq" className="section-padding bg-midnight-50 relative overflow-hidden">
+      {/* FAQPage Schema for rich snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
       {/* Background Pattern - pointer-events-none eklendi */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div 

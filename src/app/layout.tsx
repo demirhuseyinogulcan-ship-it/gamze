@@ -199,6 +199,43 @@ export const viewport: Viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    // WebSite Schema - for sitelinks
+    {
+      '@type': 'WebSite',
+      '@id': 'https://gamzetango.com/#website',
+      name: 'Gamze Tango',
+      url: 'https://gamzetango.com',
+      description: 'İstanbul\'da profesyonel tango eğitimi. Özel dersler, düğün dansı, lady styling.',
+      publisher: {
+        '@id': 'https://gamzetango.com/#organization',
+      },
+      inLanguage: ['tr-TR', 'en-US'],
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://gamzetango.com/blog?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    // VideoObject Schema - for hero video
+    {
+      '@type': 'VideoObject',
+      name: 'Gamze Yıldız Tango - İstanbul Tango Dersleri',
+      description: 'Gamze Yıldız ile profesyonel tango eğitimi. İstanbul\'da Silivri, Kadıköy ve Beyoğlu lokasyonlarında özel tango dersleri.',
+      thumbnailUrl: 'https://gamzetango.com/images/0.jpg',
+      uploadDate: '2024-01-01T00:00:00+03:00',
+      contentUrl: 'https://gamzetango.com/images/5.mp4',
+      embedUrl: 'https://gamzetango.com/images/5.mp4',
+      duration: 'PT30S',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Gamze Tango',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://gamzetango.com/icons/icon-512.png',
+        },
+      },
+    },
+    // Person Schema
     {
       '@type': 'Person',
       '@id': 'https://gamzetango.com/#person',
@@ -216,6 +253,7 @@ const jsonLd = {
         name: 'Gamze Tango',
       },
     },
+    // DanceSchool Schema
     {
       '@type': 'DanceSchool',
       '@id': 'https://gamzetango.com/#school',

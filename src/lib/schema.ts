@@ -195,3 +195,53 @@ export function generateWebSiteSchema() {
     },
   };
 }
+
+/**
+ * Generate FAQPage Schema
+ * Helps get rich snippets in Google search results with FAQ accordion
+ */
+export function generateFAQPageSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Generate VideoObject Schema
+ * Helps videos appear in Google Video search and rich results
+ */
+export function generateVideoSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Gamze Yıldız Tango - İstanbul Tango Dersleri',
+    description: 'Gamze Yıldız ile profesyonel tango eğitimi. İstanbul\'da Silivri, Kadıköy ve Beyoğlu lokasyonlarında özel tango dersleri.',
+    thumbnailUrl: `${SITE.URL}/images/0.jpg`,
+    uploadDate: '2024-01-01T00:00:00+03:00',
+    contentUrl: `${SITE.URL}/images/5.mp4`,
+    embedUrl: `${SITE.URL}/images/5.mp4`,
+    duration: 'PT30S',
+    interactionStatistic: {
+      '@type': 'InteractionCounter',
+      interactionType: { '@type': 'WatchAction' },
+      userInteractionCount: 5000,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Gamze Tango',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE.URL}/icons/icon-512.png`,
+      },
+    },
+  };
+}
