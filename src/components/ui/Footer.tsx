@@ -12,31 +12,37 @@ const socialLinks = [
 ];
 
 // SEO-critical location pages - these create internal links for Google
+// Bilingual links - Turkish and English versions
 const locationPages = [
   {
-    href: '/istanbul-ozel-tango-dersi',
+    hrefTr: '/istanbul-ozel-tango-dersi',
+    hrefEn: '/en/private-tango-lessons-istanbul',
     labelTr: 'İstanbul Özel Tango Dersi',
-    labelEn: 'Istanbul Private Tango Lesson',
+    labelEn: 'Private Tango Lessons Istanbul',
   },
   {
-    href: '/kadikoy-ozel-tango-dersi',
+    hrefTr: '/kadikoy-ozel-tango-dersi',
+    hrefEn: '/en/tango-lessons-kadikoy',
     labelTr: 'Kadıköy Özel Tango Dersi',
-    labelEn: 'Kadıköy Private Tango Lesson',
+    labelEn: 'Tango Lessons Kadıköy',
   },
   {
-    href: '/beyoglu-ozel-tango-dersi',
+    hrefTr: '/beyoglu-ozel-tango-dersi',
+    hrefEn: '/en/tango-lessons-beyoglu',
     labelTr: 'Beyoğlu Özel Tango Dersi',
-    labelEn: 'Beyoğlu Private Tango Lesson',
+    labelEn: 'Tango Lessons Beyoğlu',
   },
   {
-    href: '/silivri-ozel-tango-dersi',
+    hrefTr: '/silivri-ozel-tango-dersi',
+    hrefEn: '/en/tango-lessons-silivri',
     labelTr: 'Silivri Özel Tango Dersi',
-    labelEn: 'Silivri Private Tango Lesson',
+    labelEn: 'Tango Lessons Silivri',
   },
   {
-    href: '/istanbul-tango-kursu',
+    hrefTr: '/istanbul-tango-kursu',
+    hrefEn: '/en/wedding-dance-istanbul',
     labelTr: 'İstanbul Tango Kursu',
-    labelEn: 'Istanbul Tango Course',
+    labelEn: 'Wedding Dance Istanbul',
   },
 ];
 
@@ -141,17 +147,20 @@ export function Footer() {
                 {isTurkish ? 'Özel Ders Lokasyonları' : 'Lesson Locations'}
               </h4>
               <ul className="space-y-2.5">
-                {locationPages.map((location) => (
-                  <li key={location.href}>
-                    <Link
-                      href={location.href}
-                      className="text-white/60 hover:text-gold transition-colors duration-300 text-sm inline-flex items-center gap-1.5 group"
-                    >
-                      <MapPin size={12} className="text-gold/60 flex-shrink-0" />
-                      {isTurkish ? location.labelTr : location.labelEn}
-                    </Link>
-                  </li>
-                ))}
+                {locationPages.map((location) => {
+                  const href = isTurkish ? location.hrefTr : location.hrefEn;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="text-white/60 hover:text-gold transition-colors duration-300 text-sm inline-flex items-center gap-1.5 group"
+                      >
+                        <MapPin size={12} className="text-gold/60 flex-shrink-0" />
+                        {isTurkish ? location.labelTr : location.labelEn}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </motion.div>
 

@@ -138,6 +138,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Gamze Yıldız' }],
   creator: 'Gamze Yıldız',
+  // Hreflang for international SEO
+  alternates: {
+    canonical: 'https://gamzetango.com',
+    languages: {
+      'tr-TR': 'https://gamzetango.com',
+      'en-US': 'https://gamzetango.com/en',
+      'x-default': 'https://gamzetango.com',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'tr_TR',

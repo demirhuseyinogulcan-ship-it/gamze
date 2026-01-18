@@ -5,129 +5,152 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return [
-    // Main Pages
+    // ═══════════════════════════════════════════════════════════════════════════
+    // MAIN PAGES - Turkish (Priority 1.0)
+    // ═══════════════════════════════════════════════════════════════════════════
     {
       url: baseUrl,
       lastModified,
       changeFrequency: 'weekly',
       priority: 1,
+      alternates: {
+        languages: {
+          tr: baseUrl,
+          en: `${baseUrl}/en`,
+        },
+      },
     },
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // MAIN PAGES - English (Priority 0.9)
+    // ═══════════════════════════════════════════════════════════════════════════
     {
       url: `${baseUrl}/en`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
+      alternates: {
+        languages: {
+          tr: baseUrl,
+          en: `${baseUrl}/en`,
+        },
+      },
     },
 
-    // Section Anchors
-    {
-      url: `${baseUrl}/#about`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#services`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#gallery`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/#schedule`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // Location Pages - HIGH PRIORITY FOR LOCAL SEO
-    // These are the main landing pages for "özel tango dersi" searches
-    // ─────────────────────────────────────────────────────────────────────────
-
-    // Main İstanbul Page (Highest Priority)
+    // ═══════════════════════════════════════════════════════════════════════════
+    // LOCATION PAGES - Turkish (Priority 1.0 - Local SEO Critical)
+    // ═══════════════════════════════════════════════════════════════════════════
+    
+    // İstanbul - Main
     {
       url: `${baseUrl}/istanbul-ozel-tango-dersi`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 1.0,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/istanbul-ozel-tango-dersi`,
+          en: `${baseUrl}/en/private-tango-lessons-istanbul`,
+        },
+      },
     },
-
-    // Silivri Page
     {
-      url: `${baseUrl}/silivri-ozel-tango-dersi`,
+      url: `${baseUrl}/istanbul-tango-kursu`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
 
-    // Kadıköy Page (Anadolu Yakası)
+    // Kadıköy - Anadolu Yakası
     {
       url: `${baseUrl}/kadikoy-ozel-tango-dersi`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/kadikoy-ozel-tango-dersi`,
+          en: `${baseUrl}/en/tango-lessons-kadikoy`,
+        },
+      },
     },
 
-    // Beyoğlu Page (Avrupa Yakası)
+    // Beyoğlu - Avrupa Yakası
     {
       url: `${baseUrl}/beyoglu-ozel-tango-dersi`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/beyoglu-ozel-tango-dersi`,
+          en: `${baseUrl}/en/tango-lessons-beyoglu`,
+        },
+      },
     },
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Legal Pages (Turkish)
-    // ─────────────────────────────────────────────────────────────────────────
+    // Silivri
     {
-      url: `${baseUrl}/gizlilik-politikasi`,
+      url: `${baseUrl}/silivri-ozel-tango-dersi`,
       lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/kullanim-sartlari`,
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/silivri-ozel-tango-dersi`,
+          en: `${baseUrl}/en/tango-lessons-silivri`,
+        },
+      },
     },
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Legal Pages (English)
-    // ─────────────────────────────────────────────────────────────────────────
+    // ═══════════════════════════════════════════════════════════════════════════
+    // LOCATION PAGES - English (Priority 0.9)
+    // ═══════════════════════════════════════════════════════════════════════════
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/en/private-tango-lessons-istanbul`,
       lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
-      url: `${baseUrl}/terms-of-use`,
+      url: `${baseUrl}/en/tango-lessons-kadikoy`,
       lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/en/tango-lessons-beyoglu`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/en/tango-lessons-silivri`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/en/wedding-dance-istanbul`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
 
-    // ─────────────────────────────────────────────────────────────────────────
-    // Blog Pages - HIGH PRIORITY FOR CONTENT SEO
-    // ─────────────────────────────────────────────────────────────────────────
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG PAGES - Turkish (Priority 0.9)
+    // ═══════════════════════════════════════════════════════════════════════════
     {
       url: `${baseUrl}/blog`,
       lastModified,
       changeFrequency: 'daily',
       priority: 0.9,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/blog`,
+          en: `${baseUrl}/en/blog`,
+        },
+      },
     },
     // Pillar Content (Highest Priority)
     {
@@ -166,6 +189,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG PAGES - English (Priority 0.85)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      url: `${baseUrl}/en/blog`,
+      lastModified,
+      changeFrequency: 'daily',
+      priority: 0.85,
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // LEGAL PAGES (Low Priority)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      url: `${baseUrl}/gizlilik-politikasi`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/kullanim-sartlari`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms-of-use`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 }

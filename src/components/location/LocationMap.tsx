@@ -14,7 +14,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Bus, Car, Train, Ship, Clock, Navigation } from 'lucide-react';
+import { MapPin, Bus, Car, Train, Ship, Clock, Navigation, TramFront } from 'lucide-react';
 import type { LocationMapProps, LocationAccess } from '@/types/location';
 
 // Transport icon mapping
@@ -24,6 +24,7 @@ const transportIcons: Record<LocationAccess['type'], typeof Bus> = {
   train: Train,
   metro: Train,
   ferry: Ship,
+  tram: TramFront,
 };
 
 // Animation variants

@@ -54,7 +54,7 @@ export interface LocationTestimonial {
 
 // Transportation/access information
 export interface LocationAccess {
-  readonly type: 'metro' | 'bus' | 'car' | 'train' | 'ferry';
+  readonly type: 'metro' | 'bus' | 'car' | 'train' | 'ferry' | 'tram';
   readonly name: string;
   readonly distance: string;
   readonly walkTime?: string;
