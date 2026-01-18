@@ -144,11 +144,4 @@ export interface LocalBusinessSchema {
     readonly closes: string;
   }[];
   readonly priceRange: string;
-  readonly aggregateRating?: {
-    readonly '@type': 'AggregateRating';
-    readonly ratingValue: number;
-    readonly bestRating: number;
-    readonly worstRating: number;
-    readonly reviewCount: number;
-  };
 }
