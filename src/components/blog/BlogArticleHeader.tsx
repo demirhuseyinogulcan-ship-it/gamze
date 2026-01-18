@@ -110,10 +110,11 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
           
           {/* Meta Row */}
           <div className="flex flex-wrap items-center gap-6 pb-8 border-b border-white/10">
-            {/* Author */}
+            {/* Author - Links to About section */}
             <Link
-              href={`${basePath}/yazar/${frontmatter.author}`}
+              href="/#about"
               className="flex items-center gap-3 group"
+              title={locale === 'tr' ? 'Gamze Yıldız hakkında daha fazla bilgi' : 'Learn more about Gamze Yıldız'}
             >
               <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-gold/30 group-hover:ring-gold transition-all">
                 <Image
@@ -127,7 +128,7 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
                 <span className="block text-white group-hover:text-gold transition-colors">
                   {author?.name}
                 </span>
-                <span className="text-white/50 text-sm">
+                <span className="text-white/50 text-sm group-hover:text-gold/70 transition-colors">
                   {locale === 'tr' ? 'Tango Eğitmeni' : 'Tango Instructor'}
                 </span>
               </div>
