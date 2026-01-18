@@ -47,8 +47,8 @@ export const SITE = {
 // ============================================
 
 export const SOCIAL = {
-  INSTAGRAM: 'https://instagram.com/gamzetango',
-  INSTAGRAM_HANDLE: '@gamzetango',
+  INSTAGRAM: 'https://www.instagram.com/gamze.tango/',
+  INSTAGRAM_HANDLE: '@gamze.tango',
   YOUTUBE: 'https://youtube.com/@gamzetango',
   FACEBOOK: 'https://facebook.com/gamzetango',
   WHATSAPP: CONTACT.WHATSAPP_BASE,

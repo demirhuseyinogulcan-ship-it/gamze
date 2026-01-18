@@ -258,7 +258,7 @@ export const BLOG_AUTHORS: BlogAuthor[] = [
     },
     image: '/images/optimized/hakkimda.webp',
     social: {
-      instagram: 'https://instagram.com/gamzetango',
+      instagram: 'https://www.instagram.com/gamze.tango/',
       website: 'https://gamzetango.com',
     },
   },
