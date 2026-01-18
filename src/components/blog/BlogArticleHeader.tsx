@@ -94,7 +94,6 @@ export function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
             href={`${basePath}/kategori/${frontmatter.category}`}
             className="inline-flex items-center gap-2 text-gold text-sm uppercase tracking-wider hover:text-gold-light transition-colors mb-4"
           >
-            <span>{category?.icon}</span>
             <span>{category?.name[locale]}</span>
           </Link>
           

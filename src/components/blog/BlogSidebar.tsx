@@ -81,7 +81,6 @@ export function BlogSidebar({
                   }`}
                 >
                   <span className="flex items-center gap-2">
-                    <span>{info?.icon}</span>
                     <span>{info?.name[locale]}</span>
                   </span>
                   {count > 0 && (

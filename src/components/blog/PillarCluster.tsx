@@ -51,7 +51,7 @@ export function PillarClusterView({ data, locale = 'tr' }: PillarClusterProps) {
               
               {/* Category */}
               <span className="block text-gold text-sm uppercase tracking-wider mb-2">
-                {category?.icon} {category?.name[locale]}
+                {category?.name[locale]}
               </span>
               
               {/* Title */}

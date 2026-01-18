@@ -17,7 +17,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Arjantin tangosunun temelleri, tarihi ve felsefesi',
       en: 'Fundamentals, history and philosophy of Argentine Tango',
     },
-    icon: '💃',
+    icon: '',
     color: '#d4af37', // gold
   },
   {
@@ -30,7 +30,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Tango öğrenme süreci, ipuçları ve başlangıç rehberi',
       en: 'Tango learning process, tips and beginner guide',
     },
-    icon: '📚',
+    icon: '',
     color: '#8b1a1a', // crimson
   },
   {
@@ -43,7 +43,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Düğün dansı tango hazırlığı ve performans ipuçları',
       en: 'Wedding dance tango preparation and performance tips',
     },
-    icon: '💒',
+    icon: '',
     color: '#e6c65c', // gold-light
   },
   {
@@ -56,7 +56,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Kadınlar için tango stilizasyonu ve zarafet',
       en: 'Tango styling and elegance for women',
     },
-    icon: '✨',
+    icon: '',
     color: '#d4af37',
   },
   {
@@ -69,7 +69,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Tango teknikleri, adımlar ve figürler',
       en: 'Tango techniques, steps and figures',
     },
-    icon: '🎯',
+    icon: '',
     color: '#b8972e', // gold-dark
   },
   {
@@ -82,7 +82,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Milonga, tango müziği ve kültürel etkinlikler',
       en: 'Milonga, tango music and cultural events',
     },
-    icon: '🎭',
+    icon: '',
     color: '#6b1515', // crimson-muted
   },
   {
@@ -95,7 +95,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Tango etkinlikleri, festivaller ve milongalar',
       en: 'Tango events, festivals and milongas',
     },
-    icon: '🎉',
+    icon: '',
     color: '#a52a2a', // crimson-light
   },
   {
@@ -108,7 +108,7 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
       tr: 'Tango ile ilgili pratik ipuçları ve öneriler',
       en: 'Practical tips and recommendations about tango',
     },
-    icon: '💡',
+    icon: '',
     color: '#d4af37',
   },
 ];

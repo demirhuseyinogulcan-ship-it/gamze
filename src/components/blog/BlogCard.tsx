@@ -67,7 +67,7 @@ export function BlogCard({ post, index = 0, variant = 'default' }: BlogCardProps
             <div className="p-6 md:p-10 flex flex-col justify-center">
               {/* Category */}
               <span className="text-gold text-sm font-medium uppercase tracking-wider mb-3">
-                {category?.icon} {category?.name[post.locale]}
+                {category?.name[post.locale]}
               </span>
               
               {/* Title */}
@@ -162,7 +162,7 @@ export function BlogCard({ post, index = 0, variant = 'default' }: BlogCardProps
           
           {/* Category Badge */}
           <div className="absolute top-4 left-4 bg-midnight/80 backdrop-blur-sm text-gold px-3 py-1 text-xs font-medium uppercase tracking-wider rounded-sm">
-            {category?.icon} {category?.name[post.locale]}
+            {category?.name[post.locale]}
           </div>
           
           {/* Pillar Badge */}
