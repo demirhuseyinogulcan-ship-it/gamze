@@ -34,36 +34,36 @@ export const MDXComponents = {
       {children}
     </h4>
   ),
-  
+
   // Paragraf
   p: ({ children }: { children: ReactNode }) => (
-    <p className="text-white/80 text-lg leading-relaxed mb-6">
+    <p className="text-white/70 text-lg leading-loose mb-8">
       {children}
     </p>
   ),
-  
+
   // Listeler
   ul: ({ children }: { children: ReactNode }) => (
-    <ul className="list-none space-y-3 mb-6 pl-6">
+    <ul className="list-none space-y-4 mb-8 pl-6">
       {children}
     </ul>
   ),
   ol: ({ children }: { children: ReactNode }) => (
-    <ol className="list-decimal list-inside space-y-3 mb-6 text-white/80">
+    <ol className="list-decimal list-inside space-y-4 mb-8 text-white/70">
       {children}
     </ol>
   ),
   li: ({ children }: { children: ReactNode }) => (
-    <li className="text-white/80 flex items-start gap-3">
+    <li className="text-white/70 flex items-start gap-3 leading-relaxed">
       <span className="w-2 h-2 bg-gold rounded-full mt-2.5 flex-shrink-0" />
       <span>{children}</span>
     </li>
   ),
-  
+
   // Linkler
   a: ({ href, children }: { href?: string; children: ReactNode }) => {
     const isExternal = href?.startsWith('http');
-    
+
     if (isExternal) {
       return (
         <a
@@ -76,14 +76,14 @@ export const MDXComponents = {
         </a>
       );
     }
-    
+
     return (
       <Link href={href || '#'} className="text-gold hover:text-gold-light underline underline-offset-4 transition-colors">
         {children}
       </Link>
     );
   },
-  
+
   // Kalın ve italik
   strong: ({ children }: { children: ReactNode }) => (
     <strong className="font-semibold text-white">{children}</strong>
@@ -91,14 +91,14 @@ export const MDXComponents = {
   em: ({ children }: { children: ReactNode }) => (
     <em className="italic text-gold/90">{children}</em>
   ),
-  
+
   // Alıntı
   blockquote: ({ children }: { children: ReactNode }) => (
-    <blockquote className="border-l-4 border-gold pl-6 py-4 my-8 bg-gold/5 rounded-r-sm">
-      <div className="text-white/90 italic text-lg">{children}</div>
+    <blockquote className="border-l-4 border-gold pl-6 py-4 my-10 bg-gold/5 rounded-r-sm">
+      <div className="text-white/80 italic text-lg leading-relaxed">{children}</div>
     </blockquote>
   ),
-  
+
   // Kod
   code: ({ children }: { children: ReactNode }) => (
     <code className="bg-midnight-50 text-gold px-2 py-1 rounded text-sm font-mono">
@@ -110,12 +110,12 @@ export const MDXComponents = {
       {children}
     </pre>
   ),
-  
+
   // Yatay çizgi
   hr: () => (
     <hr className="border-none h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent my-12" />
   ),
-  
+
   // Resim
   img: ({ src, alt }: { src?: string; alt?: string }) => (
     <figure className="my-8">
@@ -134,7 +134,7 @@ export const MDXComponents = {
       )}
     </figure>
   ),
-  
+
   // Tablo
   table: ({ children }: { children: ReactNode }) => (
     <div className="overflow-x-auto mb-6">
@@ -187,10 +187,10 @@ export function Callout({ type = 'info', title, children }: CalloutProps) {
       iconColor: 'text-gold',
     },
   };
-  
+
   const style = styles[type];
   const Icon = style.icon;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -202,9 +202,9 @@ export function Callout({ type = 'info', title, children }: CalloutProps) {
         <Icon className={`${style.iconColor} flex-shrink-0 mt-1`} size={24} />
         <div>
           {title && (
-            <h4 className="font-heading text-lg text-white mb-2">{title}</h4>
+            <h4 className="font-heading text-lg text-white mb-3">{title}</h4>
           )}
-          <div className="text-white/80">{children}</div>
+          <div className="text-white/75 leading-relaxed">{children}</div>
         </div>
       </div>
     </motion.div>
@@ -277,7 +277,7 @@ export function VideoEmbed({ url, title }: VideoEmbedProps) {
   const embedUrl = url.includes('youtube.com/watch')
     ? url.replace('watch?v=', 'embed/')
     : url;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
