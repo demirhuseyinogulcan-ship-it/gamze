@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamze Yıldız Tango - Kartvizit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================
+       CARD DIMENSIONS - 8.5cm x 5.5cm
+       At 300 DPI: 1004px x 650px
+       At 96 DPI (screen): 323px x 209px
+       Using 3.11x scale for better quality
+    ============================================ */
+    
+    .card {
+      width: 1004px;
+      height: 650px;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transform: scale(0.5);
+      transform-origin: center;
+    }
+
+    /* ============================================
+       FRONT SIDE - Ön Yüz
+    ============================================ */
+    
+    .card-front {
+      background: #0c0c0c;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      position: relative;
+      gap: 32px;
+    }
+
+    /* Subtle corner accent */
+    .card-front::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      border-top: 2px solid rgba(212, 175, 55, 0.2);
+      border-left: 2px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+    }
+
+    .card-front::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+      border-right: 2px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+    }
+
+    .centered-brand {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-name .highlight {
+      font-style: italic;
+      color: #d4af37;
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #d4af37;
+      opacity: 0.4;
+    }
+
+    .minimal-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: 'Urbanist', sans-serif;
+      font-size: 18px;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: #d4af37;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .contact-value {
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.02em;
+    }
+
+    .locations-minimal {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dot {
+      color: #d4af37;
+      opacity: 0.3;
+    }
+
+
+    /* ============================================
+       BACK SIDE - Arka Yüz
+    ============================================ */
+    
+    .card-back {
+      background: #0c0c0c;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Profile Image Overlay */
+    .profile-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://gamzetango.com/images/optimized/hakkimda.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.06;
+      filter: grayscale(100%);
+      pointer-events: none;
+    }
+
+    /* Subtle corner accent */
+    .card-back::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      border-top: 2px solid rgba(212, 175, 55, 0.2);
+      border-right: 2px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+    }
+
+    .card-back::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+      border-left: 2px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+    }
+
+    .back-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+    }
+
+    .quote-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 400;
+      font-style: italic;
+      color: white;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .quote-author {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #d4af37;
+      letter-spacing: 0.05em;
+    }
+
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .qr-container {
+      width: 160px;
+      height: 160px;
+      padding: 12px;
+      background: white;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-placeholder {
+      width: 100%;
+      height: 100%;
+    }
+
+    .qr-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-label {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================================
+       PRINT STYLES
+    ============================================ */
+    
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+
+      .card {
+        width: 8.5cm;
+        height: 5.5cm;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        page-break-after: always;
+      }
+
+      .card-front,
+      .card-back {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
+      }
+    }
+
+    /* ============================================
+       RESPONSIVE - Screen Preview
+    ============================================ */
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+      
+      .card {
+        transform: scale(0.3);
+      }
+    }
+
+    /* ============================================
+       CONTROLS
+    ============================================ */
+    
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .controls button {
+      background: #d4af37;
+      color: #0c0c0c;
+      border: none;
+      padding: 12px 24px;
+      font-family: 'Urbanist', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .controls button:hover {
+      background: #c49d2f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .info {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      font-family: 'Urbanist', sans-serif;
+      font-size: 14px;
+      color: #666;
+      max-width: 300px;
+    }
+
+    .info strong {
+      color: #0c0c0c;
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- CONTROLS -->
+  <div class="controls">
+    <button onclick="window.print()">🖨️ Yazdır / PDF Kaydet</button>
+  </div>
+
+  <!-- INFO -->
+  <div class="info">
+    <strong>📏 Boyutlar</strong>
+    8.5cm x 5.5cm (standart kartvizit)<br>
+    300 DPI print-ready<br>
+    <br>
+    <strong>💡 İpucu</strong>
+    "Yazdır" butonuna basıp PDF olarak kaydedebilirsiniz.
+  </div>
+
+  <!-- FRONT SIDE - ÖN YÜZ -->
+  <div class="card card-front">
+    <!-- Centered Brand -->
+    <div class="centered-brand">
+      <div class="brand-name">
+        Gamze <span class="highlight">Yıldız</span>
+      </div>
+      <div class="tagline">Profesyonel Tango Eğitmeni</div>
+    </div>
+    
+    <!-- Divider Line -->
+    <div class="divider"></div>
+    
+    <!-- Contact Info - Minimal -->
+    <div class="minimal-contact">
+      <div class="contact-row">
+        <span class="contact-label">T</span>
+        <span class="contact-value">0506 228 45 07</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">E</span>
+        <span class="contact-value">info@gamzetango.com</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">W</span>
+        <span class="contact-value">gamzetango.com</span>
+      </div>
+    </div>
+    
+    <!-- Locations -->
+    <div class="locations-minimal">
+      <span>Kadıköy</span>
+      <span class="dot">•</span>
+      <span>Beyoğlu</span>
+      <span class="dot">•</span>
+      <span>Silivri</span>
+    </div>
+  </div>
+
+  <!-- BACK SIDE - ARKA YÜZ -->
+  <div class="card card-back">
+    <!-- Profile Image Background -->
+    <div class="profile-overlay"></div>
+    
+    <div class="back-content">
+      <!-- Quote Section -->
+      <div class="quote-section">
+        <div class="quote-text">
+          "Dansın ritmi,<br>hayatın yansıması"
+        </div>
+        <div class="quote-author">— Gamze Yıldız</div>
+      </div>
+      
+      <!-- QR Code Section -->
+      <div class="qr-section">
+        <div class="qr-container">
+          <div class="qr-placeholder">
+            <img src="frame.png" alt="QR Code - gamzetango.com">
+          </div>
+        </div>
+        <div class="qr-label">gamzetango.com</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

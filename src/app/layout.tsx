@@ -199,6 +199,19 @@ export const viewport: Viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    // WebSite Schema - Ensures correct brand name in SERP
+    {
+      '@type': 'WebSite',
+      '@id': 'https://gamzetango.com/#website',
+      name: 'Gamze Yıldız Tango',
+      alternateName: 'Gamze Tango',
+      url: 'https://gamzetango.com',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://gamzetango.com/?s={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
+    },
     // Organization Schema - CRITICAL for Google logo display in search results
     {
       '@type': 'Organization',
@@ -401,8 +414,8 @@ export default function RootLayout({
       </head>
       <body className="bg-midnight text-white antialiased">
         {/* Skip to main content - Accessibility */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-midnight focus:rounded-lg focus:font-medium"
         >
           Ana içeriğe atla
