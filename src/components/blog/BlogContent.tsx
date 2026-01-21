@@ -1,6 +1,12 @@
 /**
  * BlogContent Component
  * MDX içeriğini render eder ve özel bileşenler sağlar
+ * 
+ * ULTRATHINK Typography Standards Applied:
+ * - Line height: 1.85 (optimal for long-form reading)
+ * - Paragraph margin: 2.5rem (vertical rhythm)
+ * - Max-width: 720px (65-75 characters per line)
+ * - Font size: 1.25rem / 20px (WCAG AAA compliant)
  */
 
 'use client';
@@ -11,56 +17,59 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Info, AlertTriangle, CheckCircle, Lightbulb, Quote } from 'lucide-react';
 
-// MDX için özel bileşenler
+// MDX için özel bileşenler - Medium-style typography
 export const MDXComponents = {
-  // Başlıklar
+  // Başlıklar - Increased spacing for visual hierarchy
   h1: ({ children, id }: { children: ReactNode; id?: string }) => (
-    <h1 id={id} className="font-heading text-4xl md:text-5xl text-white mt-12 mb-6 scroll-mt-24">
+    <h1 id={id} className="font-heading text-3xl sm:text-4xl md:text-5xl text-white mt-16 mb-8 scroll-mt-24 leading-tight">
       {children}
     </h1>
   ),
   h2: ({ children, id }: { children: ReactNode; id?: string }) => (
-    <h2 id={id} className="font-heading text-3xl md:text-4xl text-white mt-10 mb-5 scroll-mt-24">
+    <h2 id={id} className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mt-14 mb-6 scroll-mt-24 leading-tight">
       {children}
     </h2>
   ),
   h3: ({ children, id }: { children: ReactNode; id?: string }) => (
-    <h3 id={id} className="font-heading text-2xl md:text-3xl text-white mt-8 mb-4 scroll-mt-24">
+    <h3 id={id} className="font-heading text-xl sm:text-2xl md:text-3xl text-white mt-12 mb-5 scroll-mt-24 leading-snug">
       {children}
     </h3>
   ),
   h4: ({ children, id }: { children: ReactNode; id?: string }) => (
-    <h4 id={id} className="font-heading text-xl md:text-2xl text-white mt-6 mb-3 scroll-mt-24">
+    <h4 id={id} className="font-heading text-lg sm:text-xl md:text-2xl text-white mt-10 mb-4 scroll-mt-24 leading-snug">
       {children}
     </h4>
   ),
 
-  // Paragraf
+  // Paragraf - ULTRATHINK optimized
+  // line-height: 1.85 (sweet spot for readability)
+  // margin-bottom: 2.5rem (generous vertical rhythm)
+  // font-size: 1.25rem on desktop, 1.125rem on mobile
   p: ({ children }: { children: ReactNode }) => (
-    <p className="text-white/70 text-lg leading-loose mb-8">
+    <p className="text-white/75 text-lg sm:text-xl leading-[1.85] mb-10 tracking-wide">
       {children}
     </p>
   ),
 
-  // Listeler
+  // Listeler - Increased spacing
   ul: ({ children }: { children: ReactNode }) => (
-    <ul className="list-none space-y-4 mb-8 pl-6">
+    <ul className="list-none space-y-5 mb-10 pl-0">
       {children}
     </ul>
   ),
   ol: ({ children }: { children: ReactNode }) => (
-    <ol className="list-decimal list-inside space-y-4 mb-8 text-white/70">
+    <ol className="list-decimal list-outside space-y-5 mb-10 text-white/75 pl-6 text-lg sm:text-xl leading-[1.85]">
       {children}
     </ol>
   ),
   li: ({ children }: { children: ReactNode }) => (
-    <li className="text-white/70 flex items-start gap-3 leading-relaxed">
-      <span className="w-2 h-2 bg-gold rounded-full mt-2.5 flex-shrink-0" />
-      <span>{children}</span>
+    <li className="text-white/75 flex items-start gap-4 leading-[1.85] text-lg sm:text-xl">
+      <span className="w-2 h-2 bg-gold rounded-full mt-3 flex-shrink-0" />
+      <span className="flex-1">{children}</span>
     </li>
   ),
 
-  // Linkler
+  // Linkler - Subtle underline, gold accent
   a: ({ href, children }: { href?: string; children: ReactNode }) => {
     const isExternal = href?.startsWith('http');
 
@@ -70,7 +79,7 @@ export const MDXComponents = {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gold hover:text-gold-light underline underline-offset-4 transition-colors"
+          className="text-gold hover:text-gold-light underline decoration-gold/40 underline-offset-4 hover:decoration-gold transition-all duration-300"
         >
           {children}
         </a>
@@ -78,13 +87,13 @@ export const MDXComponents = {
     }
 
     return (
-      <Link href={href || '#'} className="text-gold hover:text-gold-light underline underline-offset-4 transition-colors">
+      <Link href={href || '#'} className="text-gold hover:text-gold-light underline decoration-gold/40 underline-offset-4 hover:decoration-gold transition-all duration-300">
         {children}
       </Link>
     );
   },
 
-  // Kalın ve italik
+  // Kalın ve italik - Clear visual distinction
   strong: ({ children }: { children: ReactNode }) => (
     <strong className="font-semibold text-white">{children}</strong>
   ),
@@ -92,34 +101,34 @@ export const MDXComponents = {
     <em className="italic text-gold/90">{children}</em>
   ),
 
-  // Alıntı
+  // Alıntı - Pull quote style
   blockquote: ({ children }: { children: ReactNode }) => (
-    <blockquote className="border-l-4 border-gold pl-6 py-4 my-10 bg-gold/5 rounded-r-sm">
-      <div className="text-white/80 italic text-lg leading-relaxed">{children}</div>
+    <blockquote className="border-l-4 border-gold pl-8 py-6 my-12 bg-gradient-to-r from-gold/5 to-transparent rounded-r-lg">
+      <div className="text-white/85 italic text-xl sm:text-2xl leading-relaxed font-light">{children}</div>
     </blockquote>
   ),
 
-  // Kod
+  // Kod - Monospace, subtle background
   code: ({ children }: { children: ReactNode }) => (
     <code className="bg-midnight-50 text-gold px-2 py-1 rounded text-sm font-mono">
       {children}
     </code>
   ),
   pre: ({ children }: { children: ReactNode }) => (
-    <pre className="bg-midnight-50 p-6 rounded-sm overflow-x-auto mb-6 border border-white/5">
+    <pre className="bg-midnight-50 p-6 rounded-lg overflow-x-auto mb-10 border border-white/5">
       {children}
     </pre>
   ),
 
-  // Yatay çizgi
+  // Yatay çizgi - Elegant separator
   hr: () => (
-    <hr className="border-none h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent my-12" />
+    <hr className="border-none h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent my-16" />
   ),
 
-  // Resim
+  // Resim - Full bleed potential
   img: ({ src, alt }: { src?: string; alt?: string }) => (
-    <figure className="my-8">
-      <div className="relative aspect-video rounded-sm overflow-hidden">
+    <figure className="my-12">
+      <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
         <Image
           src={src || ''}
           alt={alt || ''}
@@ -128,16 +137,16 @@ export const MDXComponents = {
         />
       </div>
       {alt && (
-        <figcaption className="text-center text-white/50 text-sm mt-3 italic">
+        <figcaption className="text-center text-white/50 text-sm mt-4 italic">
           {alt}
         </figcaption>
       )}
     </figure>
   ),
 
-  // Tablo
+  // Tablo - Clean, readable
   table: ({ children }: { children: ReactNode }) => (
-    <div className="overflow-x-auto mb-6">
+    <div className="overflow-x-auto mb-10 rounded-lg border border-white/10">
       <table className="w-full border-collapse">{children}</table>
     </div>
   ),
@@ -148,11 +157,11 @@ export const MDXComponents = {
     <th className="text-left p-4 text-gold font-medium border-b border-white/10">{children}</th>
   ),
   td: ({ children }: { children: ReactNode }) => (
-    <td className="p-4 text-white/80 border-b border-white/5">{children}</td>
+    <td className="p-4 text-white/75 border-b border-white/5 leading-relaxed">{children}</td>
   ),
 };
 
-// Özel Blog Bileşenleri
+// Özel Blog Bileşenleri - Enhanced spacing
 
 interface CalloutProps {
   type?: 'info' | 'warning' | 'success' | 'tip';
@@ -196,15 +205,15 @@ export function Callout({ type = 'info', title, children }: CalloutProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`${style.bg} border ${style.border} rounded-sm p-6 my-8`}
+      className={`${style.bg} border ${style.border} rounded-lg p-6 sm:p-8 my-12`}
     >
-      <div className="flex gap-4">
+      <div className="flex gap-4 sm:gap-5">
         <Icon className={`${style.iconColor} flex-shrink-0 mt-1`} size={24} />
-        <div>
+        <div className="flex-1">
           {title && (
-            <h4 className="font-heading text-lg text-white mb-3">{title}</h4>
+            <h4 className="font-heading text-lg sm:text-xl text-white mb-4">{title}</h4>
           )}
-          <div className="text-white/75 leading-relaxed">{children}</div>
+          <div className="text-white/75 leading-relaxed text-base sm:text-lg">{children}</div>
         </div>
       </div>
     </motion.div>
@@ -223,12 +232,12 @@ export function TangoTerm({ term, definition, pronunciation }: TangoTermProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-midnight-50 border border-gold/20 rounded-sm p-5 my-6"
+      className="bg-midnight-50 border border-gold/20 rounded-lg p-6 sm:p-7 my-10"
     >
       <div className="flex items-start gap-4">
-        <span className="text-2xl">💃</span>
+        <span className="text-2xl sm:text-3xl">💃</span>
         <div>
-          <h4 className="font-heading text-xl text-gold mb-1">
+          <h4 className="font-heading text-xl sm:text-2xl text-gold mb-2">
             {term}
             {pronunciation && (
               <span className="text-white/50 text-sm font-body ml-2">
@@ -236,7 +245,7 @@ export function TangoTerm({ term, definition, pronunciation }: TangoTermProps) {
               </span>
             )}
           </h4>
-          <p className="text-white/80">{definition}</p>
+          <p className="text-white/75 leading-relaxed text-base sm:text-lg">{definition}</p>
         </div>
       </div>
     </motion.div>
@@ -253,13 +262,13 @@ export function GamzeQuote({ children }: GamzeQuoteProps) {
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className="relative my-10 p-8 bg-gradient-to-br from-gold/10 to-transparent border border-gold/20 rounded-sm"
+      className="relative my-14 p-8 sm:p-10 bg-gradient-to-br from-gold/10 to-transparent border border-gold/20 rounded-lg"
     >
       <Quote className="absolute -top-4 -left-4 w-12 h-12 text-gold/30" />
-      <blockquote className="font-heading text-xl md:text-2xl text-white/90 italic mb-4">
+      <blockquote className="font-heading text-xl sm:text-2xl md:text-3xl text-white/90 italic mb-5 leading-relaxed">
         {children}
       </blockquote>
-      <cite className="flex items-center gap-3 text-white/70 not-italic">
+      <cite className="flex items-center gap-3 text-white/70 not-italic text-base sm:text-lg">
         <span className="w-10 h-0.5 bg-gold" />
         Gamze Yıldız
       </cite>
@@ -283,9 +292,9 @@ export function VideoEmbed({ url, title }: VideoEmbedProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="my-8"
+      className="my-12"
     >
-      <div className="relative aspect-video rounded-sm overflow-hidden">
+      <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
         <iframe
           src={embedUrl}
           title={title || 'Video'}
@@ -295,7 +304,7 @@ export function VideoEmbed({ url, title }: VideoEmbedProps) {
         />
       </div>
       {title && (
-        <p className="text-center text-white/50 text-sm mt-3 italic">{title}</p>
+        <p className="text-center text-white/50 text-sm mt-4 italic">{title}</p>
       )}
     </motion.div>
   );

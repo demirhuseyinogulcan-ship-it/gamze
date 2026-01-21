@@ -68,7 +68,7 @@ export function Footer() {
         {/* Main Footer Content */}
         <div className="py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
-            
+
             {/* Brand Column - 4 cols */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ export function Footer() {
               <p className="body-md mb-6 max-w-sm">
                 {footer.description}
               </p>
-              
+
               {/* Social Links */}
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
@@ -116,10 +116,10 @@ export function Footer() {
               <h4 className="font-heading text-lg text-white mb-5">{footer.quickLinks}</h4>
               <ul className="space-y-2.5">
                 {Object.entries(footer.links).map(([key, label]) => {
-                  const href = key === 'blog' 
+                  const href = key === 'blog'
                     ? (isTurkish ? '/blog' : '/en/blog')
                     : `/#${key}`;
-                  
+
                   return (
                     <li key={key}>
                       <Link
@@ -199,7 +199,7 @@ export function Footer() {
                   <span>{contact.info.location}</span>
                 </li>
               </ul>
-              
+
               {/* CTA Button */}
               <a
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.FOOTER)}
@@ -257,10 +257,10 @@ export function Footer() {
                 Sitemap
               </Link>
             </div>
-            
+
             {/* Copyright */}
             <p className="flex items-center gap-2 text-white/40 text-sm">
-              © {currentYear} Gamze Tango. {footer.madeWith} <Heart size={16} className="text-red-500 animate-pulse fill-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" /> Can
+              © {currentYear} Gamze Tango. {footer.madeWith} <Heart size={14} className="text-crimson animate-pulse" /> Can
             </p>
           </div>
         </div>

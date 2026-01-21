@@ -138,7 +138,7 @@ function MilongaOverlay() {
 
 function FloatingLights() {
   const prefersReducedMotion = useReducedMotion();
-  
+
   const lights = useMemo(() => {
     return Array.from({ length: 20 }, (_, i) => ({
       id: i,
@@ -205,7 +205,7 @@ export function MilongaToggle({ className = '' }: MilongaToggleProps) {
   return (
     <motion.button
       onClick={toggle}
-      className={`group relative flex items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all whitespace-nowrap sm:w-[130px] ${isActive
+      className={`group relative flex items-center justify-center gap-2 rounded-full border px-3 sm:px-4 py-2 text-sm font-medium transition-all whitespace-nowrap ${isActive
         ? 'border-rose-500/50 bg-rose-500/20 text-rose-300 hover:bg-rose-500/30'
         : 'border-cream/20 bg-cream/5 text-cream/70 hover:border-gold/30 hover:text-gold'
         } ${className}`}
