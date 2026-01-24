@@ -24,17 +24,17 @@ const navItems = [
 // URL patterns for language switching
 const getLocalizedUrl = (pathname: string, targetLocale: 'tr' | 'en'): string => {
   // Check if we're on a specific blog post (not category/tag pages)
-  const isBlogPost = (pathname.startsWith('/blog/') || pathname.startsWith('/en/blog/')) && 
-    !pathname.includes('/kategori/') && 
+  const isBlogPost = (pathname.startsWith('/blog/') || pathname.startsWith('/en/blog/')) &&
+    !pathname.includes('/kategori/') &&
     !pathname.includes('/category/') &&
-    !pathname.includes('/etiket/') && 
+    !pathname.includes('/etiket/') &&
     !pathname.includes('/tag/');
-  
+
   // For specific blog posts, redirect to main blog page (slugs are different per language)
   if (isBlogPost) {
     return targetLocale === 'tr' ? '/blog' : '/en/blog';
   }
-  
+
   // Blog category pages
   if (pathname.includes('/kategori/') || pathname.includes('/category/')) {
     const categorySlug = pathname.split('/').pop();
@@ -43,7 +43,7 @@ const getLocalizedUrl = (pathname: string, targetLocale: 'tr' | 'en'): string =>
     }
     return `/en/blog/category/${categorySlug}`;
   }
-  
+
   // Blog tag pages
   if (pathname.includes('/etiket/') || pathname.includes('/tag/')) {
     const tagSlug = pathname.split('/').pop();
@@ -52,12 +52,12 @@ const getLocalizedUrl = (pathname: string, targetLocale: 'tr' | 'en'): string =>
     }
     return `/en/blog/tag/${tagSlug}`;
   }
-  
+
   // Main blog page
   if (pathname === '/blog' || pathname === '/en/blog') {
     return targetLocale === 'tr' ? '/blog' : '/en/blog';
   }
-  
+
   // For homepage and other pages, just return root
   return '/';
 };
@@ -109,13 +109,13 @@ export function Navbar() {
       setIsOpen(false);
       return;
     }
-    
+
     // Home link - always go to clean URL based on locale
     if (isHome) {
       setIsOpen(false);
       const homeUrl = locale === 'tr' ? '/' : '/en';
       const currentIsHome = pathname === '/' || pathname === '/en';
-      
+
       // If already on homepage, scroll to top
       if (currentIsHome) {
         e.preventDefault();
@@ -126,10 +126,10 @@ export function Navbar() {
       }
       return;
     }
-    
+
     // Check if we're on homepage (either Turkish or English)
     const isOnHomepage = pathname === '/' || pathname === '/en';
-    
+
     if (!isOnHomepage) {
       // Navigate to correct homepage based on locale, then scroll to section
       setIsOpen(false);
@@ -138,7 +138,7 @@ export function Navbar() {
       router.push(homeUrl);
       return;
     }
-    
+
     // On homepage - smooth scroll without changing URL
     e.preventDefault();
     setIsOpen(false);
@@ -151,7 +151,7 @@ export function Navbar() {
   const toggleLocale = () => {
     const newLocale = locale === 'tr' ? 'en' : 'tr';
     setLocale(newLocale);
-    
+
     // Use Next.js router for smooth transitions (no page reload)
     if (pathname === '/' || pathname === '/en') {
       // Homepage - navigate to language-specific homepage
@@ -228,7 +228,7 @@ export function Navbar() {
                   </motion.a>
                 );
               })}
-              
+
               {/* Language Toggle */}
               <motion.button
                 onClick={toggleLocale}
@@ -312,6 +312,16 @@ export function Navbar() {
                     </motion.a>
                   );
                 })}
+
+                {/* Milonga Mode Toggle in Mobile Menu */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navItems.length * 0.1 + 0.3 }}
+                  className="pt-8 mt-4 border-t border-white/10"
+                >
+                  <MilongaToggle className="w-full justify-center" />
+                </motion.div>
               </div>
             </motion.nav>
           </motion.div>
