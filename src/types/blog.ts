@@ -13,11 +13,13 @@ export type BlogCategory =
   | 'tango-basics'      // Tango Nedir?
   | 'learning'          // Tango Nasıl Öğrenilir?
   | 'wedding-dance'     // Düğün Dansı
+  | 'wedding'           // Düğün (alias)
   | 'lady-styling'      // Lady Styling
   | 'technique'         // Teknik
   | 'culture'           // Tango Kültürü
   | 'events'            // Etkinlikler
-  | 'tips';             // İpuçları
+  | 'tips'              // İpuçları
+  | 'wellness';         // Sağlık & Wellness
 
 // Etiketler - detaylı konular
 export interface BlogTag {

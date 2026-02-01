@@ -111,6 +111,32 @@ export const BLOG_CATEGORIES: CategoryInfo[] = [
     icon: '',
     color: '#d4af37',
   },
+  {
+    slug: 'wedding',
+    name: {
+      tr: 'Düğün Dansı',
+      en: 'Wedding Dance',
+    },
+    description: {
+      tr: 'Düğün dansı hazırlığı, müzik seçimi ve koreografi',
+      en: 'Wedding dance preparation, music selection and choreography',
+    },
+    icon: '',
+    color: '#e6c65c', // gold-light
+  },
+  {
+    slug: 'wellness',
+    name: {
+      tr: 'Sağlık & Wellness',
+      en: 'Health & Wellness',
+    },
+    description: {
+      tr: 'Tangonun sağlık faydaları, fitness ve zihinsel sağlık',
+      en: 'Health benefits of tango, fitness and mental wellness',
+    },
+    icon: '',
+    color: '#4a9c6d', // green
+  },
 ];
 
 // Etiketler - Tango terimleri dahil
