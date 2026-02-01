@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Instagram, Phone, Mail, MapPin, Heart, ChevronRight } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin, Heart, ChevronRight, BookOpen, Sparkles, Users, Music } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 import { Container } from './Container';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES, CONTACT } from '@/lib/constants/site';
@@ -46,12 +46,74 @@ const locationPages = [
   },
 ];
 
+// Service pages with dedicated URLs - SEO critical
+const servicePages = [
+  {
+    hrefTr: '/dugun-dansi',
+    hrefEn: '/en/wedding-dance-istanbul',
+    labelTr: 'Düğün Dansı Eğitimi',
+    labelEn: 'Wedding Dance Training',
+    icon: Heart,
+  },
+  {
+    hrefTr: '/lady-styling',
+    hrefEn: '/en/lady-styling',
+    labelTr: 'Lady Styling',
+    labelEn: 'Lady Styling',
+    icon: Sparkles,
+  },
+  {
+    hrefTr: '/silivri-tango-kursu',
+    hrefEn: '/en/tango-course-silivri',
+    labelTr: 'Silivri Tango Kursu',
+    labelEn: 'Silivri Tango Course',
+    icon: Users,
+  },
+  {
+    hrefTr: '/silivri-dans-kursu',
+    hrefEn: '/en/dance-lessons-silivri',
+    labelTr: 'Silivri Dans Kursu',
+    labelEn: 'Silivri Dance Course',
+    icon: Music,
+  },
+];
+
+// Blog pillar pages for topical authority - SEO critical
+const blogPillarPages = [
+  {
+    hrefTr: '/blog/tango-rehberi',
+    hrefEn: '/en/blog/tango-guide',
+    labelTr: 'Tango Rehberi',
+    labelEn: 'Tango Guide',
+  },
+  {
+    hrefTr: '/blog/dugun-dansi-tango',
+    hrefEn: '/en/blog/wedding-dance-tango',
+    labelTr: 'Düğün Dansı Rehberi',
+    labelEn: 'Wedding Dance Guide',
+  },
+  {
+    hrefTr: '/blog/lady-styling-rehberi',
+    hrefEn: '/en/blog/lady-styling-guide',
+    labelTr: 'Lady Styling Rehberi',
+    labelEn: 'Lady Styling Guide',
+  },
+  {
+    hrefTr: '/blog/tango-terimleri',
+    hrefEn: '/en/blog/tango-terminology',
+    labelTr: 'Tango Terimleri',
+    labelEn: 'Tango Terminology',
+  },
+];
+
 // Service-focused links for SEO keyword coverage
 const serviceLinks = [
   { labelTr: 'Özel Tango Dersi', labelEn: 'Private Tango Lessons' },
   { labelTr: 'Düğün Dansı Eğitimi', labelEn: 'Wedding Dance Training' },
   { labelTr: 'Lady Styling', labelEn: 'Lady Styling' },
   { labelTr: 'Arjantin Tango', labelEn: 'Argentine Tango' },
+  { labelTr: 'Tango Kursu İstanbul', labelEn: 'Tango Course Istanbul' },
+  { labelTr: 'Tango Eğitmeni', labelEn: 'Tango Instructor' },
 ];
 
 export function Footer() {
@@ -135,16 +197,16 @@ export function Footer() {
               </ul>
             </motion.div>
 
-            {/* Location Pages Column - 3 cols (SEO CRITICAL) */}
+            {/* Location Pages Column - 2 cols (SEO CRITICAL) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="lg:col-span-3"
+              className="lg:col-span-2"
             >
               <h4 className="font-heading text-lg text-white mb-5">
-                {isTurkish ? 'Özel Ders Lokasyonları' : 'Lesson Locations'}
+                {isTurkish ? 'Lokasyonlar' : 'Locations'}
               </h4>
               <ul className="space-y-2.5">
                 {locationPages.map((location) => {
@@ -164,13 +226,80 @@ export function Footer() {
               </ul>
             </motion.div>
 
-            {/* Contact Column - 3 cols */}
+            {/* Service Pages Column - 2 cols (SEO CRITICAL) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-3"
+              className="lg:col-span-2"
+            >
+              <h4 className="font-heading text-lg text-white mb-5">
+                {isTurkish ? 'Hizmetler' : 'Services'}
+              </h4>
+              <ul className="space-y-2.5">
+                {servicePages.map((service) => {
+                  const href = isTurkish ? service.hrefTr : service.hrefEn;
+                  const ServiceIcon = service.icon;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="text-white/60 hover:text-gold transition-colors duration-300 text-sm inline-flex items-center gap-1.5 group"
+                      >
+                        <ServiceIcon size={12} className="text-gold/60 flex-shrink-0" />
+                        {isTurkish ? service.labelTr : service.labelEn}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </motion.div>
+
+            {/* Blog Pillar Pages Column - 2 cols (SEO CRITICAL for Topical Authority) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="lg:col-span-2"
+            >
+              <h4 className="font-heading text-lg text-white mb-5">
+                {isTurkish ? 'Rehberler' : 'Guides'}
+              </h4>
+              <ul className="space-y-2.5">
+                {blogPillarPages.map((page) => {
+                  const href = isTurkish ? page.hrefTr : page.hrefEn;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="text-white/60 hover:text-gold transition-colors duration-300 text-sm inline-flex items-center gap-1.5 group"
+                      >
+                        <BookOpen size={12} className="text-gold/60 flex-shrink-0" />
+                        {isTurkish ? page.labelTr : page.labelEn}
+                      </Link>
+                    </li>
+                  );
+                })}
+                <li>
+                  <Link
+                    href={isTurkish ? '/blog' : '/en/blog'}
+                    className="text-gold hover:text-gold-light transition-colors duration-300 text-sm inline-flex items-center gap-1.5 group font-medium"
+                  >
+                    {isTurkish ? 'Tüm Yazılar →' : 'All Posts →'}
+                  </Link>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Contact Column - 2 cols */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="lg:col-span-2"
             >
               <h4 className="font-heading text-lg text-white mb-5">{footer.contact}</h4>
               <ul className="space-y-3">

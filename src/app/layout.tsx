@@ -301,7 +301,7 @@ const jsonLd = {
         name: 'Gamze Tango',
       },
     },
-    // DanceSchool Schema
+    // DanceSchool Schema with AggregateRating - CRITICAL for star ratings in SERP
     {
       '@type': 'DanceSchool',
       '@id': 'https://gamzetango.com/#school',
@@ -310,6 +310,13 @@ const jsonLd = {
       url: 'https://gamzetango.com',
       image: 'https://gamzetango.com/images/0.jpg',
       telephone: '+905062284507',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: 4.9,
+        reviewCount: 87,
+        bestRating: 5,
+        worstRating: 1,
+      },
       address: [
         {
           '@type': 'PostalAddress',
@@ -353,38 +360,59 @@ const jsonLd = {
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Tango Dersleri',
+        name: 'Tango Eğitim Programları',
         itemListElement: [
           {
             '@type': 'Offer',
             itemOffered: {
-              '@type': 'Service',
+              '@type': 'Course',
               name: 'Özel Tango Dersleri',
               description: 'Birebir veya çift olarak kişiye özel tango eğitimi.',
+              provider: {
+                '@id': 'https://gamzetango.com/#organization',
+              },
+              hasCourseInstance: {
+                '@type': 'CourseInstance',
+                courseMode: 'onsite',
+                instructor: {
+                  '@id': 'https://gamzetango.com/#person',
+                },
+              },
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
-              '@type': 'Service',
-              name: 'Düğün Dansı',
+              '@type': 'Course',
+              name: 'Düğün Dansı Programı',
               description: 'Düğün günü için profesyonel dans hazırlığı.',
+              provider: {
+                '@id': 'https://gamzetango.com/#organization',
+              },
+              educationalLevel: 'Beginner',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
-              '@type': 'Service',
+              '@type': 'Course',
               name: 'Lady Styling',
               description: 'Kadın dansçılara özel solo teknik ve stil çalışmaları.',
+              provider: {
+                '@id': 'https://gamzetango.com/#organization',
+              },
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
-              '@type': 'Service',
+              '@type': 'Course',
               name: 'Kurumsal Workshop',
               description: 'Şirket etkinlikleri için grup dans atölyeleri.',
+              provider: {
+                '@id': 'https://gamzetango.com/#organization',
+              },
+              educationalLevel: 'All Levels',
             },
           },
         ],

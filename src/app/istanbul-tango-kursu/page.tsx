@@ -4,9 +4,9 @@
  * 
  * Features:
  * - Full SEO metadata with OpenGraph
- * - Schema.org LocalBusiness JSON-LD
+ * - Schema.org LocalBusiness + Course + AggregateRating JSON-LD
  * - All location-specific components
- * - Bilingual support ready
+ * - Commercial intent optimization
  */
 
 import type { Metadata } from 'next';
@@ -66,16 +66,64 @@ export const metadata: Metadata = {
   },
 };
 
-// Generate JSON-LD schema
-const jsonLd = generateLocalBusinessSchema(ISTANBUL_LOCATION);
+// Generate JSON-LD schema with Course and AggregateRating
+const localBusinessSchema = generateLocalBusinessSchema(ISTANBUL_LOCATION);
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  '@id': 'https://gamzetango.com/istanbul-tango-kursu#course',
+  name: 'İstanbul Tango Kursu',
+  description: 'İstanbul\'da profesyonel Arjantin tango eğitimi. Başlangıç, orta ve ileri seviye gruplar.',
+  provider: {
+    '@type': 'Organization',
+    '@id': 'https://gamzetango.com/#organization',
+    name: 'Gamze Tango',
+  },
+  educationalLevel: 'All Levels',
+  inLanguage: 'tr',
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'onsite',
+    instructor: {
+      '@type': 'Person',
+      '@id': 'https://gamzetango.com/#person',
+      name: 'Gamze Yıldız',
+    },
+    location: {
+      '@type': 'Place',
+      name: 'Gamze Tango İstanbul',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'İstanbul',
+        addressCountry: 'TR',
+      },
+    },
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: 4.9,
+    reviewCount: 87,
+    bestRating: 5,
+  },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'TRY',
+    category: 'Tango Kursu',
+  },
+};
 
 export default function IstanbulTangoKursuPage() {
   return (
     <>
-      {/* JSON-LD Schema for SEO */}
+      {/* JSON-LD Schemas for SEO - LocalBusiness + Course */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
       />
 
       {/* Navigation */}
