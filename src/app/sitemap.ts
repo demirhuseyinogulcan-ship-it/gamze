@@ -298,6 +298,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/en/group-tango-lessons`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/private-tango-lessons`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/couple-tango-lessons`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/tango-trial-lesson`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/wedding-dance`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
 
     // ═══════════════════════════════════════════════════════════════════════════
     // BLOG PAGES - Turkish (Priority 0.9)

@@ -1170,6 +1170,152 @@ export const GRUP_TANGO_DERSI_SERVICE: Service = {
     ctaDescription: 'Yeni başlayanlar için her ay yeni gruplar açılıyor. Yerinizi ayırtın, tango yolculuğunuza başlayın!',
 
     isActive: true,
+
+    // English Translations
+    translations: {
+        en: {
+            name: 'Group Tango Lessons',
+            tagline: 'The Joy of Learning Together',
+            description: 'Learn tango with group lessons in Istanbul. Beginner, intermediate, and advanced level groups. Dance in a social environment, meet new people.',
+
+            seo: {
+                title: 'Group Tango Lessons Istanbul | Beginner to Advanced | Gamze Tango',
+                description: 'Group tango lessons in Istanbul. Beginner, intermediate, and advanced level groups. Learn tango in a social environment. Weekly classes, affordable prices.',
+                keywords: [
+                    'group tango lessons',
+                    'tango classes istanbul',
+                    'beginner tango class',
+                    'intermediate tango',
+                    'advanced tango lessons',
+                    'learn tango istanbul',
+                    'weekly tango class',
+                ],
+                canonicalUrl: 'https://gamzetango.com/en/group-tango-lessons',
+            },
+
+            features: [
+                {
+                    id: 'levels',
+                    icon: 'TrendingUp',
+                    title: 'Level Groups',
+                    description: 'Progress at your own pace with beginner, intermediate, and advanced level groups.',
+                },
+                {
+                    id: 'social',
+                    icon: 'Users',
+                    title: 'Social Environment',
+                    description: 'Meet people who share the same passion, build new friendships.',
+                },
+                {
+                    id: 'practice',
+                    icon: 'Sparkles',
+                    title: 'Practice Opportunity',
+                    description: 'Practice with different partners, develop your adaptability.',
+                },
+                {
+                    id: 'affordable',
+                    icon: 'Star',
+                    title: 'Affordable Price',
+                    description: 'Group lessons are a more economical option compared to private lessons.',
+                },
+            ],
+
+            benefits: [
+                {
+                    id: 'community',
+                    title: 'Join the Tango Community',
+                    description: 'In group lessons, you don\'t just learn to dance, you become part of a community. You\'ll see familiar faces at milongas.',
+                    highlight: 'Expand your social circle',
+                },
+                {
+                    id: 'adaptation',
+                    title: 'Develop Partner Adaptability',
+                    description: 'By dancing with different partners, you learn to adapt to any type of dancer. This is a very valuable skill at milongas.',
+                    highlight: 'Dance with anyone',
+                },
+                {
+                    id: 'motivation',
+                    title: 'Motivation and Consistency',
+                    description: 'Group dynamics keep you attending regularly and motivated. Learning with friends is more enjoyable.',
+                    highlight: 'Stronger together',
+                },
+            ],
+
+            audiences: [
+                {
+                    id: 'beginners',
+                    title: 'Beginners',
+                    description: 'Our beginner groups are ideal if you want to take your first step into tango.',
+                    icon: 'Sprout',
+                },
+                {
+                    id: 'social-dancers',
+                    title: 'Social Dancers',
+                    description: 'Those who want to dance comfortably at milongas and learn social tango.',
+                    icon: 'Users',
+                },
+                {
+                    id: 'budget-conscious',
+                    title: 'Budget Conscious',
+                    description: 'Those who want quality education but need to consider their budget.',
+                    icon: 'Star',
+                },
+            ],
+
+            steps: [
+                {
+                    id: 'contact',
+                    stepNumber: 1,
+                    title: 'Contact & Level Assessment',
+                    description: 'Reach out to us, let\'s discuss your tango background and goals. We\'ll determine the appropriate group level for you.',
+                },
+                {
+                    id: 'join-group',
+                    stepNumber: 2,
+                    title: 'Join the Group',
+                    description: 'Join the group at your determined level. New groups open every month for beginners.',
+                },
+                {
+                    id: 'learn-practice',
+                    stepNumber: 3,
+                    title: 'Learn & Practice',
+                    description: 'Learn techniques with weekly classes, practice with different partners.',
+                },
+                {
+                    id: 'milonga',
+                    stepNumber: 4,
+                    title: 'Join Milongas',
+                    description: 'Apply what you\'ve learned at real tango nights, become part of the community.',
+                },
+            ],
+
+            faqs: [
+                {
+                    id: 'partner-required',
+                    question: 'Can I join group lessons without a partner?',
+                    answer: 'Yes, absolutely! In group lessons, we rotate partners, so everyone gets the opportunity to dance with different partners. This both accelerates your learning process and develops your dance adaptation skills.',
+                },
+                {
+                    id: 'which-level',
+                    question: 'Which level group should I join?',
+                    answer: 'If you have no prior tango experience, we recommend starting from the beginner level. If you have previous tango training, you can attend a trial lesson for level assessment or contact us.',
+                },
+                {
+                    id: 'frequency',
+                    question: 'How often are group lessons held?',
+                    answer: 'Group lessons are held 1-2 times per week. Class days and times may vary by level. Contact us for the current schedule.',
+                },
+                {
+                    id: 'group-size',
+                    question: 'How many people attend group lessons?',
+                    answer: 'For quality education, we keep our groups between 6-12 people. This number provides both sufficient attention and practice opportunity.',
+                },
+            ],
+
+            ctaText: 'Join a Group',
+            ctaDescription: 'New groups open every month for beginners. Reserve your spot and start your tango journey!',
+        },
+    },
 };
 
 // =============================================================================
@@ -1340,6 +1486,157 @@ export const OZEL_TANGO_DERSI_SERVICE: Service = {
     ctaDescription: 'Özel ders deneyimini yaşamak ister misiniz? İlk tanışma dersimiz ücretsiz!',
 
     isActive: true,
+
+    // English Translations
+    translations: {
+        en: {
+            name: 'Private Tango Lessons',
+            tagline: 'Personalized Training, Fast Progress',
+            description: 'Make rapid progress with private tango lessons in Istanbul. One-on-one training, flexible scheduling, personalized program. For all levels.',
+
+            seo: {
+                title: 'Private Tango Lessons Istanbul | One-on-One Training | Gamze Tango',
+                description: 'Private tango lessons in Istanbul. Fast progress with one-on-one training. Flexible scheduling, personal program. Professional tango education for all levels.',
+                keywords: [
+                    'private tango lessons',
+                    'private tango lessons istanbul',
+                    'one on one tango',
+                    'personal tango training',
+                    'tango private class',
+                    'individual tango lessons',
+                ],
+                canonicalUrl: 'https://gamzetango.com/en/private-tango-lessons',
+            },
+
+            features: [
+                {
+                    id: 'personal-attention',
+                    icon: 'User',
+                    title: 'One-on-One Attention',
+                    description: 'The entire lesson focuses solely on you, mistakes are corrected immediately.',
+                },
+                {
+                    id: 'fast-progress',
+                    icon: 'TrendingUp',
+                    title: 'Fast Progress',
+                    description: 'Learn 3-4 times faster compared to group lessons.',
+                },
+                {
+                    id: 'flexible-schedule',
+                    icon: 'Calendar',
+                    title: 'Flexible Scheduling',
+                    description: 'Set lesson times that fit your schedule.',
+                },
+                {
+                    id: 'custom-program',
+                    icon: 'Award',
+                    title: 'Personal Program',
+                    description: 'Curriculum specially prepared for your goals and level.',
+                },
+            ],
+
+            benefits: [
+                {
+                    id: 'beginners',
+                    title: 'For Beginners',
+                    description: 'Build a solid foundation by learning basic techniques correctly. Catch details that might be missed in group lessons.',
+                    highlight: 'Right start',
+                },
+                {
+                    id: 'intermediate',
+                    title: 'For Intermediate',
+                    description: 'Ideal for overcoming specific challenges, correcting technical issues, and expanding your repertoire.',
+                    highlight: 'Accelerate your growth',
+                },
+                {
+                    id: 'advanced',
+                    title: 'For Advanced',
+                    description: 'Work on style development, musicality, performance preparation, and advanced figures.',
+                    highlight: 'Reach mastery',
+                },
+                {
+                    id: 'special-occasion',
+                    title: 'For Wedding/Special Events',
+                    description: 'Choreography preparation for a specific date and song. To deliver an impressive performance.',
+                    highlight: 'Unforgettable moments',
+                },
+            ],
+
+            audiences: [
+                {
+                    id: 'fast-learners',
+                    title: 'Those Seeking Fast Progress',
+                    description: 'In addition to group lessons or alone, those targeting rapid advancement.',
+                    icon: 'TrendingUp',
+                },
+                {
+                    id: 'busy-professionals',
+                    title: 'Busy Professionals',
+                    description: 'Learn to dance with flexible lesson times that fit your schedule.',
+                    icon: 'Calendar',
+                },
+                {
+                    id: 'special-needs',
+                    title: 'Those with Special Needs',
+                    description: 'Those who want to work on a specific technical issue, figure, or style.',
+                    icon: 'Star',
+                },
+            ],
+
+            steps: [
+                {
+                    id: 'analysis',
+                    stepNumber: 1,
+                    title: 'Needs Analysis',
+                    description: 'In the first meeting, we discuss your goals, level, and expectations.',
+                },
+                {
+                    id: 'program',
+                    stepNumber: 2,
+                    title: 'Personal Program',
+                    description: 'We prepare a training plan specifically for you.',
+                },
+                {
+                    id: 'lessons',
+                    stepNumber: 3,
+                    title: 'Regular Lessons',
+                    description: 'Lessons begin according to the determined program.',
+                },
+                {
+                    id: 'evaluation',
+                    stepNumber: 4,
+                    title: 'Evaluation',
+                    description: 'We regularly evaluate your progress.',
+                },
+            ],
+
+            faqs: [
+                {
+                    id: 'private-vs-group',
+                    question: 'Should I choose private or group lessons?',
+                    answer: 'Both have their advantages. Private lessons offer fast progress and personal attention. Group lessons provide a social environment and practice with different partners. The ideal combination is to take both together.',
+                },
+                {
+                    id: 'location',
+                    question: 'Where are private lessons held?',
+                    answer: 'Lessons can be held at our studio in Istanbul or at a location you specify. Appropriate space is required for home or office lessons.',
+                },
+                {
+                    id: 'with-partner',
+                    question: 'Can I bring my partner to private lessons?',
+                    answer: 'Of course! Taking private lessons as a couple is the most effective way to develop your harmony with your partner. We also have a separate program for couple lessons.',
+                },
+                {
+                    id: 'minimum-lessons',
+                    question: 'Is there a minimum number of lessons required?',
+                    answer: 'There is no minimum lesson requirement. However, at least 1 lesson per week is recommended for regular progress. An average of 8-12 lessons are needed for wedding dance.',
+                },
+            ],
+
+            ctaText: 'Free Trial Lesson',
+            ctaDescription: 'Would you like to experience a private lesson? Your first introductory lesson is free!',
+        },
+    },
 };
 
 // =============================================================================
@@ -1503,6 +1800,151 @@ export const CIFT_TANGO_DERSI_SERVICE: Service = {
     ctaDescription: 'Partnerinizle birlikte tango deneyimini yaşamak ister misiniz? İlk dersimiz ücretsiz!',
 
     isActive: true,
+
+    // English Translations
+    translations: {
+        en: {
+            name: 'Couple Tango Lessons',
+            tagline: 'Dance Together, Grow Together',
+            description: 'Learn tango with your partner. Special programs for couples, wedding dance preparation, a dance experience that strengthens your relationship.',
+
+            seo: {
+                title: 'Couple Tango Lessons Istanbul | Learn Tango with Your Partner | Gamze Tango',
+                description: 'Tango lessons for couples in Istanbul. Learn tango together with your partner. Wedding dance preparation, couple programs. Professional training.',
+                keywords: [
+                    'couple tango lessons',
+                    'tango for couples',
+                    'partner tango lessons',
+                    'wedding dance tango',
+                    'couple dance lessons istanbul',
+                    'romantic tango lessons',
+                ],
+                canonicalUrl: 'https://gamzetango.com/en/couple-tango-lessons',
+            },
+
+            features: [
+                {
+                    id: 'harmony',
+                    icon: 'Users',
+                    title: 'Partner Harmony',
+                    description: 'Achieve perfect harmony with your partner by working together.',
+                },
+                {
+                    id: 'communication',
+                    icon: 'Heart',
+                    title: 'Communication',
+                    description: 'Learn the art of non-verbal communication through dance.',
+                },
+                {
+                    id: 'custom',
+                    icon: 'Star',
+                    title: 'Custom Program',
+                    description: 'Programs designed specifically for you as a couple.',
+                },
+                {
+                    id: 'wedding',
+                    icon: 'Sparkles',
+                    title: 'Wedding Dance',
+                    description: 'Professional choreography preparation for your special day.',
+                },
+            ],
+
+            benefits: [
+                {
+                    id: 'together',
+                    title: 'Progress Together',
+                    description: 'Instead of going through different processes, you progress together at the same pace. This strengthens your dance connection.',
+                    highlight: 'Grow together',
+                },
+                {
+                    id: 'relationship',
+                    title: 'Strengthen Your Relationship',
+                    description: 'Dance develops non-verbal communication. The listening and harmony skills you learn also reflect on your relationship.',
+                    highlight: 'Stronger bond',
+                },
+                {
+                    id: 'memories',
+                    title: 'Special Memories',
+                    description: 'The dance you learn together creates special memories you\'ll remember for a lifetime.',
+                    highlight: 'Unforgettable experience',
+                },
+            ],
+
+            audiences: [
+                {
+                    id: 'engaged',
+                    title: 'Engaged Couples',
+                    description: 'Professional preparation for your wedding dance. A performance that will captivate your guests.',
+                    icon: 'Heart',
+                },
+                {
+                    id: 'newlywed',
+                    title: 'Newlyweds',
+                    description: 'To acquire a new hobby together and strengthen your bond with your partner.',
+                    icon: 'Sparkles',
+                },
+                {
+                    id: 'long-term',
+                    title: 'Long-term Couples',
+                    description: 'To add new excitement to your relationship, to learn something together.',
+                    icon: 'Star',
+                },
+            ],
+
+            steps: [
+                {
+                    id: 'consultation',
+                    stepNumber: 1,
+                    title: 'Initial Meeting',
+                    description: 'We discuss both of your goals, dance background, and expectations.',
+                },
+                {
+                    id: 'plan',
+                    stepNumber: 2,
+                    title: 'Create Program',
+                    description: 'We prepare a training plan specifically for both of you.',
+                },
+                {
+                    id: 'lessons',
+                    stepNumber: 3,
+                    title: 'Learn Together',
+                    description: 'Lessons begin, you progress together.',
+                },
+                {
+                    id: 'practice',
+                    stepNumber: 4,
+                    title: 'Practice & Dance',
+                    description: 'Reinforce what you\'ve learned, dance together.',
+                },
+            ],
+
+            faqs: [
+                {
+                    id: 'no-experience',
+                    question: 'Neither of us knows how to dance, can we still join?',
+                    answer: 'Absolutely! Our couple lessons are suitable for all levels. Starting from scratch and learning together is actually one of the best ways. You both progress at the same level.',
+                },
+                {
+                    id: 'wedding-timing',
+                    question: 'How far in advance should we start for a wedding dance?',
+                    answer: 'Ideally, we recommend starting 2-3 months before your wedding. Within this time, you\'ll reach a level where you can perform comfortably and confidently. We also have intensive 1-month programs for urgent situations.',
+                },
+                {
+                    id: 'different-levels',
+                    question: 'What if our skill levels are different?',
+                    answer: 'This is very common and not a problem. The instructor adapts the lesson to ensure both of you progress. The more experienced partner develops partnership skills; the beginner learns basic techniques.',
+                },
+                {
+                    id: 'lesson-count',
+                    question: 'How much progress can we make in one lesson?',
+                    answer: 'Every couple learns at a different pace, but generally after 4-6 lessons, you\'ll be able to dance with a simple tango walk and basic figures. 8-12 lessons are ideal for a wedding dance.',
+                },
+            ],
+
+            ctaText: 'Free Trial Lesson',
+            ctaDescription: 'Would you like to experience tango with your partner? Your first lesson is free!',
+        },
+    },
 };
 
 // =============================================================================
@@ -1672,6 +2114,157 @@ export const TANGO_DENEME_DERSI_SERVICE: Service = {
     ctaDescription: 'Tango\'yu merak mı ediyorsunuz? İlk adımı atın, gerisini birlikte çözeriz!',
 
     isActive: true,
+
+    // English Translations
+    translations: {
+        en: {
+            name: 'Tango Trial Lesson',
+            tagline: 'The Easiest Way to Discover Tango',
+            description: 'Want to try tango? Take your first step into the world of tango with our trial lesson. No prior knowledge required, just your curiosity is enough.',
+
+            seo: {
+                title: 'Tango Trial Lesson Istanbul | Free First Lesson | Gamze Tango',
+                description: 'Free tango trial lesson in Istanbul. Discover tango, no commitment. Your curiosity is enough, no experience needed!',
+                keywords: [
+                    'tango trial lesson',
+                    'free tango lesson',
+                    'try tango',
+                    'first tango lesson',
+                    'tango beginner',
+                    'tango introduction',
+                    'tango istanbul trial',
+                ],
+                canonicalUrl: 'https://gamzetango.com/en/tango-trial-lesson',
+            },
+
+            features: [
+                {
+                    id: 'no-commitment',
+                    icon: 'Heart',
+                    title: 'No Commitment',
+                    description: 'One-time trial opportunity. Whether to continue is entirely up to you.',
+                },
+                {
+                    id: 'introduction',
+                    icon: 'Sparkles',
+                    title: 'Basic Introduction',
+                    description: 'Experience firsthand what tango is and how it feels.',
+                },
+                {
+                    id: 'no-experience',
+                    icon: 'Sprout',
+                    title: 'No Experience Needed',
+                    description: 'You can join even if you\'ve never danced before.',
+                },
+                {
+                    id: 'questions',
+                    icon: 'User',
+                    title: 'Get Your Questions Answered',
+                    description: 'Ask all your questions about tango.',
+                },
+            ],
+
+            benefits: [
+                {
+                    id: 'risk-free',
+                    title: 'Risk-Free Experience',
+                    description: 'The opportunity to try tango without any commitment. If you like it, you continue; if not, you say goodbye.',
+                    highlight: 'Nothing to lose',
+                },
+                {
+                    id: 'feel-tango',
+                    title: 'Feel Tango',
+                    description: 'What you see in videos is different from experiencing it yourself. Experience your first abrazo (embrace).',
+                    highlight: 'Words aren\'t enough',
+                },
+                {
+                    id: 'meet-instructor',
+                    title: 'Meet Your Instructor',
+                    description: 'Meet Gamze, see her teaching style. Understand if you\'re compatible.',
+                    highlight: 'Personal connection',
+                },
+            ],
+
+            audiences: [
+                {
+                    id: 'curious',
+                    title: 'The Curious',
+                    description: 'Anyone curious about tango but hesitant to take the first step.',
+                    icon: 'Sparkles',
+                },
+                {
+                    id: 'undecided',
+                    title: 'The Undecided',
+                    description: 'Those who can\'t decide whether to start a dance course.',
+                    icon: 'User',
+                },
+                {
+                    id: 'returners',
+                    title: 'Returning Dancers',
+                    description: 'Those who used to dance and took a break, wanting to return to tango.',
+                    icon: 'Heart',
+                },
+            ],
+
+            steps: [
+                {
+                    id: 'contact',
+                    stepNumber: 1,
+                    title: 'Book an Appointment',
+                    description: 'Create an appointment for a trial lesson via WhatsApp or phone.',
+                },
+                {
+                    id: 'intro',
+                    stepNumber: 2,
+                    title: 'Introduction (10 min)',
+                    description: 'We discuss your goals, expectations, and dance background.',
+                },
+                {
+                    id: 'basics',
+                    stepNumber: 3,
+                    title: 'First Steps (35 min)',
+                    description: 'Your first tango experience with posture, walking, and abrazo.',
+                },
+                {
+                    id: 'evaluation',
+                    stepNumber: 4,
+                    title: 'Evaluation (15 min)',
+                    description: 'If you want to continue, we\'ll determine the right program for you.',
+                },
+            ],
+
+            faqs: [
+                {
+                    id: 'partner-needed',
+                    question: 'Can I come to the trial lesson without a partner?',
+                    answer: 'Yes, absolutely! Trial lessons are usually individual or in small groups. No partner requirement.',
+                },
+                {
+                    id: 'what-to-wear',
+                    question: 'What should I wear?',
+                    answer: 'Comfortable everyday clothes that allow you to move freely. For shoes, choose flat, non-slip soles. No special dance shoes needed.',
+                },
+                {
+                    id: 'duration',
+                    question: 'How long is the trial lesson?',
+                    answer: 'The trial lesson lasts approximately 45-60 minutes. This time includes introduction, basic information, and initial practice.',
+                },
+                {
+                    id: 'obligation',
+                    question: 'Do I have to sign up after the trial lesson?',
+                    answer: 'No, there is no obligation. The trial lesson is for you to discover tango. Whether to continue is entirely up to you.',
+                },
+                {
+                    id: 'age-limit',
+                    question: 'Is there an age limit?',
+                    answer: 'There is no age limit for tango! We have students ranging from 18 to 70 years old. Anyone can learn tango if there\'s no physical limitation.',
+                },
+            ],
+
+            ctaText: 'Get Trial Lesson',
+            ctaDescription: 'Curious about tango? Take the first step, we\'ll figure out the rest together!',
+        },
+    },
 };
 
 // =============================================================================
