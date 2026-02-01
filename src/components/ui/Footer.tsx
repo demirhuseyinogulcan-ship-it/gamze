@@ -49,6 +49,34 @@ const locationPages = [
 // Service pages with dedicated URLs - SEO critical
 const servicePages = [
   {
+    hrefTr: '/grup-tango-dersi',
+    hrefEn: '/en/group-tango-lessons',
+    labelTr: 'Grup Tango Dersi',
+    labelEn: 'Group Tango Lessons',
+    icon: Users,
+  },
+  {
+    hrefTr: '/ozel-tango-dersi',
+    hrefEn: '/en/private-tango-lessons',
+    labelTr: 'Özel Tango Dersi',
+    labelEn: 'Private Tango Lessons',
+    icon: Sparkles,
+  },
+  {
+    hrefTr: '/cift-tango-dersi',
+    hrefEn: '/en/couple-tango-lessons',
+    labelTr: 'Çift Tango Dersi',
+    labelEn: 'Couple Tango Lessons',
+    icon: Heart,
+  },
+  {
+    hrefTr: '/tango-deneme-dersi',
+    hrefEn: '/en/tango-trial-lesson',
+    labelTr: 'Deneme Dersi',
+    labelEn: 'Trial Lesson',
+    icon: Music,
+  },
+  {
     hrefTr: '/dugun-dansi',
     hrefEn: '/en/wedding-dance-istanbul',
     labelTr: 'Düğün Dansı Eğitimi',
@@ -61,20 +89,6 @@ const servicePages = [
     labelTr: 'Lady Styling',
     labelEn: 'Lady Styling',
     icon: Sparkles,
-  },
-  {
-    hrefTr: '/silivri-tango-kursu',
-    hrefEn: '/en/tango-course-silivri',
-    labelTr: 'Silivri Tango Kursu',
-    labelEn: 'Silivri Tango Course',
-    icon: Users,
-  },
-  {
-    hrefTr: '/silivri-dans-kursu',
-    hrefEn: '/en/dance-lessons-silivri',
-    labelTr: 'Silivri Dans Kursu',
-    labelEn: 'Silivri Dance Course',
-    icon: Music,
   },
 ];
 

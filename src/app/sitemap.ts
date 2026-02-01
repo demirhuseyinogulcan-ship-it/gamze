@@ -201,6 +201,62 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
     },
 
+    // Grup Tango Dersi
+    {
+      url: `${baseUrl}/grup-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/grup-tango-dersi`,
+          en: `${baseUrl}/en/group-tango-lessons`,
+        },
+      },
+    },
+
+    // Özel Tango Dersi (General)
+    {
+      url: `${baseUrl}/ozel-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/ozel-tango-dersi`,
+          en: `${baseUrl}/en/private-tango-lessons`,
+        },
+      },
+    },
+
+    // Çift Tango Dersi
+    {
+      url: `${baseUrl}/cift-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/cift-tango-dersi`,
+          en: `${baseUrl}/en/couple-tango-lessons`,
+        },
+      },
+    },
+
+    // Tango Deneme Dersi
+    {
+      url: `${baseUrl}/tango-deneme-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/tango-deneme-dersi`,
+          en: `${baseUrl}/en/tango-trial-lesson`,
+        },
+      },
+    },
+
     // ═══════════════════════════════════════════════════════════════════════════
     // SERVICE PAGES - English (Priority 0.9)
     // ═══════════════════════════════════════════════════════════════════════════
