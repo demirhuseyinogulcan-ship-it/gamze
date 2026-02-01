@@ -410,7 +410,7 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="flex items-center gap-2 text-white/40 text-sm">
-              © {currentYear} Gamze Tango. {footer.madeWith} <Heart size={14} className="text-crimson animate-pulse" /> Can
+              © {currentYear} Gamze Tango. {footer.rights}
             </p>
           </div>
         </div>

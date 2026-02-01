@@ -278,7 +278,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: 'Tüm hakları saklıdır.',
-      madeWith: 'Tüm hislerim saklıdır',
+      madeWith: 'sevgiyle yapıldı',
       quickLinks: 'Hızlı Bağlantılar',
       contact: 'İletişim',
       description: 'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi.',
@@ -558,7 +558,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: 'All rights reserved.',
-      madeWith: 'All hearts reserved',
+      madeWith: 'made with love',
       quickLinks: 'Quick Links',
       contact: 'Contact',
       description: 'Step into the enchanting world of tango. Professional tango training in Silivri and Istanbul.',
