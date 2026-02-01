@@ -115,9 +115,10 @@ export interface LocationCTAProps {
 }
 
 // Schema.org LocalBusiness type for SEO
+// Using LocalBusiness instead of DanceSchool for broader Google support
 export interface LocalBusinessSchema {
   readonly '@context': 'https://schema.org';
-  readonly '@type': 'DanceSchool';
+  readonly '@type': 'LocalBusiness';
   readonly name: string;
   readonly description: string;
   readonly image: string;

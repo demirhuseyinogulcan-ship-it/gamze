@@ -740,10 +740,11 @@ export function getLocationBySlug(slug: string): Location | undefined {
 }
 
 // Generate Schema.org LocalBusiness JSON-LD
+// Using LocalBusiness instead of DanceSchool for broader Google support
 export function generateLocalBusinessSchema(location: Location): LocalBusinessSchema {
   return {
     '@context': 'https://schema.org',
-    '@type': 'DanceSchool',
+    '@type': 'LocalBusiness',
     name: `Gamze Yıldız Tango - ${location.name}`,
     description: location.description,
     image: `https://gamzetango.com${location.heroImage}`,

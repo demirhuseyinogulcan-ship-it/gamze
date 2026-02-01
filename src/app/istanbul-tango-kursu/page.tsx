@@ -99,12 +99,7 @@ const courseSchema = {
       },
     },
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: 4.9,
-    reviewCount: 87,
-    bestRating: 5,
-  },
+  // Note: aggregateRating removed - Course type doesn't support it in Google
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/InStock',
