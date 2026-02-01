@@ -240,7 +240,7 @@ export function Footer() {
               </ul>
             </motion.div>
 
-            {/* Service Pages Column - 2 cols (SEO CRITICAL) */}
+            {/* Service/Lesson Pages Column - 2 cols (SEO CRITICAL) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -249,7 +249,7 @@ export function Footer() {
               className="lg:col-span-2"
             >
               <h4 className="font-heading text-lg text-white mb-5">
-                {isTurkish ? 'Hizmetler' : 'Services'}
+                {isTurkish ? 'Dersler' : 'Lessons'}
               </h4>
               <ul className="space-y-2.5">
                 {servicePages.map((service) => {

@@ -1,14 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, Heart, Sparkles, Building2, ArrowRight, MapPin } from 'lucide-react';
+import { Users, Heart, Sparkles, Building2, ArrowRight, MapPin, User, Music, UserPlus } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslation } from '@/lib/i18n';
 import { Container, SectionTitle, Button } from '@/components/ui';
 
 const serviceIcons = {
-  private: Users,
-  wedding: Heart,
+  private: User,
+  group: Users,
+  couple: Heart,
+  trial: Music,
+  wedding: Sparkles,
   lady: Sparkles,
   corporate: Building2,
 };
