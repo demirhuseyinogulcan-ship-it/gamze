@@ -49,7 +49,7 @@ Mesaj:
 ${formData.message}
 
 ---
-Bu mesaj gamzeyildiztango.com iletişim formundan gönderilmiştir.`;
+Bu mesaj gamzetango.com iletişim formundan gönderilmiştir.`;
 
     // mailto: linkini oluştur
     const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

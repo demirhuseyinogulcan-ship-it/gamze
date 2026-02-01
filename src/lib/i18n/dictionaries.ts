@@ -46,6 +46,7 @@ export interface Dictionary {
       title: string;
       description: string;
       features: string[];
+      href?: string; // Link to service detail page
     }[];
     cta: string;
   };
@@ -181,18 +182,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: 'Özel Tango Dersleri',
           description: 'Birebir veya çift olarak, kişiye özel hazırlanmış program ile tangonun inceliklerini öğrenin.',
           features: ['Kişiye özel program', 'Esnek saat seçimi', 'Hızlı ilerleme', 'Detaylı geri bildirim'],
+          href: '/istanbul-ozel-tango-dersi',
         },
         {
           id: 'wedding',
           title: 'Düğün Dansı',
           description: 'Hayatınızın en özel gününde unutulmaz bir dans performansı sergilemek için profesyonel hazırlık.',
           features: ['Şarkı seçimi desteği', 'Koreografi tasarımı', 'Video analizi', 'Genel prova'],
+          href: '/dugun-dansi',
         },
         {
           id: 'lady',
           title: 'Lady Styling',
           description: 'Kadın dansçılara özel solo teknik çalışmaları ve stil geliştirme programı.',
           features: ['Duruş ve zarafet', 'Adorno teknikleri', 'Müzikalite', 'Özgüven geliştirme'],
+          href: '/lady-styling',
         },
         {
           id: 'corporate',
@@ -436,18 +440,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: 'Private Tango Lessons',
           description: 'Learn the intricacies of tango with a personalized program, one-on-one or as a couple.',
           features: ['Personalized program', 'Flexible scheduling', 'Fast progress', 'Detailed feedback'],
+          href: '/en/private-tango-lessons-istanbul',
         },
         {
           id: 'wedding',
           title: 'Wedding Dance',
           description: 'Professional preparation to perform an unforgettable dance on the most special day of your life.',
           features: ['Song selection support', 'Choreography design', 'Video analysis', 'Dress rehearsal'],
+          href: '/en/wedding-dance',
         },
         {
           id: 'lady',
           title: 'Lady Styling',
           description: 'Solo technique work and style development program specially designed for female dancers.',
           features: ['Posture and grace', 'Adorno techniques', 'Musicality', 'Confidence building'],
+          href: '/en/lady-styling',
         },
         {
           id: 'corporate',

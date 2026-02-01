@@ -57,7 +57,7 @@ export function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-12">
           {services.items.map((service, index) => {
             const Icon = serviceIcons[service.id as keyof typeof serviceIcons];
-            
+
             return (
               <motion.article
                 key={service.id}
@@ -100,15 +100,25 @@ export function Services() {
                   ))}
                 </ul>
 
-                {/* CTA */}
-                <Button
-                  variant="ghost"
-                  onClick={scrollToContact}
-                  className="group/btn"
-                >
-                  {services.cta}
-                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                {/* CTA - Link if href exists, otherwise scroll to contact */}
+                {service.href ? (
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors group/btn"
+                  >
+                    {services.cta}
+                    <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                ) : (
+                  <Button
+                    variant="ghost"
+                    onClick={scrollToContact}
+                    className="group/btn"
+                  >
+                    {services.cta}
+                    <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                )}
 
                 {/* Hover Decoration */}
                 <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

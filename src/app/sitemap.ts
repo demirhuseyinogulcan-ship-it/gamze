@@ -4,7 +4,7 @@ import { getAllPostSlugs } from '@/lib/blog';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://gamzetango.com';
   const lastModified = new Date();
-  
+
   // Get all blog posts dynamically
   const allPostSlugs = await getAllPostSlugs();
 
@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // ═══════════════════════════════════════════════════════════════════════════
     // LOCATION PAGES - Turkish (Priority 1.0 - Local SEO Critical)
     // ═══════════════════════════════════════════════════════════════════════════
-    
+
     // İstanbul - Main
     {
       url: `${baseUrl}/istanbul-ozel-tango-dersi`,
@@ -139,6 +139,88 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.85,
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SERVICE PAGES - Turkish (Priority 0.95 - High Converting Pages)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    // Lady Styling
+    {
+      url: `${baseUrl}/lady-styling`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/lady-styling`,
+          en: `${baseUrl}/en/lady-styling`,
+        },
+      },
+    },
+
+    // Silivri Dans Kursu (SEO Critical - "silivri dans kursu" keyword)
+    {
+      url: `${baseUrl}/silivri-dans-kursu`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/silivri-dans-kursu`,
+          en: `${baseUrl}/en/dance-lessons-silivri`,
+        },
+      },
+    },
+
+    // Silivri Tango Kursu
+    {
+      url: `${baseUrl}/silivri-tango-kursu`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/silivri-tango-kursu`,
+          en: `${baseUrl}/en/tango-course-silivri`,
+        },
+      },
+    },
+
+    // Düğün Dansı
+    {
+      url: `${baseUrl}/dugun-dansi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/dugun-dansi`,
+          en: `${baseUrl}/en/wedding-dance`,
+        },
+      },
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SERVICE PAGES - English (Priority 0.9)
+    // ═══════════════════════════════════════════════════════════════════════════
+    {
+      url: `${baseUrl}/en/lady-styling`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/dance-lessons-silivri`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/tango-course-silivri`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
 
     // ═══════════════════════════════════════════════════════════════════════════
@@ -237,14 +319,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // BLOG POSTS - Dynamically generated from content directory
     // ═══════════════════════════════════════════════════════════════════════════
     ...allPostSlugs.map(({ slug, locale }) => {
-      const url = locale === 'tr' 
+      const url = locale === 'tr'
         ? `${baseUrl}/blog/${slug}`
         : `${baseUrl}/en/blog/${slug}`;
-      
+
       // Determine priority based on pillar content
-      const isPillar = ['tango-rehberi', 'dugun-dansi-tango', 'lady-styling-rehberi', 
-                        'tango-guide', 'wedding-dance-tango', 'lady-styling-guide'].includes(slug);
-      
+      const isPillar = ['tango-rehberi', 'dugun-dansi-tango', 'lady-styling-rehberi',
+        'tango-guide', 'wedding-dance-tango', 'lady-styling-guide'].includes(slug);
+
       return {
         url,
         lastModified,
