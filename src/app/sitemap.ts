@@ -313,6 +313,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+    {
+      url: `${baseUrl}/blog/tango-muzigi-rehberi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/milonga-adabi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/tango-tarihi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/tango-saglik-faydalari`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
     // Cluster Content
     {
       url: `${baseUrl}/blog/tango-nedir`,
@@ -380,8 +404,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         : `${baseUrl}/en/blog/${slug}`;
 
       // Determine priority based on pillar content
-      const isPillar = ['tango-rehberi', 'dugun-dansi-tango', 'lady-styling-rehberi',
-        'tango-guide', 'wedding-dance-tango', 'lady-styling-guide'].includes(slug);
+      const isPillar = [
+        'tango-rehberi', 'dugun-dansi-tango', 'lady-styling-rehberi',
+        'tango-muzigi-rehberi', 'milonga-adabi', 'tango-tarihi', 'tango-saglik-faydalari',
+        'tango-guide', 'wedding-dance-tango', 'lady-styling-guide'
+      ].includes(slug);
 
       return {
         url,
