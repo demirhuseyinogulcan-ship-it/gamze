@@ -74,12 +74,38 @@ Site, tango hakkında kapsamlı Türkçe ve İngilizce blog içeriği sunmaktad�
 
 ## Önemli Sayfalar
 
+### Türkçe Sayfalar
 - Ana sayfa: https://gamzetango.com
 - Blog: https://gamzetango.com/blog
 - İstanbul Özel Tango Dersi: https://gamzetango.com/istanbul-ozel-tango-dersi
 - Silivri Tango Dersi: https://gamzetango.com/silivri-ozel-tango-dersi
 - Kadıköy Tango Dersi: https://gamzetango.com/kadikoy-ozel-tango-dersi
 - Beyoğlu Tango Dersi: https://gamzetango.com/beyoglu-ozel-tango-dersi
+- Özel Tango Dersi: https://gamzetango.com/ozel-tango-dersi
+- Grup Tango Dersi: https://gamzetango.com/grup-tango-dersi
+- Çift Tango Dersi: https://gamzetango.com/cift-tango-dersi
+- Düğün Dansı: https://gamzetango.com/dugun-dansi
+- Lady Styling: https://gamzetango.com/lady-styling
+- Kurumsal Workshop: https://gamzetango.com/kurumsal-workshop
+- Tango Deneme Dersi: https://gamzetango.com/tango-deneme-dersi
+
+### İngilizce Sayfalar (English)
+- Homepage: https://gamzetango.com/en
+- Blog: https://gamzetango.com/en/blog
+- Private Tango Lessons: https://gamzetango.com/en/private-tango-lessons
+- Group Tango Lessons: https://gamzetango.com/en/group-tango-lessons
+- Wedding Dance: https://gamzetango.com/en/wedding-dance
+- Lady Styling: https://gamzetango.com/en/lady-styling
+- Corporate Workshop: https://gamzetango.com/en/corporate-workshop
+
+### Popüler Blog Yazıları
+- Tango Rehberi A-Z: https://gamzetango.com/blog/tango-rehberi
+- Tango Nedir: https://gamzetango.com/blog/tango-nedir
+- Tango Tarihi: https://gamzetango.com/blog/tango-tarihi
+- Düğün Dansı Tango: https://gamzetango.com/blog/dugun-dansi-tango
+- Milonga Nedir: https://gamzetango.com/blog/milonga-nedir
+- Tango Terimleri: https://gamzetango.com/blog/tango-terimleri
+- İlk Tango Dersi: https://gamzetango.com/blog/ilk-tango-dersi
 
 ## Anahtar Kelimeler
 

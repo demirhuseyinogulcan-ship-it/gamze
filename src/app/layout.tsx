@@ -199,13 +199,18 @@ export const viewport: Viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    // WebSite Schema - Ensures correct brand name in SERP
+    // WebSite Schema - Ensures correct brand name in SERP and sitelinks
     {
       '@type': 'WebSite',
       '@id': 'https://gamzetango.com/#website',
       name: 'Gamze Yıldız Tango',
       alternateName: 'Gamze Tango',
       url: 'https://gamzetango.com',
+      description: 'İstanbul\'da profesyonel tango eğitimi. Özel dersler, düğün dansı, lady styling.',
+      publisher: {
+        '@id': 'https://gamzetango.com/#organization',
+      },
+      inLanguage: ['tr-TR', 'en-US'],
       potentialAction: {
         '@type': 'SearchAction',
         target: 'https://gamzetango.com/?s={search_term_string}',
@@ -252,23 +257,7 @@ const jsonLd = {
         addressCountry: 'TR',
       },
     },
-    // WebSite Schema - for sitelinks
-    {
-      '@type': 'WebSite',
-      '@id': 'https://gamzetango.com/#website',
-      name: 'Gamze Tango',
-      url: 'https://gamzetango.com',
-      description: 'İstanbul\'da profesyonel tango eğitimi. Özel dersler, düğün dansı, lady styling.',
-      publisher: {
-        '@id': 'https://gamzetango.com/#organization',
-      },
-      inLanguage: ['tr-TR', 'en-US'],
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: 'https://gamzetango.com/blog?q={search_term_string}',
-        'query-input': 'required name=search_term_string',
-      },
-    },
+    // Note: WebSite Schema moved to main WebSite block above to avoid duplicates
     // VideoObject Schema - for hero video
     {
       '@type': 'VideoObject',
@@ -297,13 +286,13 @@ const jsonLd = {
       ],
       knowsAbout: ['Arjantin Tangosu', 'Dans Eğitimi', 'Düğün Dansı', 'Lady Styling'],
       worksFor: {
-        '@type': 'DanceSchool',
-        name: 'Gamze Tango',
+        '@id': 'https://gamzetango.com/#organization',
       },
     },
-    // DanceSchool Schema with AggregateRating - CRITICAL for star ratings in SERP
+    // LocalBusiness Schema with AggregateRating - CRITICAL for star ratings in SERP
+    // Using LocalBusiness because DanceSchool doesn't support aggregateRating in Google
     {
-      '@type': 'DanceSchool',
+      '@type': 'LocalBusiness',
       '@id': 'https://gamzetango.com/#school',
       name: 'Gamze Tango',
       description: 'Profesyonel tango eğitimi - Özel dersler, düğün dansı, lady styling ve kurumsal workshoplar.',
