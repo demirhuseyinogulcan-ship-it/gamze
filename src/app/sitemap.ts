@@ -106,6 +106,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
       },
     },
+    {
+      url: `${baseUrl}/silivri-tango-dersi`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
 
     // ═══════════════════════════════════════════════════════════════════════════
     // LOCATION PAGES - English (Priority 0.9)

@@ -40,9 +40,9 @@ const locationPages = [
   },
   {
     hrefTr: '/istanbul-tango-kursu',
-    hrefEn: '/en/wedding-dance-istanbul',
+    hrefEn: '/en/private-tango-lessons-istanbul',
     labelTr: 'İstanbul Tango Kursu',
-    labelEn: 'Wedding Dance Istanbul',
+    labelEn: 'Istanbul Tango Course',
   },
 ];
 
@@ -78,7 +78,7 @@ const servicePages = [
   },
   {
     hrefTr: '/dugun-dansi',
-    hrefEn: '/en/wedding-dance-istanbul',
+    hrefEn: '/en/wedding-dance',
     labelTr: 'Düğün Dansı Eğitimi',
     labelEn: 'Wedding Dance Training',
     icon: Heart,
