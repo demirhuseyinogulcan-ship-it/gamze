@@ -80,7 +80,7 @@ export default async function EnglishCategoryPage({ params }: CategoryPageProps)
         <BlogHero
           locale="en"
           subtitle="CATEGORY"
-          title={`${categoryInfo.icon} ${categoryInfo.name.en}`}
+          title={categoryInfo.name.en}
           description={categoryInfo.description.en}
         />
         

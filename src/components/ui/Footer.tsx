@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Instagram, Phone, Mail, MapPin, Heart, ChevronRight, BookOpen, Sparkles, Users, Music } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin, Heart, ChevronRight, BookOpen, Sparkles, Users, Music, Building2 } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n';
 import { Container } from './Container';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES, CONTACT } from '@/lib/constants/site';
@@ -89,6 +89,13 @@ const servicePages = [
     labelTr: 'Lady Styling',
     labelEn: 'Lady Styling',
     icon: Sparkles,
+  },
+  {
+    hrefTr: '/kurumsal-workshop',
+    hrefEn: '/en/corporate-workshop',
+    labelTr: 'Kurumsal Workshop',
+    labelEn: 'Corporate Workshop',
+    icon: Building2,
   },
 ];
 

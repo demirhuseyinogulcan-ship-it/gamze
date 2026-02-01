@@ -257,6 +257,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
     },
 
+    // Kurumsal Workshop
+    {
+      url: `${baseUrl}/kurumsal-workshop`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/kurumsal-workshop`,
+          en: `${baseUrl}/en/corporate-workshop`,
+        },
+      },
+    },
+
     // ═══════════════════════════════════════════════════════════════════════════
     // SERVICE PAGES - English (Priority 0.9)
     // ═══════════════════════════════════════════════════════════════════════════
@@ -274,6 +288,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/en/tango-course-silivri`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/corporate-workshop`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,

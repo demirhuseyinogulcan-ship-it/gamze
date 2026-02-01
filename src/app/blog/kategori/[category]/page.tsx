@@ -75,7 +75,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <BlogHero
           locale="tr"
           subtitle="KATEGORİ"
-          title={`${categoryInfo.icon} ${categoryInfo.name.tr}`}
+          title={categoryInfo.name.tr}
           description={categoryInfo.description.tr}
         />
         

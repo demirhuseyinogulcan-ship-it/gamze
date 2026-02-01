@@ -1675,6 +1675,431 @@ export const TANGO_DENEME_DERSI_SERVICE: Service = {
 };
 
 // =============================================================================
+// KURUMSAL WORKSHOP SERVICE - CORPORATE TEAM BUILDING
+// =============================================================================
+
+export const KURUMSAL_WORKSHOP_SERVICE: Service = {
+    id: 'kurumsal-workshop',
+    slug: 'kurumsal-workshop',
+    name: 'Kurumsal Tango Workshop',
+    tagline: 'Dans ile Takım Ruhu Oluşturun',
+    description: 'Şirket etkinliklerinde fark yaratın! Tango workshop\'u ile ekibinizin iletişimini güçlendirin, motivasyonu artırın ve unutulmaz anılar biriktirin.',
+    heroImage: '/images/optimized/6.jpg',
+
+    seo: {
+        title: 'Kurumsal Tango Workshop İstanbul | Takım Çalışması | Gamze Tango',
+        description: 'Şirket etkinliklerinde tango workshop. Takım bağlarını güçlendiren, iletişimi artıran, eğlenceli kurumsal dans programları İstanbul.',
+        keywords: [
+            'kurumsal tango workshop',
+            'şirket tango etkinliği',
+            'takım çalışması workshop',
+            'kurumsal dans etkinliği',
+            'team building tango',
+            'şirket motivasyon etkinliği',
+            'kurumsal workshop istanbul',
+            'tango team building',
+            'şirket eğlence aktivitesi',
+            'motivasyon dans etkinliği',
+        ],
+        canonicalUrl: 'https://gamzetango.com/kurumsal-workshop',
+    },
+
+    features: [
+        {
+            id: 'team-building',
+            icon: 'Users',
+            title: 'Takım Bağları',
+            description: 'Tango, lideri ve takipçiyi gerektirir. Bu dinamik, iş yaşamındaki işbirliğini güçlendirir.',
+        },
+        {
+            id: 'communication',
+            icon: 'Heart',
+            title: 'İletişim Geliştirme',
+            description: 'Sözsüz iletişimin gücünü keşfedin. Tango, empati ve dikkatle dinlemeyi öğretir.',
+        },
+        {
+            id: 'fun',
+            icon: 'Sparkles',
+            title: 'Eğlenceli Ortam',
+            description: 'Ofis ortamının dışında, kahkahalar ve müzikle dolu unutulmaz anlar.',
+        },
+        {
+            id: 'all-levels',
+            icon: 'Sprout',
+            title: 'Her Seviyeye Uygun',
+            description: 'Dans deneyimi gerekmez. Programlar tamamen sıfırdan başlayanlara göre tasarlanır.',
+        },
+        {
+            id: 'custom',
+            icon: 'Star',
+            title: 'Özel Program',
+            description: 'Şirketinizin hedeflerine göre özelleştirilmiş workshop içerikleri.',
+        },
+        {
+            id: 'professional',
+            icon: 'Award',
+            title: 'Profesyonel Sunum',
+            description: 'Kurumsal etkinliklerde deneyimli eğitmen ile sorunsuz organizasyon.',
+        },
+    ],
+
+    benefits: [
+        {
+            id: 'motivation',
+            title: 'Motivasyon Artışı',
+            description: 'Rutinin dışına çıkın. Çalışanlarınız farklı bir deneyimle yenilenmiş hissederek iş yerine döner.',
+            highlight: 'Enerjik başlangıç',
+        },
+        {
+            id: 'bonding',
+            title: 'Güçlü Bağlar',
+            description: 'Birlikte dans etmek, güven ve samimiyet oluşturur. Departmanlar arası bariyerler yıkılır.',
+            highlight: 'Takım ruhu',
+        },
+        {
+            id: 'leadership',
+            title: 'Liderlik Farkındalığı',
+            description: 'Tango\'da liderlik ve takip etme rolleri, iş yaşamındaki dinamikleri yansıtır. Farkındalık kazanılır.',
+            highlight: 'Rol farkındalığı',
+        },
+        {
+            id: 'stress-relief',
+            title: 'Stres Azaltma',
+            description: 'Dans, endorfin salgılatır. İş stresinden uzaklaşıp keyifli vakit geçirin.',
+            highlight: 'Rahatlatıcı etki',
+        },
+        {
+            id: 'memorable',
+            title: 'Unutulmaz Anılar',
+            description: 'Sıradan toplantılar unutulur, tango workshop\'u konuşulmaya devam eder.',
+            highlight: 'Kalıcı izlenim',
+        },
+    ],
+
+    audiences: [
+        {
+            id: 'hr',
+            title: 'İK Departmanları',
+            description: 'Çalışan bağlılığını artırmak ve motivasyon etkinlikleri düzenlemek isteyenler.',
+            icon: 'Users',
+        },
+        {
+            id: 'management',
+            title: 'Yöneticiler',
+            description: 'Ekip dinamiklerini güçlendirmek ve liderlik becerilerini geliştirmek isteyenler.',
+            icon: 'Star',
+        },
+        {
+            id: 'event-planners',
+            title: 'Etkinlik Organizatörleri',
+            description: 'Şirket yıl sonu, kutlama ve özel günler için farklı aktivite arayanlar.',
+            icon: 'Calendar',
+        },
+        {
+            id: 'small-teams',
+            title: 'Küçük Ekipler',
+            description: '5-15 kişilik ekipler için ideal. Samimi ve yoğun etkileşim.',
+            icon: 'Heart',
+        },
+    ],
+
+    steps: [
+        {
+            id: 'consultation',
+            stepNumber: 1,
+            title: 'İhtiyaç Analizi',
+            description: 'Şirketinizin hedeflerini, katılımcı sayısını ve beklentilerinizi konuşalım.',
+        },
+        {
+            id: 'planning',
+            stepNumber: 2,
+            title: 'Program Tasarımı',
+            description: 'Size özel workshop programı hazırlayalım. Süre, içerik ve format belirlenir.',
+        },
+        {
+            id: 'logistics',
+            stepNumber: 3,
+            title: 'Lojistik Planlama',
+            description: 'Mekan, müzik sistemi ve diğer teknik gereksinimler organize edilir.',
+        },
+        {
+            id: 'workshop',
+            stepNumber: 4,
+            title: 'Workshop Günü',
+            description: 'Eğlenceli, enerjik ve profesyonel bir deneyim. Herkes katılır, herkes eğlenir!',
+        },
+        {
+            id: 'follow-up',
+            stepNumber: 5,
+            title: 'Değerlendirme',
+            description: 'İsteğe bağlı: Sürekli dans programları veya tekrar workshop\'lar planlanabilir.',
+        },
+    ],
+
+    faqs: [
+        {
+            id: 'group-size',
+            question: 'Kaç kişilik gruplara workshop verebilirsiniz?',
+            answer: '5 kişiden 100+ kişiye kadar her boyutta grup için program tasarlayabiliriz. Küçük gruplar daha yoğun, büyük gruplar daha eğlenceli bir atmosfer sunar.',
+        },
+        {
+            id: 'duration',
+            question: 'Workshop ne kadar sürer?',
+            answer: 'Standart workshop 1.5-2 saat sürer. Yarım günlük (3-4 saat) veya tam günlük programlar da mümkündür. İhtiyacınıza göre ayarlanır.',
+        },
+        {
+            id: 'experience-needed',
+            question: 'Katılımcıların dans deneyimi olması gerekiyor mu?',
+            answer: 'Hayır, kesinlikle gerekmez! Programlar tamamen başlangıç seviyesinden başlar. Hiç dans etmemiş kişiler bile rahatça katılabilir.',
+        },
+        {
+            id: 'location',
+            question: 'Workshop nerede yapılır?',
+            answer: 'Şirketinizin mekanında (toplantı salonu, kafeterya vb.) veya anlaşmalı dans stüdyolarımızda yapılabilir. Mekan seçimi size kalmış.',
+        },
+        {
+            id: 'what-to-wear',
+            question: 'Katılımcılar ne giymelidir?',
+            answer: 'Rahat, günlük kıyafetler yeterlidir. Takım elbise bile olur! Sadece rahat ayakkabı (topuksuz veya alçak topuk) önerilir.',
+        },
+        {
+            id: 'mixed-gender',
+            question: 'Erkek-kadın oranı önemli mi?',
+            answer: 'Hayır, önemli değil. Tangoda rolleri dönüşümlü öğretiyoruz. Herkes hem lider hem takipçi rolünü deniyor. Eğlenceli ve öğretici!',
+        },
+        {
+            id: 'price',
+            question: 'Fiyatlandırma nasıl yapılıyor?',
+            answer: 'Fiyat; katılımcı sayısı, süre ve özel isteklere göre değişir. Ücretsiz teklif için bizimle iletişime geçin.',
+        },
+        {
+            id: 'booking',
+            question: 'Ne kadar önceden rezervasyon yapmalıyım?',
+            answer: 'İdeal olarak 2-3 hafta öncesinden randevu almanızı öneriyoruz. Acil durumlar için de çözümler üretebiliriz.',
+        },
+    ],
+
+    relatedLocations: [
+        'istanbul-ozel-tango-dersi',
+        'kadikoy-ozel-tango-dersi',
+        'beyoglu-ozel-tango-dersi',
+    ],
+
+    relatedBlogs: [
+        'tango-rehberi',
+        'tek-basina-tango-kursuna-gitmek',
+        'ilk-tango-dersi',
+    ],
+
+    ctaText: 'Teklif Alın',
+    ctaDescription: 'Ekibiniz için benzersiz bir deneyim mi arıyorsunuz? Ücretsiz danışmanlık ve teklif için hemen iletişime geçin!',
+
+    isActive: true,
+
+    // English Translations
+    translations: {
+        en: {
+            name: 'Corporate Tango Workshop',
+            tagline: 'Build Team Spirit Through Dance',
+            description: 'Make your corporate events unique! Strengthen team communication, boost motivation, and create unforgettable memories with tango workshops.',
+
+            seo: {
+                title: 'Corporate Tango Workshop Istanbul | Team Building | Gamze Tango',
+                description: 'Corporate tango workshops for team building. Strengthen bonds, improve communication, fun dance programs for companies in Istanbul.',
+                keywords: [
+                    'corporate tango workshop',
+                    'team building dance',
+                    'company tango event',
+                    'corporate dance workshop',
+                    'tango team building istanbul',
+                    'corporate motivation event',
+                    'company bonding activity',
+                ],
+                canonicalUrl: 'https://gamzetango.com/en/corporate-workshop',
+            },
+
+            features: [
+                {
+                    id: 'team-building',
+                    icon: 'Users',
+                    title: 'Team Bonding',
+                    description: 'Tango requires leaders and followers. This dynamic strengthens workplace collaboration.',
+                },
+                {
+                    id: 'communication',
+                    icon: 'Heart',
+                    title: 'Communication Skills',
+                    description: 'Discover the power of non-verbal communication. Tango teaches empathy and active listening.',
+                },
+                {
+                    id: 'fun',
+                    icon: 'Sparkles',
+                    title: 'Fun Environment',
+                    description: 'Outside the office, unforgettable moments filled with laughter and music.',
+                },
+                {
+                    id: 'all-levels',
+                    icon: 'Sprout',
+                    title: 'All Levels Welcome',
+                    description: 'No dance experience needed. Programs designed for complete beginners.',
+                },
+                {
+                    id: 'custom',
+                    icon: 'Star',
+                    title: 'Custom Program',
+                    description: 'Workshop content tailored to your company\'s goals.',
+                },
+                {
+                    id: 'professional',
+                    icon: 'Award',
+                    title: 'Professional Delivery',
+                    description: 'Experienced instructor ensures smooth organization for corporate events.',
+                },
+            ],
+
+            benefits: [
+                {
+                    id: 'motivation',
+                    title: 'Increased Motivation',
+                    description: 'Break from routine. Employees return to work feeling refreshed and energized.',
+                    highlight: 'Fresh energy',
+                },
+                {
+                    id: 'bonding',
+                    title: 'Stronger Bonds',
+                    description: 'Dancing together builds trust and intimacy. Barriers between departments dissolve.',
+                    highlight: 'Team spirit',
+                },
+                {
+                    id: 'leadership',
+                    title: 'Leadership Awareness',
+                    description: 'Leading and following roles in tango mirror workplace dynamics. Gain new perspectives.',
+                    highlight: 'Role awareness',
+                },
+                {
+                    id: 'stress-relief',
+                    title: 'Stress Relief',
+                    description: 'Dancing releases endorphins. Escape work stress and enjoy quality time.',
+                    highlight: 'Relaxing effect',
+                },
+                {
+                    id: 'memorable',
+                    title: 'Unforgettable Memories',
+                    description: 'Ordinary meetings are forgotten, tango workshops are talked about for years.',
+                    highlight: 'Lasting impression',
+                },
+            ],
+
+            audiences: [
+                {
+                    id: 'hr',
+                    title: 'HR Departments',
+                    description: 'Looking to increase employee engagement and organize motivation events.',
+                    icon: 'Users',
+                },
+                {
+                    id: 'management',
+                    title: 'Managers',
+                    description: 'Wanting to strengthen team dynamics and develop leadership skills.',
+                    icon: 'Star',
+                },
+                {
+                    id: 'event-planners',
+                    title: 'Event Planners',
+                    description: 'Seeking unique activities for year-end parties and special occasions.',
+                    icon: 'Calendar',
+                },
+                {
+                    id: 'small-teams',
+                    title: 'Small Teams',
+                    description: 'Ideal for 5-15 people. Intimate and intensive interaction.',
+                    icon: 'Heart',
+                },
+            ],
+
+            steps: [
+                {
+                    id: 'consultation',
+                    stepNumber: 1,
+                    title: 'Needs Analysis',
+                    description: 'Let\'s discuss your company\'s goals, participant count, and expectations.',
+                },
+                {
+                    id: 'planning',
+                    stepNumber: 2,
+                    title: 'Program Design',
+                    description: 'We create a custom workshop program. Duration, content, and format determined.',
+                },
+                {
+                    id: 'logistics',
+                    stepNumber: 3,
+                    title: 'Logistics Planning',
+                    description: 'Venue, sound system, and other technical requirements organized.',
+                },
+                {
+                    id: 'workshop',
+                    stepNumber: 4,
+                    title: 'Workshop Day',
+                    description: 'A fun, energetic, and professional experience. Everyone participates, everyone enjoys!',
+                },
+                {
+                    id: 'follow-up',
+                    stepNumber: 5,
+                    title: 'Evaluation',
+                    description: 'Optional: Ongoing dance programs or repeat workshops can be planned.',
+                },
+            ],
+
+            faqs: [
+                {
+                    id: 'group-size',
+                    question: 'What group sizes can you accommodate?',
+                    answer: 'We can design programs for groups from 5 to 100+ people. Small groups offer intensive interaction, larger groups create a more festive atmosphere.',
+                },
+                {
+                    id: 'duration',
+                    question: 'How long does a workshop last?',
+                    answer: 'Standard workshop is 1.5-2 hours. Half-day (3-4 hours) or full-day programs are also possible. Adjusted to your needs.',
+                },
+                {
+                    id: 'experience-needed',
+                    question: 'Do participants need dance experience?',
+                    answer: 'No, absolutely not! Programs start from complete beginner level. Even those who have never danced can participate comfortably.',
+                },
+                {
+                    id: 'location',
+                    question: 'Where are workshops held?',
+                    answer: 'At your company venue (meeting room, cafeteria, etc.) or at our partner dance studios. Your choice.',
+                },
+                {
+                    id: 'what-to-wear',
+                    question: 'What should participants wear?',
+                    answer: 'Comfortable, casual clothes are fine. Even suits work! Just recommend comfortable shoes (flat or low heels).',
+                },
+                {
+                    id: 'mixed-gender',
+                    question: 'Does gender ratio matter?',
+                    answer: 'No, it doesn\'t. We teach roles interchangeably. Everyone tries both leader and follower roles. Fun and educational!',
+                },
+                {
+                    id: 'price',
+                    question: 'How is pricing done?',
+                    answer: 'Price varies by participant count, duration, and special requests. Contact us for a free quote.',
+                },
+                {
+                    id: 'booking',
+                    question: 'How far in advance should I book?',
+                    answer: 'Ideally 2-3 weeks in advance. We can also accommodate urgent requests.',
+                },
+            ],
+
+            ctaText: 'Get a Quote',
+            ctaDescription: 'Looking for a unique experience for your team? Contact us for free consultation and quote!',
+        },
+    },
+};
+
+// =============================================================================
 // ALL SERVICES
 // =============================================================================
 
@@ -1687,6 +2112,7 @@ export const ALL_SERVICES: readonly Service[] = [
     OZEL_TANGO_DERSI_SERVICE,
     CIFT_TANGO_DERSI_SERVICE,
     TANGO_DENEME_DERSI_SERVICE,
+    KURUMSAL_WORKSHOP_SERVICE,
 ] as const;
 
 // Helper to get service by slug
