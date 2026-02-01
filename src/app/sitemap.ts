@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllPostSlugs } from '@/lib/blog';
+import { getAllPostSlugs, getAllCategories, getAllTags } from '@/lib/blog';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://gamzetango.com';
@@ -7,6 +7,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Get all blog posts dynamically
   const allPostSlugs = await getAllPostSlugs();
+  
+  // Get all categories and tags for both locales
+  const [trCategories, enCategories, trTags, enTags] = await Promise.all([
+    getAllCategories('tr'),
+    getAllCategories('en'),
+    getAllTags('tr'),
+    getAllTags('en'),
+  ]);
 
   return [
     // ═══════════════════════════════════════════════════════════════════════════
@@ -479,5 +487,57 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
       };
     }),
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG CATEGORY PAGES - Turkish (Priority 0.75)
+    // ═══════════════════════════════════════════════════════════════════════════
+    ...trCategories.map(({ category }) => ({
+      url: `${baseUrl}/blog/kategori/${category}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/blog/kategori/${category}`,
+          en: `${baseUrl}/en/blog/category/${category}`,
+        },
+      },
+    })),
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG CATEGORY PAGES - English (Priority 0.7)
+    // ═══════════════════════════════════════════════════════════════════════════
+    ...enCategories.map(({ category }) => ({
+      url: `${baseUrl}/en/blog/category/${category}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/blog/kategori/${category}`,
+          en: `${baseUrl}/en/blog/category/${category}`,
+        },
+      },
+    })),
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG TAG PAGES - Turkish (Priority 0.6)
+    // ═══════════════════════════════════════════════════════════════════════════
+    ...trTags.map(({ tag }) => ({
+      url: `${baseUrl}/blog/etiket/${tag}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    })),
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // BLOG TAG PAGES - English (Priority 0.55)
+    // ═══════════════════════════════════════════════════════════════════════════
+    ...enTags.map(({ tag }) => ({
+      url: `${baseUrl}/en/blog/tag/${tag}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.55,
+    })),
   ];
 }
