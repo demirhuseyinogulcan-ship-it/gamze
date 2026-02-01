@@ -1008,6 +1008,673 @@ export const SILIVRI_TANGO_COURSE_SERVICE: Service = {
 };
 
 // =============================================================================
+// GRUP TANGO DERSİ SERVICE
+// =============================================================================
+
+export const GRUP_TANGO_DERSI_SERVICE: Service = {
+    id: 'grup-tango-dersi',
+    slug: 'grup-tango-dersi',
+    name: 'Grup Tango Dersi',
+    tagline: 'Birlikte Öğrenmenin Keyfi',
+    description: 'İstanbul\'da grup tango dersleri ile tango öğrenin. Başlangıç, orta ve ileri seviye gruplar. Sosyal bir ortamda dans edin, yeni insanlarla tanışın.',
+    heroImage: '/images/optimized/3.jpg',
+
+    seo: {
+        title: 'Grup Tango Dersi İstanbul | Başlangıç, Orta, İleri Seviye | Gamze Tango',
+        description: 'İstanbul\'da grup tango dersleri. Başlangıç, orta ve ileri seviye gruplar. Sosyal ortamda tango öğrenin. Haftalık dersler, uygun fiyatlar.',
+        keywords: [
+            'grup tango dersi',
+            'grup tango kursu',
+            'tango grubu istanbul',
+            'başlangıç tango dersi',
+            'orta seviye tango',
+            'ileri seviye tango',
+            'tango öğrenmek istanbul',
+            'haftalık tango dersi',
+        ],
+        canonicalUrl: 'https://gamzetango.com/grup-tango-dersi',
+    },
+
+    features: [
+        {
+            id: 'levels',
+            icon: 'TrendingUp',
+            title: 'Seviye Grupları',
+            description: 'Başlangıç, orta ve ileri seviye gruplar ile kendi hızınızda ilerleyin.',
+        },
+        {
+            id: 'social',
+            icon: 'Users',
+            title: 'Sosyal Ortam',
+            description: 'Aynı tutkuyu paylaşan insanlarla tanışın, yeni arkadaşlıklar kurun.',
+        },
+        {
+            id: 'practice',
+            icon: 'Sparkles',
+            title: 'Pratik İmkanı',
+            description: 'Farklı partnerlerle dans ederek pratik yapın, uyum yeteneğinizi geliştirin.',
+        },
+        {
+            id: 'affordable',
+            icon: 'Star',
+            title: 'Uygun Fiyat',
+            description: 'Grup dersleri, özel derslere göre daha ekonomik bir seçenektir.',
+        },
+    ],
+
+    benefits: [
+        {
+            id: 'community',
+            title: 'Tango Topluluğuna Katılın',
+            description: 'Grup derslerinde sadece dans öğrenmezsiniz, bir topluluğun parçası olursunuz. Milongalara gittiğinizde tanıdık yüzler görürsünüz.',
+            highlight: 'Sosyal çevreniz genişler',
+        },
+        {
+            id: 'adaptation',
+            title: 'Partner Uyumu Geliştirin',
+            description: 'Farklı partnerlerle dans ederek, her tür dansçıya uyum sağlamayı öğrenirsiniz. Bu, milongalarda çok değerli bir beceridir.',
+            highlight: 'Herkesle dans edebilirsiniz',
+        },
+        {
+            id: 'motivation',
+            title: 'Motivasyon ve Süreklilik',
+            description: 'Grup dinamiği, düzenli devam etmenizi ve motive kalmanızı sağlar. Arkadaşlarınızla birlikte öğrenmek daha keyiflidir.',
+            highlight: 'Birlikte daha güçlü',
+        },
+    ],
+
+    audiences: [
+        {
+            id: 'beginners',
+            title: 'Yeni Başlayanlar',
+            description: 'Tango\'ya ilk adımınızı atmak istiyorsanız, başlangıç gruplarımız sizin için ideal.',
+            icon: 'Sprout',
+        },
+        {
+            id: 'social-dancers',
+            title: 'Sosyal Dansçılar',
+            description: 'Milongalarda rahatça dans etmek isteyen, sosyal tango öğrenmek isteyenler.',
+            icon: 'Users',
+        },
+        {
+            id: 'budget-conscious',
+            title: 'Bütçe Bilincinde Olanlar',
+            description: 'Kaliteli eğitim almak isteyen ama bütçesini düşünmek zorunda olanlar.',
+            icon: 'Star',
+        },
+    ],
+
+    steps: [
+        {
+            id: 'contact',
+            stepNumber: 1,
+            title: 'İletişim & Seviye Belirleme',
+            description: 'Bize ulaşın, tango geçmişinizi ve hedeflerinizi konuşalım. Size uygun grup seviyesini belirleyelim.',
+        },
+        {
+            id: 'join-group',
+            stepNumber: 2,
+            title: 'Gruba Katılın',
+            description: 'Belirlenen seviyedeki gruba katılın. Yeni başlayanlar için her ay yeni gruplar açılıyor.',
+        },
+        {
+            id: 'learn-practice',
+            stepNumber: 3,
+            title: 'Öğrenin & Pratik Yapın',
+            description: 'Haftalık derslerle teknik öğrenin, farklı partnerlerle pratik yapın.',
+        },
+        {
+            id: 'milonga',
+            stepNumber: 4,
+            title: 'Milongalara Katılın',
+            description: 'Öğrendiklerinizi gerçek tango gecelerinde uygulayın, topluluğun parçası olun.',
+        },
+    ],
+
+    faqs: [
+        {
+            id: 'partner-required',
+            question: 'Grup derslerine partner olmadan katılabilir miyim?',
+            answer: 'Evet, kesinlikle! Grup derslerinde partner rotasyonu yapılır, böylece herkes farklı partnerlerle dans etme fırsatı bulur. Bu, hem öğrenme sürecinizi hızlandırır hem de dans adaptasyon yeteneğinizi geliştirir.',
+        },
+        {
+            id: 'which-level',
+            question: 'Hangi seviye grubuna katılmalıyım?',
+            answer: 'Daha önce hiç tango deneyiminiz yoksa başlangıç seviyesinden başlamanızı öneririz. Eğer daha önce tango eğitimi aldıysanız, seviye belirleme için bir deneme dersine katılabilir veya bize ulaşabilirsiniz.',
+        },
+        {
+            id: 'frequency',
+            question: 'Grup dersleri ne sıklıkla yapılıyor?',
+            answer: 'Grup dersleri haftada 1-2 kez yapılmaktadır. Ders günleri ve saatleri seviyeye göre değişebilir. Güncel program için bizimle iletişime geçebilirsiniz.',
+        },
+        {
+            id: 'group-size',
+            question: 'Grup derslerine kaç kişi katılıyor?',
+            answer: 'Kaliteli eğitim için gruplarımızı 6-12 kişi arasında tutuyoruz. Bu sayı, hem yeterli ilgi hem de pratik imkanı sağlar.',
+        },
+    ],
+
+    relatedLocations: [
+        'silivri-ozel-tango-dersi',
+        'kadikoy-ozel-tango-dersi',
+        'beyoglu-ozel-tango-dersi',
+    ],
+
+    relatedBlogs: [
+        'tango-rehberi',
+        'ilk-tango-dersi',
+        'tek-basina-tango-kursuna-gitmek',
+    ],
+
+    ctaText: 'Gruba Katıl',
+    ctaDescription: 'Yeni başlayanlar için her ay yeni gruplar açılıyor. Yerinizi ayırtın, tango yolculuğunuza başlayın!',
+
+    isActive: true,
+};
+
+// =============================================================================
+// ÖZEL TANGO DERSİ SERVICE
+// =============================================================================
+
+export const OZEL_TANGO_DERSI_SERVICE: Service = {
+    id: 'ozel-tango-dersi',
+    slug: 'ozel-tango-dersi',
+    name: 'Özel Tango Dersi',
+    tagline: 'Kişiye Özel Eğitim, Hızlı İlerleme',
+    description: 'İstanbul\'da özel tango dersleri ile hızla ilerleme kaydedin. Bire bir eğitim, esnek zamanlama, kişiselleştirilmiş program. Her seviye için.',
+    heroImage: '/images/optimized/tango ozel dersi.jpg',
+
+    seo: {
+        title: 'Özel Tango Dersi İstanbul | Bire Bir Eğitim | Gamze Tango',
+        description: 'İstanbul\'da özel tango dersleri. Bire bir eğitim ile hızlı ilerleme. Esnek zamanlama, kişisel program. Her seviye için profesyonel tango eğitimi.',
+        keywords: [
+            'özel tango dersi',
+            'özel tango dersi istanbul',
+            'birebir tango dersi',
+            'private tango lesson',
+            'kişiye özel tango',
+            'tango özel eğitim',
+            'özel ders tango',
+        ],
+        canonicalUrl: 'https://gamzetango.com/ozel-tango-dersi',
+    },
+
+    features: [
+        {
+            id: 'personal-attention',
+            icon: 'User',
+            title: 'Bire Bir İlgi',
+            description: 'Tüm ders boyunca sadece size odaklanılır, hatalarınız anında düzeltilir.',
+        },
+        {
+            id: 'fast-progress',
+            icon: 'TrendingUp',
+            title: 'Hızlı İlerleme',
+            description: 'Grup derslerine göre 3-4 kat daha hızlı öğrenme imkanı.',
+        },
+        {
+            id: 'flexible-schedule',
+            icon: 'Calendar',
+            title: 'Esnek Zamanlama',
+            description: 'Kendi programınıza uygun ders saatleri belirleyin.',
+        },
+        {
+            id: 'custom-program',
+            icon: 'Award',
+            title: 'Kişisel Program',
+            description: 'Hedeflerinize ve seviyenize özel hazırlanmış müfredat.',
+        },
+    ],
+
+    benefits: [
+        {
+            id: 'beginners',
+            title: 'Yeni Başlayanlar İçin',
+            description: 'Temel teknikleri doğru öğrenerek sağlam bir altyapı oluşturun. Grup derslerinde kaçırılabilecek detayları yakalayın.',
+            highlight: 'Doğru başlangıç',
+        },
+        {
+            id: 'intermediate',
+            title: 'Orta Seviye İçin',
+            description: 'Belirli zorlukları aşmak, teknik sorunları düzeltmek ve repertuarınızı genişletmek için ideal.',
+            highlight: 'Gelişiminizi hızlandırın',
+        },
+        {
+            id: 'advanced',
+            title: 'İleri Seviye İçin',
+            description: 'Stil geliştirme, müzikalite, performans hazırlığı ve ileri düzey figürler üzerine çalışın.',
+            highlight: 'Ustalığa ulaşın',
+        },
+        {
+            id: 'special-occasion',
+            title: 'Düğün/Özel Gün İçin',
+            description: 'Belirli bir tarih ve şarkı için koreografi hazırlığı. Etkileyici bir performans sergilemek için.',
+            highlight: 'Unutulmaz anlar',
+        },
+    ],
+
+    audiences: [
+        {
+            id: 'fast-learners',
+            title: 'Hızlı İlerlemek İsteyenler',
+            description: 'Grup derslerine ek olarak veya tek başına, hızlı ilerleme hedefleyenler.',
+            icon: 'TrendingUp',
+        },
+        {
+            id: 'busy-professionals',
+            title: 'Yoğun Programlılar',
+            description: 'Esnek ders saatleri ile programınıza uygun dans öğrenin.',
+            icon: 'Calendar',
+        },
+        {
+            id: 'special-needs',
+            title: 'Özel İhtiyaçları Olanlar',
+            description: 'Belirli bir teknik sorun, figür veya stil üzerinde çalışmak isteyenler.',
+            icon: 'Star',
+        },
+    ],
+
+    steps: [
+        {
+            id: 'analysis',
+            stepNumber: 1,
+            title: 'İhtiyaç Analizi',
+            description: 'İlk görüşmede hedeflerinizi, seviyenizi ve beklentilerinizi konuşuyoruz.',
+        },
+        {
+            id: 'program',
+            stepNumber: 2,
+            title: 'Kişisel Program',
+            description: 'Size özel bir eğitim planı hazırlıyoruz.',
+        },
+        {
+            id: 'lessons',
+            stepNumber: 3,
+            title: 'Düzenli Dersler',
+            description: 'Belirlenen program dahilinde dersler başlıyor.',
+        },
+        {
+            id: 'evaluation',
+            stepNumber: 4,
+            title: 'Değerlendirme',
+            description: 'İlerleyişinizi düzenli olarak değerlendiriyoruz.',
+        },
+    ],
+
+    faqs: [
+        {
+            id: 'private-vs-group',
+            question: 'Özel ders mi, grup dersi mi tercih etmeliyim?',
+            answer: 'Her ikisinin de avantajları var. Özel dersler, hızlı ilerleme ve kişisel ilgi sunar. Grup dersleri ise sosyal ortam ve farklı partnerlerle pratik imkanı sağlar. İdeal kombinasyon, her ikisini birlikte almaktır.',
+        },
+        {
+            id: 'location',
+            question: 'Özel dersler nerede yapılıyor?',
+            answer: 'Dersler, İstanbul\'daki stüdyomuzda veya belirlediğiniz bir mekanda yapılabilir. Ev veya ofis dersleri için uygun alan gereklidir.',
+        },
+        {
+            id: 'with-partner',
+            question: 'Özel derse partnerimle birlikte gelebilir miyim?',
+            answer: 'Elbette! Çift olarak özel ders almak, partnerinizle uyumunuzu geliştirmenin en etkili yoludur. Çift dersleri için ayrı bir programımız da bulunmaktadır.',
+        },
+        {
+            id: 'minimum-lessons',
+            question: 'Minimum kaç ders almam gerekiyor?',
+            answer: 'Minimum ders zorunluluğu yoktur. Ancak düzenli ilerleme için haftada en az 1 ders önerilir. Düğün dansı için ortalama 8-12 ders gerekir.',
+        },
+    ],
+
+    relatedLocations: [
+        'silivri-ozel-tango-dersi',
+        'kadikoy-ozel-tango-dersi',
+        'beyoglu-ozel-tango-dersi',
+    ],
+
+    relatedBlogs: [
+        'tango-rehberi',
+        'ilk-tango-dersi',
+        'tango-kursu-fiyatlari-2026',
+    ],
+
+    ctaText: 'Ücretsiz Deneme Dersi',
+    ctaDescription: 'Özel ders deneyimini yaşamak ister misiniz? İlk tanışma dersimiz ücretsiz!',
+
+    isActive: true,
+};
+
+// =============================================================================
+// ÇİFT TANGO DERSİ SERVICE
+// =============================================================================
+
+export const CIFT_TANGO_DERSI_SERVICE: Service = {
+    id: 'cift-tango-dersi',
+    slug: 'cift-tango-dersi',
+    name: 'Çift Tango Dersi',
+    tagline: 'Birlikte Dans Edin, Birlikte Büyüyün',
+    description: 'Partnerinizle birlikte tango öğrenin. Çiftlere özel programlar, düğün dansı hazırlığı, ilişkinizi güçlendiren dans deneyimi.',
+    heroImage: '/images/optimized/wedding dance.jpg',
+
+    seo: {
+        title: 'Çift Tango Dersi İstanbul | Partnerinizle Tango Öğrenin | Gamze Tango',
+        description: 'İstanbul\'da çiftlere özel tango dersleri. Partnerinizle birlikte tango öğrenin. Düğün dansı hazırlığı, çift programları. Profesyonel eğitim.',
+        keywords: [
+            'çift tango dersi',
+            'çiftler için tango',
+            'partnerle tango',
+            'düğün dansı tango',
+            'çift dans dersi istanbul',
+            'tango couple lessons',
+        ],
+        canonicalUrl: 'https://gamzetango.com/cift-tango-dersi',
+    },
+
+    features: [
+        {
+            id: 'harmony',
+            icon: 'Users',
+            title: 'Partner Uyumu',
+            description: 'Birlikte çalışarak partnerinizle mükemmel uyum yakalayın.',
+        },
+        {
+            id: 'communication',
+            icon: 'Heart',
+            title: 'İletişim Gelişimi',
+            description: 'Dans yoluyla sözsüz iletişiminizi güçlendirin.',
+        },
+        {
+            id: 'custom',
+            icon: 'Award',
+            title: 'Özel Program',
+            description: 'İkinizin seviyesine ve hedeflerine göre özelleştirilmiş içerik.',
+        },
+        {
+            id: 'quality-time',
+            icon: 'Sparkles',
+            title: 'Kaliteli Zaman',
+            description: 'Birlikte geçirdiğiniz kaliteli ve eğlenceli anlar.',
+        },
+    ],
+
+    benefits: [
+        {
+            id: 'sync',
+            title: 'Aynı Hızda İlerleme',
+            description: 'Partnerinizle aynı anda, aynı şeyleri öğrenerek uyum içinde ilerlersiniz. Farklı seviye sorunu yaşamazsınız.',
+            highlight: 'Birlikte gelişin',
+        },
+        {
+            id: 'relationship',
+            title: 'İlişkinizi Güçlendirin',
+            description: 'Dans, sözsüz iletişimi geliştirir. Öğrendiğiniz dinleme ve uyum becerileri ilişkinize de yansır.',
+            highlight: 'Daha güçlü bağ',
+        },
+        {
+            id: 'memories',
+            title: 'Özel Anılar',
+            description: 'Birlikte öğrendiğiniz dans, hayat boyu hatırlayacağınız özel anılar oluşturur.',
+            highlight: 'Unutulmaz deneyim',
+        },
+    ],
+
+    audiences: [
+        {
+            id: 'engaged',
+            title: 'Nişanlı Çiftler',
+            description: 'Düğün dansınız için profesyonel hazırlık. Misafirlerinizi büyüleyecek bir performans.',
+            icon: 'Heart',
+        },
+        {
+            id: 'newlywed',
+            title: 'Yeni Evli Çiftler',
+            description: 'Birlikte yeni bir hobi edinmek ve partnerinizle bağınızı güçlendirmek için.',
+            icon: 'Sparkles',
+        },
+        {
+            id: 'long-term',
+            title: 'Uzun Süreli Çiftler',
+            description: 'İlişkinize yeni bir heyecan katmak, birlikte bir şeyler öğrenmek için.',
+            icon: 'Star',
+        },
+    ],
+
+    steps: [
+        {
+            id: 'consultation',
+            stepNumber: 1,
+            title: 'Tanışma Görüşmesi',
+            description: 'İkinizin de hedeflerini, dans geçmişinizi ve beklentilerinizi konuşuyoruz.',
+        },
+        {
+            id: 'plan',
+            stepNumber: 2,
+            title: 'Program Oluşturma',
+            description: 'İkinize özel bir eğitim planı hazırlıyoruz.',
+        },
+        {
+            id: 'lessons',
+            stepNumber: 3,
+            title: 'Birlikte Öğrenme',
+            description: 'Dersler başlıyor, birlikte ilerliyorsunuz.',
+        },
+        {
+            id: 'practice',
+            stepNumber: 4,
+            title: 'Pratik & Dans',
+            description: 'Öğrendiklerinizi pekiştirin, birlikte dans edin.',
+        },
+    ],
+
+    faqs: [
+        {
+            id: 'no-experience',
+            question: 'İkimiz de hiç dans bilmiyoruz, yine de katılabilir miyiz?',
+            answer: 'Kesinlikle! Çift derslerimiz her seviyeye uygundur. Sıfırdan başlayarak birlikte öğrenmek, aslında en güzel yollardan biridir. İkiniz de aynı seviyede ilerlersiniz.',
+        },
+        {
+            id: 'wedding-timing',
+            question: 'Düğün dansı için ne kadar süre önceden başlamalıyız?',
+            answer: 'İdeal olarak düğününüzden 2-3 ay önce başlamanızı öneriyoruz. Bu süre içinde rahat ve özgüvenli bir performans sergileyebilecek seviyeye ulaşırsınız. Acil durumlar için 1 aylık yoğun programlarımız da mevcuttur.',
+        },
+        {
+            id: 'different-levels',
+            question: 'Seviyelerimiz farklı olursa ne olacak?',
+            answer: 'Bu çok yaygın bir durum ve sorun değil. Eğitmen, her ikinizin de gelişmesini sağlayacak şekilde dersi uyarlar. Daha deneyimli partner, partnerlik becerilerini geliştirir; yeni başlayan ise temel teknikleri öğrenir.',
+        },
+        {
+            id: 'lesson-count',
+            question: 'Bir derste ne kadar ilerleme kaydedebiliriz?',
+            answer: 'Her çift farklı hızda öğrenir, ancak genellikle 4-6 ders sonunda basit bir tango yürüyüşü ve temel figürlerle dans edebilir hale gelirsiniz. Düğün dansı için 8-12 ders idealdir.',
+        },
+    ],
+
+    relatedLocations: [
+        'silivri-ozel-tango-dersi',
+        'kadikoy-ozel-tango-dersi',
+        'beyoglu-ozel-tango-dersi',
+    ],
+
+    relatedBlogs: [
+        'dugun-dansi-tango',
+        'dugun-dansi-muzik-secimi',
+        'tango-kursu-fiyatlari-2026',
+    ],
+
+    ctaText: 'Ücretsiz Deneme Dersi',
+    ctaDescription: 'Partnerinizle birlikte tango deneyimini yaşamak ister misiniz? İlk dersimiz ücretsiz!',
+
+    isActive: true,
+};
+
+// =============================================================================
+// TANGO DENEME DERSİ SERVICE
+// =============================================================================
+
+export const TANGO_DENEME_DERSI_SERVICE: Service = {
+    id: 'tango-deneme-dersi',
+    slug: 'tango-deneme-dersi',
+    name: 'Tango Deneme Dersi',
+    tagline: 'Tango ile Tanışmanın En Kolay Yolu',
+    description: 'Tango\'yu denemek mi istiyorsunuz? Deneme dersimizle tango dünyasına ilk adımınızı atın. Hiçbir ön bilgi gerekmez, sadece merakınız yeterli.',
+    heroImage: '/images/optimized/6.jpg',
+
+    seo: {
+        title: 'Tango Deneme Dersi İstanbul | Ücretsiz İlk Ders | Gamze Tango',
+        description: 'İstanbul\'da ücretsiz tango deneme dersi. Tango\'yu tanıyın, hiçbir bağlayıcılık yok. Merakınız yeterli, deneyim gerekmez!',
+        keywords: [
+            'tango deneme dersi',
+            'ücretsiz tango dersi',
+            'tango denemek',
+            'ilk tango dersi',
+            'tango başlangıç',
+            'tango tanışma dersi',
+            'tango istanbul deneme',
+        ],
+        canonicalUrl: 'https://gamzetango.com/tango-deneme-dersi',
+    },
+
+    features: [
+        {
+            id: 'no-commitment',
+            icon: 'Heart',
+            title: 'Bağlayıcılık Yok',
+            description: 'Tek seferlik deneme fırsatı. Devam edip etmemek tamamen size kalmış.',
+        },
+        {
+            id: 'introduction',
+            icon: 'Sparkles',
+            title: 'Temel Tanışma',
+            description: 'Tango\'nun ne olduğunu, nasıl hissettirdiğini ilk elden deneyimleyin.',
+        },
+        {
+            id: 'no-experience',
+            icon: 'Sprout',
+            title: 'Deneyim Gerekmez',
+            description: 'Hiç dans etmemiş olsanız bile katılabilirsiniz.',
+        },
+        {
+            id: 'questions',
+            icon: 'User',
+            title: 'Sorularınıza Yanıt',
+            description: 'Tango hakkındaki tüm merak ettiklerinizi sorun.',
+        },
+    ],
+
+    benefits: [
+        {
+            id: 'risk-free',
+            title: 'Risksiz Deneyim',
+            description: 'Hiçbir taahhüt olmadan tango\'yu deneme fırsatı. Beğenirseniz devam edersiniz, beğenmezseniz güle güle dersiniz.',
+            highlight: 'Kaybedecek bir şey yok',
+        },
+        {
+            id: 'feel-tango',
+            title: 'Tango\'yu Hissedin',
+            description: 'Videolarda gördükleriniz başka, bizzat yaşamak başka. İlk abrazo\'nuzu (kucaklama) deneyimleyin.',
+            highlight: 'Sözcükler yetmez',
+        },
+        {
+            id: 'meet-instructor',
+            title: 'Eğitmeninizi Tanıyın',
+            description: 'Gamze ile tanışın, öğretim stilini görün. Uyumlu olup olmadığınızı anlayın.',
+            highlight: 'Kişisel bağlantı',
+        },
+    ],
+
+    audiences: [
+        {
+            id: 'curious',
+            title: 'Meraklılar',
+            description: 'Tango hakkında merak duyan ama adım atmaya çekinen herkes.',
+            icon: 'Sparkles',
+        },
+        {
+            id: 'undecided',
+            title: 'Karar Veremeyenler',
+            description: 'Dans kursuna başlayıp başlamamaya karar veremeyenler.',
+            icon: 'User',
+        },
+        {
+            id: 'returners',
+            title: 'Yeniden Başlayanlar',
+            description: 'Eskiden dans edip ara verenler, tango\'ya dönmek isteyenler.',
+            icon: 'Heart',
+        },
+    ],
+
+    steps: [
+        {
+            id: 'contact',
+            stepNumber: 1,
+            title: 'Randevu Alın',
+            description: 'WhatsApp veya telefon ile deneme dersi için randevu oluşturun.',
+        },
+        {
+            id: 'intro',
+            stepNumber: 2,
+            title: 'Tanışma (10 dk)',
+            description: 'Hedeflerinizi, beklentilerinizi ve dans geçmişinizi konuşuyoruz.',
+        },
+        {
+            id: 'basics',
+            stepNumber: 3,
+            title: 'İlk Adımlar (35 dk)',
+            description: 'Duruş, yürüyüş ve abrazo ile ilk tango deneyiminiz.',
+        },
+        {
+            id: 'evaluation',
+            stepNumber: 4,
+            title: 'Değerlendirme (15 dk)',
+            description: 'Devam etmek isterseniz size uygun programı belirleyelim.',
+        },
+    ],
+
+    faqs: [
+        {
+            id: 'partner-needed',
+            question: 'Deneme dersine partner olmadan gelebilir miyim?',
+            answer: 'Evet, kesinlikle! Deneme dersleri genellikle bireysel veya küçük gruplar halinde yapılır. Partner zorunluluğu yoktur.',
+        },
+        {
+            id: 'what-to-wear',
+            question: 'Ne giysem iyi olur?',
+            answer: 'Rahat hareket edebileceğiniz günlük kıyafetler yeterli. Ayakkabı olarak topuksuz, kaymayan tabanlı bir ayakkabı tercih edin. Özel dans ayakkabısı gerekmez.',
+        },
+        {
+            id: 'duration',
+            question: 'Deneme dersi ne kadar sürüyor?',
+            answer: 'Deneme dersi yaklaşık 45-60 dakika sürmektedir. Bu süre tanışma, temel bilgiler ve ilk pratik içindir.',
+        },
+        {
+            id: 'obligation',
+            question: 'Deneme dersinden sonra kayıt olmak zorunda mıyım?',
+            answer: 'Hayır, hiçbir zorunluluk yoktur. Deneme dersi, tango\'yu tanımanız içindir. Devam edip etmemek tamamen size kalmış.',
+        },
+        {
+            id: 'age-limit',
+            question: 'Yaş sınırı var mı?',
+            answer: 'Tango için yaş sınırı yoktur! 18-70 yaş arası öğrencilerimiz mevcut. Fiziksel bir engel yoksa herkes tango öğrenebilir.',
+        },
+    ],
+
+    relatedLocations: [
+        'silivri-ozel-tango-dersi',
+        'kadikoy-ozel-tango-dersi',
+        'beyoglu-ozel-tango-dersi',
+    ],
+
+    relatedBlogs: [
+        'ilk-tango-dersi',
+        'tango-nedir',
+        'tek-basina-tango-kursuna-gitmek',
+    ],
+
+    ctaText: 'Deneme Dersi Al',
+    ctaDescription: 'Tango\'yu merak mı ediyorsunuz? İlk adımı atın, gerisini birlikte çözeriz!',
+
+    isActive: true,
+};
+
+// =============================================================================
 // ALL SERVICES
 // =============================================================================
 
@@ -1016,6 +1683,10 @@ export const ALL_SERVICES: readonly Service[] = [
     SILIVRI_DANCE_COURSE_SERVICE,
     SILIVRI_TANGO_COURSE_SERVICE,
     WEDDING_DANCE_SERVICE,
+    GRUP_TANGO_DERSI_SERVICE,
+    OZEL_TANGO_DERSI_SERVICE,
+    CIFT_TANGO_DERSI_SERVICE,
+    TANGO_DENEME_DERSI_SERVICE,
 ] as const;
 
 // Helper to get service by slug
