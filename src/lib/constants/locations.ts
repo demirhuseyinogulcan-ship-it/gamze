@@ -31,8 +31,8 @@ export const SILIVRI_LOCATION: Location = {
     whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
-    title: 'Silivri Tango Dersi | Gamze Yıldız ile Profesyonel Tango Eğitimi',
-    description: 'Silivri\'de profesyonel tango dersleri. Özel ders, grup dersi ve düğün dansı eğitimi. Gamze Yıldız ile tangonun büyüsünü keşfedin. İlk ders ücretsiz!',
+    title: 'Silivri Tango Dersi ⭐ İlk Ders Bedava | 500+ Mutlu Öğrenci',
+    description: 'Silivri\'de profesyonel tango dersleri 💃 15 yıl deneyim | Özel & grup dersleri | Düğün dansı eğitimi. Şubat indirimi %20! Hemen başla.',
     keywords: [
       'silivri tango dersi',
       'silivri dans kursu',
@@ -161,8 +161,8 @@ export const ISTANBUL_LOCATION: Location = {
     whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
-    title: 'İstanbul Tango Kursu | Profesyonel Arjantin Tango Dersleri',
-    description: 'İstanbul\'da Arjantin Tango dersleri. Özel ders, grup dersi, düğün dansı. Avrupa ve Anadolu yakasında hizmet. Deneyimli eğitmen Gamze Yıldız.',
+    title: 'İstanbul Tango Kursu 💃 Her İki Yakada | Deneme Ücretsiz',
+    description: 'İstanbul\'da profesyonel Arjantin Tango ⭐ 500+ mezun | Avrupa & Anadolu yakası | Özel/grup dersleri. 15 yıl deneyim. İlk ders bedava!',
     keywords: [
       'istanbul tango kursu',
       'istanbul tango dersi',
@@ -290,8 +290,8 @@ export const KADIKOY_LOCATION: Location = {
     whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
-    title: 'Kadıköy Özel Tango Dersi | Anadolu Yakası Tango Eğitimi',
-    description: 'Kadıköy\'de profesyonel özel tango dersleri. Moda, Bağdat Caddesi çevresinde stüdyo eğitimi. Gamze Yıldız ile birebir ve grup dersleri.',
+    title: 'Kadıköy Tango Dersi ⭐ Moda & Bağdat Cad | İlk Ders Bedava',
+    description: 'Kadıköy\'de profesyonel tango eğitimi 💃 500+ mutlu öğrenci | Moda, Bağdat Caddesi stüdyo | Birebir & grup dersleri. Şubat fırsatı %20!',
     keywords: [
       'kadıköy tango dersi',
       'kadıköy özel tango dersi',
@@ -405,8 +405,8 @@ export const BEYOGLU_LOCATION: Location = {
     whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
-    title: 'Beyoğlu Özel Tango Dersi | Avrupa Yakası Tango Eğitimi',
-    description: 'Beyoğlu\'nda profesyonel özel tango dersleri. Taksim, Galata, Cihangir çevresinde stüdyo eğitimi. Gamze Yıldız ile birebir ve grup dersleri.',
+    title: 'Beyoğlu Tango Dersi ⭐ Taksim & Galata | İlk Ders Bedava',
+    description: 'Beyoğlu\'nda profesyonel tango 💃 500+ mezun öğrenci | Taksim, Galata stüdyo | Birebir & grup dersleri. 15 yıl deneyim. Şubat indirimi!',
     keywords: [
       'beyoğlu tango dersi',
       'beyoğlu özel tango dersi',
@@ -519,8 +519,8 @@ export const ISTANBUL_OZEL_LOCATION: Location = {
     whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
-    title: 'İstanbul Özel Tango Dersi | Profesyonel Tango Eğitimi',
-    description: 'İstanbul\'da profesyonel özel tango dersleri. Avrupa ve Anadolu yakasında stüdyo eğitimi. Gamze Yıldız ile birebir, çift ve grup dersleri.',
+    title: 'İstanbul Özel Tango Dersi ⭐ Birebir Eğitim | Deneme Ücretsiz',
+    description: 'İstanbul\'da özel tango dersleri 💃 Her iki yakada hizmet | 500+ mezun | Birebir, çift, grup dersleri. 15 yıl deneyim. İlk ders bedava!',
     keywords: [
       'istanbul özel tango dersi',
       'özel tango dersi istanbul',
@@ -634,8 +634,8 @@ export const SILIVRI_OZEL_LOCATION: Location = {
     whatsapp: CONTACT.PHONE.replace('+', ''),
   },
   seo: {
-    title: 'Silivri Özel Tango Dersi | Profesyonel Tango Eğitimi',
-    description: 'Silivri\'de profesyonel özel tango dersleri. Modern stüdyoda birebir, çift ve grup eğitimleri. Gamze Yıldız ile tangonun büyüsünü keşfedin.',
+    title: 'Silivri Özel Tango Dersi ⭐ Modern Stüdyo | İlk Ders Bedava',
+    description: 'Silivri\'de özel tango dersleri 💃 Birebir, çift & grup eğitimi | Düğün dansı uzmanı | 15 yıl deneyim. Şubat fırsatı %20 indirim!',
     keywords: [
       'silivri tango dersi',
       'silivri özel tango dersi',

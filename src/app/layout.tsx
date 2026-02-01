@@ -25,11 +25,11 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL('https://gamzetango.com'),
   title: {
-    default: 'Gamze Yıldız Tango | İstanbul Tango Dersi & Eğitimi',
+    default: 'İstanbul Tango Dersi ⭐ 500+ Mutlu Öğrenci | İlk Ders Bedava',
     template: '%s | Gamze Yıldız Tango',
   },
   description:
-    'Gamze Yıldız ile profesyonel tango dersleri. İstanbul\'da özel tango eğitimi, düğün dansı, lady styling. İlk tanışma dersi ücretsiz! ☎ 0506 228 45 07',
+    'İstanbul\'da profesyonel tango dersleri 💃 Özel, grup, düğün dansı | 15 yıl deneyim | 500+ mezun öğrenci | Kadıköy, Beyoğlu, Silivri. Şubat indirimi %20!',
   keywords: [
     // Ana Anahtar Kelimeler
     'tango',

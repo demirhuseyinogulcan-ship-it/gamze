@@ -25,8 +25,8 @@ export const LADY_STYLING_SERVICE: Service = {
     heroImage: '/images/2.jpg',
 
     seo: {
-        title: 'Lady Styling | Bayanlara Özel Tango Dersleri | Gamze Yıldız',
-        description: 'Tangoda kadın zarafeti, duruş teknikleri ve kişisel stil geliştirme. Bayanlara özel solo tango eğitimi. İstanbul\'da profesyonel Lady Styling dersleri.',
+        title: 'Lady Styling ⭐ Bayanlara Özel Tango | İlk Ders Bedava',
+        description: 'Tangoda kadın zarafeti 💃 Adornos, duruş teknikleri | Bayanlara özel solo tango | 500+ mutlu öğrenci. Şubat indirimi %20!',
         keywords: [
             // Ana anahtar kelimeler
             'lady styling',
@@ -408,8 +408,8 @@ export const SILIVRI_DANCE_COURSE_SERVICE: Service = {
     heroImage: '/images/0.jpg',
 
     seo: {
-        title: 'Silivri Dans Kursu | Profesyonel Dans Eğitimi | Gamze Yıldız',
-        description: 'Silivri\'de dans kursu arıyorsanız! Profesyonel Arjantin Tango eğitimi. Başlangıç seviyesinden ileri seviyeye. İlk ders ücretsiz!',
+        title: 'Silivri Dans Kursu ⭐ Profesyonel Eğitim | Deneme Bedava',
+        description: 'Silivri\'de profesyonel dans kursu 💃 Arjantin Tango | Başlangıçtan ileri seviye | Modern stüdyo | 15 yıl deneyim. Şubat indirimi %20!',
         keywords: [
             'silivri dans kursu',
             'silivri dans okulu',
@@ -602,8 +602,8 @@ export const WEDDING_DANCE_SERVICE: Service = {
     heroImage: '/images/1.jpg',
 
     seo: {
-        title: 'Düğün Dansı Eğitimi | Profesyonel İlk Dans Kursu | Gamze Yıldız',
-        description: 'Düğününüz için özel ilk dans koreografisi ve eğitimi. Tango, vals veya size özel stil. İstanbul\'da profesyonel düğün dansı dersleri.',
+        title: 'Düğün Dansı Eğitimi ⭐ Özel Koreografi | İlk Dans Kursu',
+        description: 'Düğününüz için özel ilk dans 💃 Profesyonel koreografi | Tango, vals | Gelin damat dansı | 500+ çift | Şubat indirimi %20!',
         keywords: [
             'düğün dansı',
             'düğün dansı eğitimi',
@@ -855,8 +855,8 @@ export const SILIVRI_TANGO_COURSE_SERVICE: Service = {
     heroImage: '/images/0.jpg',
 
     seo: {
-        title: 'Silivri Tango Kursu | Arjantin Tango Eğitimi | Gamze Yıldız',
-        description: 'Silivri\'de profesyonel Arjantin Tango kursu. Başlangıç ve ileri seviye gruplar. Gamze Yıldız ile tangonun büyüsünü keşfedin!',
+        title: 'Silivri Tango Kursu ⭐ Arjantin Tango | Deneme Bedava',
+        description: 'Silivri\'de Arjantin Tango 💃 Başlangıç & ileri seviye | Milonga deneyimi | 15 yıl eğitmen | Tango ailesi. İlk ders ücretsiz!',
         keywords: [
             'silivri tango kursu',
             'silivri tango',
@@ -1020,8 +1020,8 @@ export const GRUP_TANGO_DERSI_SERVICE: Service = {
     heroImage: '/images/optimized/3.jpg',
 
     seo: {
-        title: 'Grup Tango Dersi İstanbul | Başlangıç, Orta, İleri Seviye | Gamze Tango',
-        description: 'İstanbul\'da grup tango dersleri. Başlangıç, orta ve ileri seviye gruplar. Sosyal ortamda tango öğrenin. Haftalık dersler, uygun fiyatlar.',
+        title: 'Grup Tango Dersi ⭐ Sosyal Ortamda Öğren | İlk Ders Bedava',
+        description: 'İstanbul grup tango dersleri 💃 Başlangıç, orta, ileri seviye | Yeni arkadaşlar | Uygun fiyat | Haftalık dersler. Şubat fırsatı!',
         keywords: [
             'grup tango dersi',
             'grup tango kursu',
@@ -1331,8 +1331,8 @@ export const OZEL_TANGO_DERSI_SERVICE: Service = {
     heroImage: '/images/optimized/tango ozel dersi.jpg',
 
     seo: {
-        title: 'Özel Tango Dersi İstanbul | Bire Bir Eğitim | Gamze Tango',
-        description: 'İstanbul\'da özel tango dersleri. Bire bir eğitim ile hızlı ilerleme. Esnek zamanlama, kişisel program. Her seviye için profesyonel tango eğitimi.',
+        title: 'Özel Tango Dersi ⭐ Birebir Eğitim | İlk Ders Bedava',
+        description: 'İstanbul özel tango dersi 💃 Kişiye özel program | Hızlı ilerleme | Esnek zamanlama | 500+ mezun | Şubat indirimi %20!',
         keywords: [
             'özel tango dersi',
             'özel tango dersi istanbul',
@@ -1652,8 +1652,8 @@ export const CIFT_TANGO_DERSI_SERVICE: Service = {
     heroImage: '/images/optimized/wedding dance.jpg',
 
     seo: {
-        title: 'Çift Tango Dersi İstanbul | Partnerinizle Tango Öğrenin | Gamze Tango',
-        description: 'İstanbul\'da çiftlere özel tango dersleri. Partnerinizle birlikte tango öğrenin. Düğün dansı hazırlığı, çift programları. Profesyonel eğitim.',
+        title: 'Çift Tango Dersi ⭐ Partnerinizle Dans | İlk Ders Bedava',
+        description: 'İstanbul\'da çift tango dersleri 💃 Birlikte büyüyün | Düğün dansı hazırlığı | Özel program | 500+ mutlu çift. Şubat indirimi %20!',
         keywords: [
             'çift tango dersi',
             'çiftler için tango',
@@ -1960,8 +1960,8 @@ export const TANGO_DENEME_DERSI_SERVICE: Service = {
     heroImage: '/images/optimized/6.jpg',
 
     seo: {
-        title: 'Tango Deneme Dersi İstanbul | Ücretsiz İlk Ders | Gamze Tango',
-        description: 'İstanbul\'da ücretsiz tango deneme dersi. Tango\'yu tanıyın, hiçbir bağlayıcılık yok. Merakınız yeterli, deneyim gerekmez!',
+        title: 'Tango Deneme Dersi ⭐ Ücretsiz İlk Ders | Bağlayıcılık Yok',
+        description: 'İstanbul\'da ücretsiz tango deneme 💃 Hiç deneyim gerekmez | Bağlayıcılık yok | Tanışma dersi | 500+ mezun | Hemen dene!',
         keywords: [
             'tango deneme dersi',
             'ücretsiz tango dersi',
@@ -2280,8 +2280,8 @@ export const KURUMSAL_WORKSHOP_SERVICE: Service = {
     heroImage: '/images/optimized/6.jpg',
 
     seo: {
-        title: 'Kurumsal Tango Workshop İstanbul | Takım Çalışması | Gamze Tango',
-        description: 'Şirket etkinliklerinde tango workshop. Takım bağlarını güçlendiren, iletişimi artıran, eğlenceli kurumsal dans programları İstanbul.',
+        title: 'Kurumsal Tango Workshop ⭐ Team Building | İstanbul',
+        description: 'Şirket etkinliklerinde tango workshop 💃 Takım bağları | Motivasyon | İletişim | 100+ şirket | Eğlenceli & etkili!',
         keywords: [
             'kurumsal tango workshop',
             'şirket tango etkinliği',
