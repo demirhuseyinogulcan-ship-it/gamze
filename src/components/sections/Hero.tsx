@@ -153,7 +153,7 @@ export function Hero() {
           className="flex flex-col items-center gap-2 text-white/60 hover:text-gold transition-colors duration-300"
           aria-label="Aşağı kaydır"
         >
-          <span className="text-xs uppercase tracking-widest">Keşfet</span>
+          <span className="text-xs uppercase tracking-widest">{hero.scrollHint}</span>
           <ChevronDown size={24} />
         </motion.button>
       </motion.div>

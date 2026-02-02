@@ -21,6 +21,7 @@ export interface Dictionary {
     description: string;
     cta: string;
     ctaSecondary: string;
+    scrollHint: string;
   };
   about: {
     subtitle: string;
@@ -152,6 +153,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       description: 'Tangonun büyüleyici dünyasına adım atın. Silivri ve İstanbul\'da profesyonel tango eğitimi ile dans tutkunuzu keşfedin.',
       cta: 'Ders Al',
       ctaSecondary: 'Daha Fazla',
+      scrollHint: 'Keşfet',
     },
     about: {
       subtitle: 'Hakkımda',
@@ -432,6 +434,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       description: 'Step into the enchanting world of tango. Discover your passion for dance with professional tango training in Silivri and Kadıköy.',
       cta: 'Book a Class',
       ctaSecondary: 'Learn More',
+      scrollHint: 'Explore',
     },
     about: {
       subtitle: 'About Me',

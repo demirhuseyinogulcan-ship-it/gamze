@@ -355,7 +355,7 @@ export function Footer() {
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.FOOTER)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium hover:bg-gold hover:text-midnight transition-all duration-300"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2.5 text-center text-sm font-medium text-gold transition-all duration-300 hover:bg-gold hover:text-midnight"
               >
                 {isTurkish ? 'Ücretsiz Deneme Dersi' : 'Free Trial Lesson'}
                 <ChevronRight size={16} />

@@ -51,17 +51,32 @@ function BeforeAfterBadge({ before, after }: { before: string; after: string }) 
   );
 }
 
+// Button text translations
+const buttonTranslations = {
+  tr: {
+    showLess: 'Daha az göster',
+    readMore: 'Devamını oku',
+  },
+  en: {
+    showLess: 'Show less',
+    readMore: 'Read more',
+  },
+} as const;
+
 // Single Testimonial Card
 function TestimonialCard({
   testimonial,
   isExpanded,
   onToggle,
+  locale,
 }: {
   testimonial: Testimonial;
   isExpanded: boolean;
   onToggle: () => void;
+  locale: 'tr' | 'en';
 }) {
   const hasFullStory = !!testimonial.fullStory;
+  const buttonText = buttonTranslations[locale];
 
   return (
     <article
@@ -143,12 +158,12 @@ function TestimonialCard({
         >
           {isExpanded ? (
             <>
-              <span>Daha az göster</span>
+              <span>{buttonText.showLess}</span>
               <ChevronUp className="h-4 w-4" aria-hidden="true" />
             </>
           ) : (
             <>
-              <span>Devamını oku</span>
+              <span>{buttonText.readMore}</span>
               <ChevronDown className="h-4 w-4" aria-hidden="true" />
             </>
           )}
@@ -294,6 +309,7 @@ export function Testimonials() {
                 testimonial={testimonial}
                 isExpanded={expandedId === testimonial.id}
                 onToggle={() => handleToggleExpand(testimonial.id)}
+                locale={locale}
               />
             </motion.div>
           ))}

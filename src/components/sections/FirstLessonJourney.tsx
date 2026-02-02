@@ -243,6 +243,7 @@ interface NavigationProps {
   canGoNext: boolean;
   currentStep: number;
   totalSteps: number;
+  locale: 'tr' | 'en';
 }
 
 function Navigation({
@@ -252,7 +253,9 @@ function Navigation({
   canGoNext,
   currentStep,
   totalSteps,
+  locale,
 }: NavigationProps) {
+  const navText = ctaTranslations[locale];
   return (
     <div className="mt-8 flex items-center justify-between">
       {/* Previous Button */}
@@ -267,7 +270,7 @@ function Navigation({
         whileTap={canGoPrev ? { scale: 0.95 } : undefined}
       >
         <ChevronLeft className="h-4 w-4" />
-        <span className="hidden sm:inline">Önceki / Previous</span>
+        <span className="hidden sm:inline">{navText.prev}</span>
       </motion.button>
 
       {/* Step Counter */}
@@ -287,7 +290,7 @@ function Navigation({
         whileHover={canGoNext ? { x: 4 } : undefined}
         whileTap={canGoNext ? { scale: 0.95 } : undefined}
       >
-        <span className="hidden sm:inline">Sonraki / Next</span>
+        <span className="hidden sm:inline">{navText.next}</span>
         <ChevronRight className="h-4 w-4" />
       </motion.button>
     </div>
@@ -298,12 +301,28 @@ function Navigation({
 // CTA Section
 // ─────────────────────────────────────────────────────────────────────────────
 
+// CTA translations
+const ctaTranslations = {
+  tr: {
+    badge: 'İlk ders ücretsiz!',
+    prev: 'Önceki',
+    next: 'Sonraki',
+  },
+  en: {
+    badge: 'First lesson is free!',
+    prev: 'Previous',
+    next: 'Next',
+  },
+} as const;
+
 interface JourneyCTAProps {
   ctaText: string;
   ctaSecondary: string;
+  locale: 'tr' | 'en';
 }
 
-function JourneyCTA({ ctaText, ctaSecondary }: JourneyCTAProps) {
+function JourneyCTA({ ctaText, ctaSecondary, locale }: JourneyCTAProps) {
+  const t = ctaTranslations[locale];
   return (
     <motion.div
       className="mt-12 text-center"
@@ -314,7 +333,7 @@ function JourneyCTA({ ctaText, ctaSecondary }: JourneyCTAProps) {
     >
       <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm text-gold">
         <Clock className="h-4 w-4" />
-        <span>İlk ders ücretsiz! / First lesson is free!</span>
+        <span>{t.badge}</span>
       </div>
 
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -434,10 +453,11 @@ export function FirstLessonJourney() {
           canGoNext={currentStep < content.steps.length - 1}
           currentStep={currentStep}
           totalSteps={content.steps.length}
+          locale={locale}
         />
 
         {/* CTA */}
-        <JourneyCTA ctaText={content.ctaText} ctaSecondary={content.ctaSecondary} />
+        <JourneyCTA ctaText={content.ctaText} ctaSecondary={content.ctaSecondary} locale={locale} />
       </Container>
     </section>
   );

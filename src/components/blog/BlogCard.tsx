@@ -29,9 +29,24 @@ interface BlogCardProps {
   variant?: 'default' | 'featured' | 'compact';
 }
 
+// Translations
+const translations = {
+  tr: {
+    readMore: 'Devamını Oku',
+    pillarGuide: 'Ana Rehber',
+    guide: '⭐ Rehber',
+  },
+  en: {
+    readMore: 'Read More',
+    pillarGuide: 'Main Guide',
+    guide: '⭐ Guide',
+  },
+} as const;
+
 export function BlogCard({ post, index = 0, variant = 'default' }: BlogCardProps) {
   const category = getCategoryInfo(post.category);
   const href = post.locale === 'tr' ? `/blog/${post.slug}` : `/en/blog/${post.slug}`;
+  const t = translations[post.locale];
   
   if (variant === 'featured') {
     return (
@@ -58,7 +73,7 @@ export function BlogCard({ post, index = 0, variant = 'default' }: BlogCardProps
               {/* Pillar Badge */}
               {post.pillar && (
                 <div className="absolute top-4 left-4 bg-gold text-midnight px-3 py-1 text-xs font-medium uppercase tracking-wider">
-                  Ana Rehber
+                  {t.pillarGuide}
                 </div>
               )}
             </div>
@@ -94,7 +109,7 @@ export function BlogCard({ post, index = 0, variant = 'default' }: BlogCardProps
               
               {/* CTA */}
               <span className="inline-flex items-center gap-2 text-gold font-medium group-hover:gap-3 transition-all duration-300">
-                Devamını Oku
+                {t.readMore}
                 <ArrowRight size={18} />
               </span>
             </div>
@@ -168,7 +183,7 @@ export function BlogCard({ post, index = 0, variant = 'default' }: BlogCardProps
           {/* Pillar Badge */}
           {post.pillar && (
             <div className="absolute top-4 right-4 bg-gold text-midnight px-2 py-1 text-xs font-medium">
-              ⭐ Rehber
+              {t.guide}
             </div>
           )}
         </div>
