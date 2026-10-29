@@ -2,7 +2,7 @@
 
 Website for a tango teacher in Istanbul, in Turkish and English. Besides the main pages there is a landing page for each lesson type and each neighbourhood she teaches in, so a search like "private tango lesson Kadıköy" lands on a page written for that question. A bilingual blog answers the questions new dancers ask.
 
-**Live demo:** [gamze-tango.pages.dev](https://gamze-tango.pages.dev)
+**Live:** [gamzetango.com](https://gamzetango.com)
 
 ![Gamze Tango about section](docs/screenshot.jpg)
 
@@ -13,7 +13,6 @@ Website for a tango teacher in Istanbul, in Turkish and English. Besides the mai
 - Tailwind CSS 3
 - Framer Motion
 - MDX blog with `next-mdx-remote` and `gray-matter`
-- Hosted on Cloudflare Pages (demo)
 
 ## What is in it
 
@@ -67,12 +66,6 @@ Open http://localhost:3000.
 ```bash
 npm run build          # regular Next.js build
 npm run build:static   # static copy in out/ for any static host
-```
-
-To publish the static copy on Cloudflare Pages:
-
-```bash
-npx wrangler pages deploy out --project-name gamze-tango
 ```
 
 ## Writing a blog post
