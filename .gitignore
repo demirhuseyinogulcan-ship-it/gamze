@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Temp files
 generate-favicons.js
+
+# TypeScript build info
+*.tsbuildinfo
